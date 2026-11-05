@@ -77,7 +77,10 @@ const renderPortfolio = () => {
   const drawer = $("#drawer");
   const body = $("#drawerBody");
   let current = -1;
+  let currentPoint = -1; // -1: 1단계(개요), 0 이상: 2단계(구현 상세)
   let lastFocus = null;
+  const DET = window.PORTFOLIO_DETAILS || {};
+  const detailOf = (id, k) => (DET[id] && DET[id][k]) || {};
 
   function renderProject(i) {
     const p = D.projects[i];
@@ -116,16 +119,24 @@ const renderPortfolio = () => {
             <p>${esc(p.metric.label)}</p>
           </div>` : ""}
 
-        <h3 class="dh3">핵심 구현 · 문제 → 해결 → 결과</h3>
-        ${p.points.map((pt, k) => `
-          <details class="point" ${k === 0 ? "open" : ""}>
-            <summary><span class="n">${String(k + 1).padStart(2, "0")}</span>${esc(pt.title)}</summary>
-            <div class="psr">
-              <div><b>문제</b><span>${esc(pt.problem)}</span></div>
-              <div><b>해결</b><span>${esc(pt.solution)}</span></div>
-              <div><b>결과</b><span>${esc(pt.result)}</span></div>
-            </div>
-          </details>`).join("")}
+        <h3 class="dh3">핵심 구현 · 눌러서 자세히 보기</h3>
+        <ol class="plist">
+          ${p.points.map((pt, k) => {
+            const det = detailOf(p.id, k);
+            return `
+            <li>
+              <button class="prow" type="button" data-point="${k}">
+                <span class="prow__n">${String(k + 1).padStart(2, "0")}</span>
+                <span class="prow__body">
+                  <b>${esc(pt.title)}</b>
+                  <span>${esc(pt.result)}</span>
+                  <span class="prow__meta">${det.figures?.length ? `<i>구조도</i>` : ""}${det.intent?.length ? `<i>설계 의도 ${det.intent.length}</i>` : ""}${det.why ? `<i>선택 이유 · 한계</i>` : ""}</span>
+                </span>
+                <span class="prow__go" aria-hidden="true">›</span>
+              </button>
+            </li>`;
+          }).join("")}
+        </ol>
 
         <h3 class="dh3">화면</h3>
         <div class="gallery">
@@ -138,16 +149,97 @@ const renderPortfolio = () => {
         <h3 class="dh3">이 프로젝트에서 AI를 쓴 방식</h3>
         <div class="aibox"><span class="aibox__icon">AI</span><p>${todo(p.aiUse)}</p></div>
       </div>`;
-    drawer.scrollTop = 0;
+    currentPoint = -1;
+    body.classList.remove("is-depth2");
+    body.scrollTop = 0;
     body.scrollTop = 0;
     try { history.replaceState(null, "", "#project-" + p.id); } catch (e) {}
   }
 
-  function openProject(id) {
+  /* 2단계: 구현 상세 */
+  function renderPoint(i, k) {
+    const p = D.projects[i];
+    const pt = p.points[k];
+    if (!pt) return renderProject(i);
+    const det = detailOf(p.id, k);
+    const n = p.points.length;
+    const prevPt = k > 0 ? p.points[k - 1] : null;
+    const nextPt = k < n - 1 ? p.points[k + 1] : null;
+    current = i;
+    currentPoint = k;
+    body.style.setProperty("--pc", p.color);
+    body.innerHTML = `
+      <div class="dhead">
+        <button class="dback" type="button" data-back aria-label="${esc(p.title)} 개요로 돌아가기">‹</button>
+        <nav class="crumb" aria-label="현재 위치">
+          <button type="button" data-back>${esc(p.title)}</button>
+          <span aria-hidden="true">›</span>
+          <b id="drawerTitle">구현 ${k + 1} / ${n}</b>
+        </nav>
+        <div class="dhead__nav">
+          <button class="iconbtn" type="button" data-pstep="-1" ${prevPt ? "" : "disabled"} aria-label="이전 구현">↑</button>
+          <button class="iconbtn" type="button" data-pstep="1" ${nextPt ? "" : "disabled"} aria-label="다음 구현">↓</button>
+          <button class="iconbtn" type="button" data-close aria-label="닫기">✕</button>
+        </div>
+      </div>
+      <div class="dsec depth2">
+        <div class="dtitle">
+          <p class="eyebrow">Project ${esc(p.no)} · 핵심 구현 ${String(k + 1).padStart(2, "0")}</p>
+          <h2>${esc(pt.title)}</h2>
+        </div>
+
+        <div class="psr psr--cards">
+          <div><b>문제</b><span>${esc(pt.problem)}</span></div>
+          <div><b>해결</b><span>${esc(pt.solution)}</span></div>
+          <div><b>결과</b><span>${esc(pt.result)}</span></div>
+        </div>
+
+        ${det.figures?.length ? `
+          <h3 class="dh3">구조도 · 화면</h3>
+          <div class="figs ${det.figures.length > 1 ? "figs--2" : ""}">
+            ${det.figures.map((f) => `
+              <button class="fig" type="button" data-zoom="${f.src}" data-cap="${esc(f.caption)}">
+                <img src="${f.src}" alt="${esc(f.caption)}" loading="lazy" />
+                <span>${esc(f.caption)} <i>크게 보기</i></span>
+              </button>`).join("")}
+          </div>` : ""}
+
+        ${det.intent?.length ? `
+          <h3 class="dh3">설계 의도</h3>
+          <ol class="intent">
+            ${det.intent.map((x, j) => `<li><span>${j + 1}</span><div><b>${esc(x.t)}</b><p>${esc(x.d)}</p></div></li>`).join("")}
+          </ol>` : ""}
+
+        ${det.outcomes?.length ? `
+          <h3 class="dh3">구현 결과</h3>
+          <ul class="outcomes">${det.outcomes.map((o) => `<li>${esc(o)}</li>`).join("")}</ul>` : ""}
+
+        ${det.why ? `
+          <div class="why"><b>선택 이유와 한계</b><p>${esc(det.why)}</p></div>` : ""}
+
+        <div class="pnav">
+          ${prevPt ? `<button class="pnav__btn" type="button" data-pstep="-1"><span>‹ 이전 구현</span><b>${esc(prevPt.title)}</b></button>` : `<button class="pnav__btn" type="button" data-back><span>‹ 개요로</span><b>${esc(p.title)}</b></button>`}
+          ${nextPt ? `<button class="pnav__btn pnav__btn--next" type="button" data-pstep="1"><span>다음 구현 ›</span><b>${esc(nextPt.title)}</b></button>` : `<button class="pnav__btn pnav__btn--next" type="button" data-back><span>개요로 ›</span><b>${esc(p.title)}</b></button>`}
+        </div>
+      </div>`;
+    body.classList.add("is-depth2");
+    body.scrollTop = 0;
+    try { history.replaceState(null, "", `#project-${p.id}/${k + 1}`); } catch (e) {}
+  }
+
+  function backToProject() {
+    const k = currentPoint;
+    renderProject(current);
+    const row = body.querySelector(`[data-point="${k}"]`);
+    if (row) { row.scrollIntoView({ block: "center" }); row.focus({ preventScroll: true }); }
+  }
+
+  function openProject(id, pointIndex = -1) {
     const i = D.projects.findIndex((p) => p.id === id);
     if (i < 0) return;
-    lastFocus = document.activeElement;
-    renderProject(i);
+    if (!drawer.open) lastFocus = document.activeElement;
+    if (pointIndex >= 0 && D.projects[i].points[pointIndex]) renderPoint(i, pointIndex);
+    else renderProject(i);
     if (!drawer.open) drawer.showModal();
     document.body.style.overflow = "hidden";
     $(".dhead [data-close]", body)?.focus();
@@ -163,13 +255,29 @@ const renderPortfolio = () => {
     if (e.target === drawer) return closeDrawer(); // backdrop
     const step = e.target.closest("[data-step]");
     if (step) { renderProject((current + Number(step.dataset.step) + D.projects.length) % D.projects.length); $(".dhead [data-close]", body)?.focus(); return; }
+    const point = e.target.closest("[data-point]");
+    if (point) { renderPoint(current, Number(point.dataset.point)); $(".dback", body)?.focus(); return; }
+    const pstep = e.target.closest("[data-pstep]");
+    if (pstep) { renderPoint(current, currentPoint + Number(pstep.dataset.pstep)); $(".dback", body)?.focus(); return; }
+    if (e.target.closest("[data-back]")) return backToProject();
     if (e.target.closest("[data-close]")) return closeDrawer();
     const z = e.target.closest("[data-zoom]");
     if (z) openLightbox(z.dataset.zoom, z.dataset.cap);
   });
+  // 2단계에서 Esc는 패널을 닫지 않고 한 단계 뒤로
+  drawer.addEventListener("cancel", (e) => {
+    if (currentPoint >= 0) { e.preventDefault(); backToProject(); }
+  });
   drawer.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight" && !e.target.closest("details")) { renderProject((current + 1) % D.projects.length); }
-    if (e.key === "ArrowLeft" && !e.target.closest("details")) { renderProject((current - 1 + D.projects.length) % D.projects.length); }
+    if (e.target.closest("input, textarea")) return;
+    const n = D.projects[current]?.points.length || 0;
+    if (currentPoint >= 0) {
+      if (e.key === "ArrowRight" && currentPoint < n - 1) { e.preventDefault(); renderPoint(current, currentPoint + 1); $(".dback", body)?.focus(); }
+      if (e.key === "ArrowLeft" && currentPoint > 0) { e.preventDefault(); renderPoint(current, currentPoint - 1); $(".dback", body)?.focus(); }
+      return;
+    }
+    if (e.key === "ArrowRight") { renderProject((current + 1) % D.projects.length); $(".dhead [data-close]", body)?.focus(); }
+    if (e.key === "ArrowLeft") { renderProject((current - 1 + D.projects.length) % D.projects.length); $(".dhead [data-close]", body)?.focus(); }
   });
   grid.addEventListener("click", (e) => {
     const b = e.target.closest("[data-open]");
@@ -449,13 +557,14 @@ const renderPortfolio = () => {
     onScroll();
   }
 
-  // 주소(#home, #projects, #ai, #career, #project-<id>)와 탭을 연동
+  // 주소(#home, #projects, #ai, #career, #project-<id>, #project-<id>/<구현 번호>)와 탭을 연동
   const route = () => {
-    const h = location.hash.slice(1);
-    const m = h.match(/^project-(.+)$/);
+    const h = decodeURIComponent(location.hash.slice(1));
+    const m = h.match(/^project-([^/]+)(?:\/(\d+))?$/);
     if (m) {
       showTab("projects");
-      if (D.projects[current]?.id !== m[1] || !drawer.open) openProject(m[1]);
+      const k = m[2] ? Number(m[2]) - 1 : -1;
+      if (D.projects[current]?.id !== m[1] || currentPoint !== k || !drawer.open) openProject(m[1], k);
       return;
     }
     if (drawer.open) drawer.close();

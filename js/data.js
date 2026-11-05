@@ -206,7 +206,7 @@ window.PORTFOLIO = {
         {
           title: "적·아군이 공유하는 타깃 판정",
           problem: "적과 아군이 같은 전투 공간에서 서로 다른 대상을 골라야 했고, 매 프레임 전체 탐색은 비용이 컸습니다.",
-          solution: "TeamSide · IsHostile을 공통 NPC 계층에 두고, Target Evaluator가 0.1초 주기로 유효 대상을 갱신.",
+          solution: "TeamSide · IsHostile을 공통 NPC 계층에 두고, Target Evaluator는 1초, 주요 Task 판단은 0.1초 주기로 갱신.",
           result: "같은 StateTree 로직을 적·아군이 재사용, 반복 탐색 빈도 제한.",
         },
         {
