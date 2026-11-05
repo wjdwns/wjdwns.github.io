@@ -42,6 +42,7 @@ const renderPortfolio = () => {
   grid.innerHTML = D.projects.map((p) => `
     <li class="card reveal" data-tags="${p.tags.join(" ")}" style="--pc:${p.color}">
       <button class="card__btn" type="button" data-open="${p.id}" aria-label="${esc(p.title)} 자세히 보기">
+        <div class="node__head" aria-hidden="true"><i class="pin"></i><span>PROJECT_${p.no}</span><em>${esc(p.team)}</em><i class="pin pin--out"></i></div>
         <div class="card__media">
           <img src="${p.cover}" alt="${esc(p.title)} 플레이 화면" loading="lazy" />
           <span class="card__no">PROJECT ${p.no}</span>
@@ -552,7 +553,7 @@ const renderPortfolio = () => {
       document.documentElement.style.scrollBehavior = "auto";
       scrollTo(0, 0);
       document.documentElement.style.scrollBehavior = "";
-      document.title = `${id === "home" ? "" : tabs.find((t) => t.dataset.tab === id).firstChild.textContent + " · "}박정준 · Unreal Engine Client Developer`;
+      document.title = `${id === "home" ? "" : tabs.find((t) => t.dataset.tab === id).dataset.label + " · "}박정준 · Unreal Engine Client Developer`;
     }
     onScroll();
   }

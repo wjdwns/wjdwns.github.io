@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <script>
     try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
@@ -29,11 +30,11 @@
         <span class="brand__name">박정준</span>
       </a>
       <nav class="tabs" role="tablist" aria-label="포트폴리오 메뉴" id="tabs">
-        <a class="tab" role="tab" href="#home" id="tab-home" aria-controls="home" data-tab="home">홈</a>
-        <a class="tab" role="tab" href="#projects" id="tab-projects" aria-controls="projects" data-tab="projects">프로젝트<span class="tab__count" id="tabProjCount"></span></a>
-        <a class="tab" role="tab" href="#career" id="tab-career" aria-controls="career" data-tab="career">경력</a>
-        <a class="tab" role="tab" href="#ai" id="tab-ai" aria-controls="ai" data-tab="ai">AI 활용능력</a>
-        <a class="tab" role="tab" href="#ai-log" id="tab-ai-log" aria-controls="ai-log" data-tab="ai-log">AI 사용로그</a>
+        <a class="tab" role="tab" href="#home" id="tab-home" aria-controls="home" data-tab="home" data-label="홈"><span class="tab__no">01</span>홈</a>
+        <a class="tab" role="tab" href="#projects" id="tab-projects" aria-controls="projects" data-tab="projects" data-label="프로젝트"><span class="tab__no">02</span>프로젝트<span class="tab__count" id="tabProjCount"></span></a>
+        <a class="tab" role="tab" href="#career" id="tab-career" aria-controls="career" data-tab="career" data-label="경력"><span class="tab__no">03</span>경력</a>
+        <a class="tab" role="tab" href="#ai" id="tab-ai" aria-controls="ai" data-tab="ai" data-label="AI 활용능력"><span class="tab__no">04</span>AI 활용능력</a>
+        <a class="tab" role="tab" href="#ai-log" id="tab-ai-log" aria-controls="ai-log" data-tab="ai-log" data-label="AI 사용로그"><span class="tab__no">05</span>AI 사용로그</a>
       </nav>
       <button class="iconbtn" id="themeToggle" type="button" aria-label="다크 모드 전환">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
@@ -47,6 +48,7 @@
     <!-- HERO -->
     <section class="hero wrap" aria-labelledby="heroTitle">
       <div class="hero__text">
+        <p class="hero__code" aria-hidden="true"><span class="c-k">UCLASS</span>() <span class="c-k">class</span> <b class="c-t">PARKJEONGJUN</b> : <span class="c-k">public</span> <span class="c-t">UEngineDeveloper</span><i class="caret"></i></p>
         <p class="eyebrow" id="heroRole"></p>
         <h1 id="heroTitle"></h1>
         <p class="hero__summary" id="heroSummary"></p>
@@ -66,10 +68,10 @@
 
     <!-- HOME: 탭 바로가기 -->
     <section class="wrap jump" aria-label="탭 바로가기">
-      <a class="jump__card" href="#projects"><span class="eyebrow">Projects</span><b>프로젝트 5개</b><span>네트워크 · GAS · 게임 AI · 3D 자동화를 문제 → 해결 → 결과로</span><i>→</i></a>
-      <a class="jump__card" href="#career"><span class="eyebrow">Experience</span><b>경력 · 학력</b><span>앱 · 서버 실무 2년 2개월, 수상과 자격</span><i>→</i></a>
-      <a class="jump__card jump__card--dark" href="#ai"><span class="eyebrow">AI skills</span><b>AI 활용능력</b><span>Codex · ChatGPT 역할 분담, 질문 습관, 검증 파이프라인</span><i>→</i></a>
-      <a class="jump__card jump__card--dark" href="#ai-log"><span class="eyebrow">AI log</span><b>AI 사용로그</b><span>Codex 세션 · 요청 · 도구 실행을 집계한 실제 기록</span><i>→</i></a>
+      <a class="jump__card" href="#projects"><span class="eyebrow">02 · Projects</span><b>프로젝트 5개</b><span>네트워크 · GAS · 게임 AI · 3D 자동화를 문제 → 해결 → 결과로</span><i>→</i></a>
+      <a class="jump__card" href="#career"><span class="eyebrow">03 · Experience</span><b>경력 · 학력</b><span>앱 · 서버 실무 2년 2개월, 수상과 자격</span><i>→</i></a>
+      <a class="jump__card jump__card--dark" href="#ai"><span class="eyebrow">04 · AI skills</span><b>AI 활용능력</b><span>Codex · ChatGPT 역할 분담, 질문 습관, 검증 파이프라인</span><i>→</i></a>
+      <a class="jump__card jump__card--dark" href="#ai-log"><span class="eyebrow">05 · AI log</span><b>AI 사용로그</b><span>Codex 세션 · 요청 · 도구 실행을 집계한 실제 기록</span><i>→</i></a>
     </section>
     </div>
 
@@ -77,7 +79,7 @@
     <section class="section view" id="projects" role="tabpanel" aria-labelledby="tab-projects" data-view="projects" hidden>
       <div class="wrap">
         <div class="section__head">
-          <p class="eyebrow">Projects</p>
+          <p class="eyebrow"><span class="sec-no">02</span>Projects</p>
           <h2 id="projTitle">5개의 프로젝트, 각각 다른 문제</h2>
           <p class="section__lead">카드를 누르면 문제 → 해결 → 결과 순서로 자세히 볼 수 있습니다.</p>
         </div>
@@ -90,7 +92,7 @@
     <section class="section section--ai view" id="ai" role="tabpanel" aria-labelledby="tab-ai" data-view="ai" hidden>
       <div class="wrap">
         <div class="section__head">
-          <p class="eyebrow">How I work with AI</p>
+          <p class="eyebrow"><span class="sec-no">04</span>How I work with AI</p>
           <h2 id="aiTitle">AI는 빠르게 쓰고,<br />결과는 직접 검증합니다</h2>
           <p class="section__lead" id="aiLead"></p>
         </div>
@@ -152,7 +154,7 @@
     <section class="section section--ai view" id="ai-log" role="tabpanel" aria-labelledby="tab-ai-log" data-view="ai-log" hidden>
       <div class="wrap">
         <div class="section__head">
-          <p class="eyebrow">AI usage log</p>
+          <p class="eyebrow"><span class="sec-no">05</span>AI usage log</p>
           <h2 id="aiLogTitle">얼마나, 어디에 맡겼는지<br />기록으로 보여드립니다</h2>
           <p class="section__lead">Codex 로컬 세션 기록을 직접 집계한 실제 수치입니다. 자동 승인 검토 세션은 제외했습니다.</p>
         </div>
@@ -203,7 +205,7 @@
     <section class="section view" id="career" role="tabpanel" aria-labelledby="tab-career" data-view="career" hidden>
       <div class="wrap">
         <div class="section__head">
-          <p class="eyebrow">Experience</p>
+          <p class="eyebrow"><span class="sec-no">03</span>Experience</p>
           <h2 id="careerTitle">앱부터 서버, 그리고 엔진까지</h2>
         </div>
         <div class="career">
@@ -219,10 +221,12 @@
 
     <!-- CONTACT -->
     <section class="section contact" id="contact" aria-labelledby="contactTitle">
-      <div class="wrap contact__inner">
+      <div class="wrap"><div class="contact__inner">
+        <p class="contact__code" aria-hidden="true">// EndPlay → BeginCollaboration()</p>
         <h2 id="contactTitle">함께 만들 게임이 있다면</h2>
         <p>편하게 연락 주세요. 빠르게 답장드리겠습니다.</p>
         <div class="contact__actions" id="contactActions"></div>
+      </div>
       </div>
     </section>
   </main>
