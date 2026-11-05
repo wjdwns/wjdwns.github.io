@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T01:15:33+09:00",
+  "generatedAt": "2026-11-05T22:38:20+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
@@ -9,15 +9,15 @@
   },
   "totals": {
     "sessions": 39,
-    "requests": 989,
-    "toolRuns": 10109,
+    "requests": 994,
+    "toolRuns": 10158,
     "patches": 233,
-    "inputTokens": 1401860042,
-    "cachedInputTokens": 1343720320,
-    "outputTokens": 5723595,
-    "reasoningTokens": 1232037,
+    "inputTokens": 1411444764,
+    "cachedInputTokens": 1353086592,
+    "outputTokens": 5755840,
+    "reasoningTokens": 1243893,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9585267285904994
+    "cacheHitRate": 0.9586535913494664
   },
   "daily": [
     {
@@ -686,11 +686,11 @@
     },
     {
       "date": "2026-11-05",
-      "requests": 1,
-      "toolRuns": 34,
-      "inputTokens": 2511034,
-      "cachedInputTokens": 2439296,
-      "outputTokens": 33407
+      "requests": 6,
+      "toolRuns": 83,
+      "inputTokens": 12095756,
+      "cachedInputTokens": 11805568,
+      "outputTokens": 65652
     }
   ],
   "projects": [
@@ -726,9 +726,9 @@
     },
     {
       "name": "기타 실험 · 학습",
-      "requests": 74,
-      "toolRuns": 457,
-      "inputTokens": 56042772
+      "requests": 79,
+      "toolRuns": 506,
+      "inputTokens": 65627494
     },
     {
       "name": "OverCooked2 (UE5)",
@@ -755,13 +755,13 @@
     },
     {
       "name": "검증",
-      "turns": 193,
-      "inputTokens": 777654628
+      "turns": 194,
+      "inputTokens": 780182612
     },
     {
       "name": "수정",
-      "turns": 14,
-      "inputTokens": 16245705
+      "turns": 17,
+      "inputTokens": 23302443
     },
     {
       "name": "기타",
