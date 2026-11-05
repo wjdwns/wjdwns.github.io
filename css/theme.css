@@ -45,6 +45,9 @@ body {
 /* 헤더 · 에디터 탭 */
 .topbar { background: color-mix(in srgb, var(--bg) 86%, transparent); border-bottom: 1px solid var(--line); }
 .brand__mark { border-radius: 8px; background: var(--accent); color: var(--on-accent); }
+.brand__mark svg { display: block; }
+.brand:hover .brand__mark { transform: rotate(-6deg); }
+.brand__mark { transition: transform .2s; }
 .tabs { background: transparent; padding: 0; gap: 2px; border-radius: 0; }
 .tab { border-radius: 8px; padding: 8px 14px; font-weight: 600; gap: 7px; }
 .tab__no { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
