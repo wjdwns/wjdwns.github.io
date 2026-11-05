@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>박정준 · Unreal Engine Client Developer</title>
+  <meta name="description" content="Unreal Engine 5 네트워크 게임플레이 · GAS · AI 시스템을 설계하는 개발자 박정준의 포트폴리오. AI 에이전트 활용 방식 포함." />
+  <meta property="og:title" content="박정준 · Unreal Engine Client Developer" />
+  <meta property="og:description" content="구조를 설계하고, 지연과 변경에 강한 플레이를 만듭니다." />
+  <meta property="og:image" content="assets/img/ir-hero.jpg" />
+  <meta name="theme-color" content="#f6f5f1" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">본문 바로가기</a>
+
+  <header class="topbar" id="top">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#home" aria-label="홈으로">
+        <span class="brand__mark">PJ</span>
+        <span class="brand__name">박정준</span>
+      </a>
+      <nav class="tabs" role="tablist" aria-label="포트폴리오 메뉴" id="tabs">
+        <a class="tab" role="tab" href="#home" id="tab-home" aria-controls="home" data-tab="home">홈</a>
+        <a class="tab" role="tab" href="#projects" id="tab-projects" aria-controls="projects" data-tab="projects">프로젝트<span class="tab__count" id="tabProjCount"></span></a>
+        <a class="tab" role="tab" href="#career" id="tab-career" aria-controls="career" data-tab="career">경력</a>
+        <a class="tab" role="tab" href="#ai" id="tab-ai" aria-controls="ai" data-tab="ai">AI 활용능력</a>
+        <a class="tab" role="tab" href="#ai-log" id="tab-ai-log" aria-controls="ai-log" data-tab="ai-log">AI 사용로그</a>
+      </nav>
+      <button class="iconbtn" id="themeToggle" type="button" aria-label="다크 모드 전환">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+      </button>
+    </div>
+    <div class="progress" id="progress"></div>
+  </header>
+
+  <main id="main">
+    <div class="view" id="home" role="tabpanel" aria-labelledby="tab-home" data-view="home">
+    <!-- HERO -->
+    <section class="hero wrap" aria-labelledby="heroTitle">
+      <div class="hero__text">
+        <p class="eyebrow" id="heroRole"></p>
+        <h1 id="heroTitle"></h1>
+        <p class="hero__summary" id="heroSummary"></p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
+          <a class="btn" href="#ai">AI 활용능력</a>
+        </div>
+        <ul class="hero__links" id="heroLinks"></ul>
+      </div>
+      <ul class="bento" id="heroStats" aria-label="핵심 지표"></ul>
+    </section>
+
+    <!-- SKILLS STRIP -->
+    <section class="wrap skills" aria-label="기술 스택">
+      <div class="skills__grid" id="skills"></div>
+    </section>
+
+    <!-- HOME: 탭 바로가기 -->
+    <section class="wrap jump" aria-label="탭 바로가기">
+      <a class="jump__card" href="#projects"><span class="eyebrow">Projects</span><b>프로젝트 5개</b><span>네트워크 · GAS · 게임 AI · 3D 자동화를 문제 → 해결 → 결과로</span><i>→</i></a>
+      <a class="jump__card" href="#career"><span class="eyebrow">Experience</span><b>경력 · 학력</b><span>앱 · 서버 실무 2년 2개월, 수상과 자격</span><i>→</i></a>
+      <a class="jump__card jump__card--dark" href="#ai"><span class="eyebrow">AI skills</span><b>AI 활용능력</b><span>Codex · ChatGPT 역할 분담, 질문 습관, 검증 파이프라인</span><i>→</i></a>
+      <a class="jump__card jump__card--dark" href="#ai-log"><span class="eyebrow">AI log</span><b>AI 사용로그</b><span>Codex 세션 · 요청 · 도구 실행을 집계한 실제 기록</span><i>→</i></a>
+    </section>
+    </div>
+
+    <!-- PROJECTS -->
+    <section class="section view" id="projects" role="tabpanel" aria-labelledby="tab-projects" data-view="projects" hidden>
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Projects</p>
+          <h2 id="projTitle">5개의 프로젝트, 각각 다른 문제</h2>
+          <p class="section__lead">카드를 누르면 문제 → 해결 → 결과 순서로 자세히 볼 수 있습니다.</p>
+        </div>
+        <div class="chips" id="filters" role="toolbar" aria-label="프로젝트 분야 필터"></div>
+        <ul class="cards" id="projectGrid"></ul>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="section section--ai view" id="ai" role="tabpanel" aria-labelledby="tab-ai" data-view="ai" hidden>
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">How I work with AI</p>
+          <h2 id="aiTitle">AI는 빠르게 쓰고,<br />결과는 직접 검증합니다</h2>
+          <p class="section__lead" id="aiLead"></p>
+        </div>
+
+        <ol class="principles" id="principles"></ol>
+
+        <h3 class="subhead">도구마다 맡기는 일이 다릅니다</h3>
+        <div class="tools" id="tools"></div>
+        <div class="handoff" id="handoff"></div>
+
+        <h3 class="subhead">토큰은 이렇게 아낍니다</h3>
+        <p class="subhead__lead" id="tokenLead"></p>
+        <ol class="saves" id="saves"></ol>
+
+        <h3 class="subhead">원하는 결과를 한 번에 받는 프롬프트 구조</h3>
+        <p class="subhead__lead" id="designLead"></p>
+        <div class="design">
+          <ol class="anatomy" id="anatomy" aria-label="프롬프트 구성 순서"></ol>
+          <div class="design__side">
+            <p class="design__note" id="designPlacement"></p>
+            <p class="design__note design__note--retry" id="designRetry"></p>
+          </div>
+        </div>
+
+        <h3 class="subhead">이렇게 묻고, 이렇게 씁니다</h3>
+        <p class="subhead__lead">ChatGPT 대화 기록을 돌아보며 정리한 질문 습관과 활용 분야입니다.</p>
+        <div class="askgrid">
+          <ol class="habits" id="habits"></ol>
+          <figure class="panel domains">
+            <figcaption>
+              <strong>ChatGPT 활용 분야</strong>
+              <span>대화 주제의 빈도와 깊이 기준 · 정성 평가</span>
+            </figcaption>
+            <ul id="domains"></ul>
+          </figure>
+        </div>
+
+        <h3 class="subhead">AI 코드 검증 파이프라인</h3>
+        <p class="subhead__lead">AI가 만든 변경을 바로 반영하지 않고, 다섯 단계를 거칩니다.</p>
+        <ol class="pipeline" id="pipeline"></ol>
+
+        <div class="verify" id="verify"></div>
+
+        <h3 class="subhead">AI 결과를 받아들이지 않은 순간</h3>
+        <p class="subhead__lead">품질 기준은 제가 정합니다. 요구사항을 충족하지 않으면 쓰지 않습니다.</p>
+        <ul class="rejects" id="rejects"></ul>
+
+        <section class="case" id="caseStudy" aria-labelledby="caseTitle"></section>
+
+        <div class="refs">
+          <h3>근거 자료</h3>
+          <ol id="refs"></ol>
+          <p class="refs__note">"내 실천"의 수치는 Codex 로컬 세션 기록과 프롬프트 파일을 직접 집계한 값입니다.</p>
+        </div>
+      </div>
+    </section>
+
+<!-- AI USAGE LOG -->
+    <section class="section section--ai view" id="ai-log" role="tabpanel" aria-labelledby="tab-ai-log" data-view="ai-log" hidden>
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">AI usage log</p>
+          <h2 id="aiLogTitle">얼마나, 어디에 맡겼는지<br />기록으로 보여드립니다</h2>
+          <p class="section__lead">Codex 로컬 세션 기록을 직접 집계한 실제 수치입니다. 자동 승인 검토 세션은 제외했습니다.</p>
+        </div>
+        <div class="usage" id="usage">
+          <div class="usage__head">
+            <div>
+              <h3 class="subhead subhead--flush">Codex 사용 요약</h3>
+              <p class="subhead__lead" id="usageMeta"></p>
+            </div>
+          </div>
+          <div class="kpis" id="usageKpis"></div>
+          <div class="activity" id="usageActivity"></div>
+
+          <div class="usage__charts">
+            <figure class="panel">
+              <figcaption>
+                <strong>프로젝트별 Codex 작업 요청</strong>
+                <span>어디에 AI를 가장 많이 맡겼나 · 단위: 건</span>
+              </figcaption>
+              <ul class="hbars" id="jobBars"></ul>
+            </figure>
+            <figure class="panel">
+              <figcaption>
+                <strong>작업 단계별 입력 토큰</strong>
+                <span id="stageNote"></span>
+              </figcaption>
+              <div class="stackbar" id="stageBar" role="img"></div>
+              <ul class="legend" id="stageLegend"></ul>
+            </figure>
+          </div>
+
+          <figure class="panel daily" id="dailyPanel" hidden>
+            <figcaption>
+              <strong>최근 30일 Codex 작업 요청</strong>
+              <span>날짜별 요청 수 · 막대에 마우스를 올리면 도구 실행과 토큰이 보입니다</span>
+            </figcaption>
+            <div class="cols" id="dailyCols" role="img"></div>
+            <div class="cols__axis" id="dailyAxis"></div>
+          </figure>
+
+          <ul class="insights" id="insights"></ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CAREER -->
+    <section class="section view" id="career" role="tabpanel" aria-labelledby="tab-career" data-view="career" hidden>
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Experience</p>
+          <h2 id="careerTitle">앱부터 서버, 그리고 엔진까지</h2>
+        </div>
+        <div class="career">
+          <ol class="timeline" id="timeline"></ol>
+          <aside class="facts">
+            <div class="facts__group"><h3>학력</h3><ul id="edu"></ul></div>
+            <div class="facts__group"><h3>수상</h3><ul id="awards"></ul></div>
+            <div class="facts__group"><h3>자격 · 어학</h3><ul id="certs"></ul></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap contact__inner">
+        <h2 id="contactTitle">함께 만들 게임이 있다면</h2>
+        <p>편하게 연락 주세요. 빠르게 답장드리겠습니다.</p>
+        <div class="contact__actions" id="contactActions"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span>© 2026 박정준</span>
+    <a href="#top">맨 위로 ↑</a>
+  </footer>
+
+  <!-- Project detail drawer -->
+  <dialog class="drawer" id="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer__inner" id="drawerBody"></div>
+  </dialog>
+
+  <!-- Image lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="이미지 크게 보기">
+    <button class="iconbtn lightbox__close" type="button" data-close aria-label="닫기">✕</button>
+    <img id="lightboxImg" alt="" />
+    <p id="lightboxCap"></p>
+  </dialog>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

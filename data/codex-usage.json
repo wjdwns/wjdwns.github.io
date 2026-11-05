@@ -1,0 +1,772 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-05T01:15:33+09:00",
+  "source": "codex-local-sessions",
+  "range": {
+    "from": "2026-06-18",
+    "to": "2026-11-05",
+    "activeDays": 84
+  },
+  "totals": {
+    "sessions": 39,
+    "requests": 989,
+    "toolRuns": 10109,
+    "patches": 233,
+    "inputTokens": 1401860042,
+    "cachedInputTokens": 1343720320,
+    "outputTokens": 5723595,
+    "reasoningTokens": 1232037,
+    "guardianReviews": 244,
+    "cacheHitRate": 0.9585267285904994
+  },
+  "daily": [
+    {
+      "date": "2026-06-18",
+      "requests": 9,
+      "toolRuns": 109,
+      "inputTokens": 4862959,
+      "cachedInputTokens": 4628224,
+      "outputTokens": 35667
+    },
+    {
+      "date": "2026-06-20",
+      "requests": 1,
+      "toolRuns": 23,
+      "inputTokens": 312348,
+      "cachedInputTokens": 258176,
+      "outputTokens": 3029
+    },
+    {
+      "date": "2026-06-21",
+      "requests": 3,
+      "toolRuns": 26,
+      "inputTokens": 1223661,
+      "cachedInputTokens": 1042944,
+      "outputTokens": 10774
+    },
+    {
+      "date": "2026-06-24",
+      "requests": 14,
+      "toolRuns": 196,
+      "inputTokens": 13774371,
+      "cachedInputTokens": 12735360,
+      "outputTokens": 74154
+    },
+    {
+      "date": "2026-06-25",
+      "requests": 11,
+      "toolRuns": 95,
+      "inputTokens": 7141482,
+      "cachedInputTokens": 6658560,
+      "outputTokens": 32121
+    },
+    {
+      "date": "2026-06-28",
+      "requests": 16,
+      "toolRuns": 101,
+      "inputTokens": 6802518,
+      "cachedInputTokens": 6402432,
+      "outputTokens": 31778
+    },
+    {
+      "date": "2026-06-29",
+      "requests": 5,
+      "toolRuns": 108,
+      "inputTokens": 9883145,
+      "cachedInputTokens": 9541504,
+      "outputTokens": 43683
+    },
+    {
+      "date": "2026-07-04",
+      "requests": 11,
+      "toolRuns": 177,
+      "inputTokens": 14605208,
+      "cachedInputTokens": 13815680,
+      "outputTokens": 47705
+    },
+    {
+      "date": "2026-07-05",
+      "requests": 5,
+      "toolRuns": 172,
+      "inputTokens": 9841462,
+      "cachedInputTokens": 9122176,
+      "outputTokens": 38353
+    },
+    {
+      "date": "2026-07-10",
+      "requests": 5,
+      "toolRuns": 91,
+      "inputTokens": 2501618,
+      "cachedInputTokens": 2143488,
+      "outputTokens": 31473
+    },
+    {
+      "date": "2026-07-13",
+      "requests": 74,
+      "toolRuns": 306,
+      "inputTokens": 44997439,
+      "cachedInputTokens": 42778624,
+      "outputTokens": 271912
+    },
+    {
+      "date": "2026-07-15",
+      "requests": 2,
+      "toolRuns": 0,
+      "inputTokens": 139000,
+      "cachedInputTokens": 75264,
+      "outputTokens": 4004
+    },
+    {
+      "date": "2026-07-16",
+      "requests": 13,
+      "toolRuns": 83,
+      "inputTokens": 10194541,
+      "cachedInputTokens": 9683968,
+      "outputTokens": 42716
+    },
+    {
+      "date": "2026-07-19",
+      "requests": 1,
+      "toolRuns": 0,
+      "inputTokens": 175651,
+      "cachedInputTokens": 9984,
+      "outputTokens": 2726
+    },
+    {
+      "date": "2026-07-20",
+      "requests": 30,
+      "toolRuns": 11,
+      "inputTokens": 5685215,
+      "cachedInputTokens": 4830464,
+      "outputTokens": 39652
+    },
+    {
+      "date": "2026-07-21",
+      "requests": 17,
+      "toolRuns": 30,
+      "inputTokens": 4790658,
+      "cachedInputTokens": 3932416,
+      "outputTokens": 38106
+    },
+    {
+      "date": "2026-07-23",
+      "requests": 39,
+      "toolRuns": 3,
+      "inputTokens": 6200051,
+      "cachedInputTokens": 5211648,
+      "outputTokens": 38591
+    },
+    {
+      "date": "2026-07-24",
+      "requests": 13,
+      "toolRuns": 30,
+      "inputTokens": 3520729,
+      "cachedInputTokens": 3250688,
+      "outputTokens": 43942
+    },
+    {
+      "date": "2026-07-25",
+      "requests": 3,
+      "toolRuns": 25,
+      "inputTokens": 1415697,
+      "cachedInputTokens": 1247744,
+      "outputTokens": 24626
+    },
+    {
+      "date": "2026-07-27",
+      "requests": 11,
+      "toolRuns": 2,
+      "inputTokens": 1284751,
+      "cachedInputTokens": 683776,
+      "outputTokens": 4802
+    },
+    {
+      "date": "2026-07-29",
+      "requests": 6,
+      "toolRuns": 40,
+      "inputTokens": 2372196,
+      "cachedInputTokens": 2293248,
+      "outputTokens": 35111
+    },
+    {
+      "date": "2026-07-30",
+      "requests": 1,
+      "toolRuns": 8,
+      "inputTokens": 832954,
+      "cachedInputTokens": 743168,
+      "outputTokens": 2361
+    },
+    {
+      "date": "2026-08-01",
+      "requests": 20,
+      "toolRuns": 143,
+      "inputTokens": 15953693,
+      "cachedInputTokens": 15414272,
+      "outputTokens": 93946
+    },
+    {
+      "date": "2026-08-02",
+      "requests": 14,
+      "toolRuns": 339,
+      "inputTokens": 47023941,
+      "cachedInputTokens": 45219840,
+      "outputTokens": 204451
+    },
+    {
+      "date": "2026-08-03",
+      "requests": 31,
+      "toolRuns": 307,
+      "inputTokens": 41348970,
+      "cachedInputTokens": 39761152,
+      "outputTokens": 175227
+    },
+    {
+      "date": "2026-08-04",
+      "requests": 8,
+      "toolRuns": 23,
+      "inputTokens": 4567902,
+      "cachedInputTokens": 4200448,
+      "outputTokens": 29976
+    },
+    {
+      "date": "2026-08-06",
+      "requests": 1,
+      "toolRuns": 0,
+      "inputTokens": 158883,
+      "cachedInputTokens": 0,
+      "outputTokens": 2415
+    },
+    {
+      "date": "2026-08-08",
+      "requests": 9,
+      "toolRuns": 33,
+      "inputTokens": 7460563,
+      "cachedInputTokens": 6894208,
+      "outputTokens": 25053
+    },
+    {
+      "date": "2026-08-09",
+      "requests": 15,
+      "toolRuns": 191,
+      "inputTokens": 26235497,
+      "cachedInputTokens": 25312128,
+      "outputTokens": 134260
+    },
+    {
+      "date": "2026-08-10",
+      "requests": 21,
+      "toolRuns": 423,
+      "inputTokens": 61973304,
+      "cachedInputTokens": 60364672,
+      "outputTokens": 304766
+    },
+    {
+      "date": "2026-08-12",
+      "requests": 11,
+      "toolRuns": 129,
+      "inputTokens": 17985207,
+      "cachedInputTokens": 17025536,
+      "outputTokens": 82571
+    },
+    {
+      "date": "2026-08-13",
+      "requests": 9,
+      "toolRuns": 272,
+      "inputTokens": 40808704,
+      "cachedInputTokens": 39357056,
+      "outputTokens": 160872
+    },
+    {
+      "date": "2026-08-14",
+      "requests": 5,
+      "toolRuns": 50,
+      "inputTokens": 3543670,
+      "cachedInputTokens": 3286144,
+      "outputTokens": 54486
+    },
+    {
+      "date": "2026-08-15",
+      "requests": 2,
+      "toolRuns": 8,
+      "inputTokens": 1259313,
+      "cachedInputTokens": 1010176,
+      "outputTokens": 21773
+    },
+    {
+      "date": "2026-08-17",
+      "requests": 42,
+      "toolRuns": 70,
+      "inputTokens": 11751189,
+      "cachedInputTokens": 10945664,
+      "outputTokens": 71464
+    },
+    {
+      "date": "2026-08-18",
+      "requests": 41,
+      "toolRuns": 16,
+      "inputTokens": 7165117,
+      "cachedInputTokens": 6641408,
+      "outputTokens": 30491
+    },
+    {
+      "date": "2026-08-19",
+      "requests": 10,
+      "toolRuns": 9,
+      "inputTokens": 2385212,
+      "cachedInputTokens": 1805568,
+      "outputTokens": 16197
+    },
+    {
+      "date": "2026-09-02",
+      "requests": 13,
+      "toolRuns": 8,
+      "inputTokens": 3583728,
+      "cachedInputTokens": 3068928,
+      "outputTokens": 28081
+    },
+    {
+      "date": "2026-09-03",
+      "requests": 17,
+      "toolRuns": 306,
+      "inputTokens": 46067681,
+      "cachedInputTokens": 44559616,
+      "outputTokens": 220146
+    },
+    {
+      "date": "2026-09-04",
+      "requests": 11,
+      "toolRuns": 278,
+      "inputTokens": 39155063,
+      "cachedInputTokens": 37682560,
+      "outputTokens": 148859
+    },
+    {
+      "date": "2026-09-05",
+      "requests": 25,
+      "toolRuns": 128,
+      "inputTokens": 17001530,
+      "cachedInputTokens": 15831680,
+      "outputTokens": 80241
+    },
+    {
+      "date": "2026-09-08",
+      "requests": 10,
+      "toolRuns": 157,
+      "inputTokens": 20506359,
+      "cachedInputTokens": 19278336,
+      "outputTokens": 147521
+    },
+    {
+      "date": "2026-09-09",
+      "requests": 5,
+      "toolRuns": 48,
+      "inputTokens": 5809027,
+      "cachedInputTokens": 5177472,
+      "outputTokens": 58779
+    },
+    {
+      "date": "2026-09-11",
+      "requests": 13,
+      "toolRuns": 281,
+      "inputTokens": 37179715,
+      "cachedInputTokens": 35787264,
+      "outputTokens": 247061
+    },
+    {
+      "date": "2026-09-12",
+      "requests": 9,
+      "toolRuns": 120,
+      "inputTokens": 15552854,
+      "cachedInputTokens": 14686976,
+      "outputTokens": 56735
+    },
+    {
+      "date": "2026-09-13",
+      "requests": 11,
+      "toolRuns": 178,
+      "inputTokens": 24581570,
+      "cachedInputTokens": 23606528,
+      "outputTokens": 99198
+    },
+    {
+      "date": "2026-09-14",
+      "requests": 11,
+      "toolRuns": 148,
+      "inputTokens": 21545890,
+      "cachedInputTokens": 21056896,
+      "outputTokens": 74951
+    },
+    {
+      "date": "2026-09-15",
+      "requests": 8,
+      "toolRuns": 142,
+      "inputTokens": 16210216,
+      "cachedInputTokens": 15481216,
+      "outputTokens": 81044
+    },
+    {
+      "date": "2026-09-16",
+      "requests": 20,
+      "toolRuns": 229,
+      "inputTokens": 28643470,
+      "cachedInputTokens": 27764352,
+      "outputTokens": 92442
+    },
+    {
+      "date": "2026-09-17",
+      "requests": 2,
+      "toolRuns": 0,
+      "inputTokens": 281910,
+      "cachedInputTokens": 159232,
+      "outputTokens": 723
+    },
+    {
+      "date": "2026-09-19",
+      "requests": 2,
+      "toolRuns": 0,
+      "inputTokens": 223289,
+      "cachedInputTokens": 18560,
+      "outputTokens": 1306
+    },
+    {
+      "date": "2026-09-21",
+      "requests": 1,
+      "toolRuns": 10,
+      "inputTokens": 775450,
+      "cachedInputTokens": 672000,
+      "outputTokens": 5892
+    },
+    {
+      "date": "2026-09-22",
+      "requests": 9,
+      "toolRuns": 117,
+      "inputTokens": 17741037,
+      "cachedInputTokens": 17004672,
+      "outputTokens": 54601
+    },
+    {
+      "date": "2026-09-23",
+      "requests": 20,
+      "toolRuns": 366,
+      "inputTokens": 53182897,
+      "cachedInputTokens": 51853312,
+      "outputTokens": 172158
+    },
+    {
+      "date": "2026-09-24",
+      "requests": 7,
+      "toolRuns": 137,
+      "inputTokens": 16407767,
+      "cachedInputTokens": 15750528,
+      "outputTokens": 48983
+    },
+    {
+      "date": "2026-09-25",
+      "requests": 7,
+      "toolRuns": 125,
+      "inputTokens": 15251255,
+      "cachedInputTokens": 14670720,
+      "outputTokens": 36301
+    },
+    {
+      "date": "2026-09-27",
+      "requests": 4,
+      "toolRuns": 71,
+      "inputTokens": 10114156,
+      "cachedInputTokens": 9960960,
+      "outputTokens": 24648
+    },
+    {
+      "date": "2026-09-28",
+      "requests": 11,
+      "toolRuns": 130,
+      "inputTokens": 21193941,
+      "cachedInputTokens": 20690688,
+      "outputTokens": 33707
+    },
+    {
+      "date": "2026-10-01",
+      "requests": 10,
+      "toolRuns": 118,
+      "inputTokens": 15209171,
+      "cachedInputTokens": 14559488,
+      "outputTokens": 46963
+    },
+    {
+      "date": "2026-10-02",
+      "requests": 11,
+      "toolRuns": 352,
+      "inputTokens": 50656674,
+      "cachedInputTokens": 48539648,
+      "outputTokens": 153727
+    },
+    {
+      "date": "2026-10-03",
+      "requests": 2,
+      "toolRuns": 62,
+      "inputTokens": 9531595,
+      "cachedInputTokens": 9126016,
+      "outputTokens": 55337
+    },
+    {
+      "date": "2026-10-04",
+      "requests": 8,
+      "toolRuns": 156,
+      "inputTokens": 22552639,
+      "cachedInputTokens": 21855744,
+      "outputTokens": 142667
+    },
+    {
+      "date": "2026-10-05",
+      "requests": 15,
+      "toolRuns": 243,
+      "inputTokens": 31770406,
+      "cachedInputTokens": 30283776,
+      "outputTokens": 103473
+    },
+    {
+      "date": "2026-10-06",
+      "requests": 28,
+      "toolRuns": 55,
+      "inputTokens": 8039316,
+      "cachedInputTokens": 7657984,
+      "outputTokens": 40247
+    },
+    {
+      "date": "2026-10-07",
+      "requests": 9,
+      "toolRuns": 69,
+      "inputTokens": 14222078,
+      "cachedInputTokens": 13690880,
+      "outputTokens": 30335
+    },
+    {
+      "date": "2026-10-08",
+      "requests": 21,
+      "toolRuns": 108,
+      "inputTokens": 14986433,
+      "cachedInputTokens": 13589120,
+      "outputTokens": 108484
+    },
+    {
+      "date": "2026-10-09",
+      "requests": 31,
+      "toolRuns": 277,
+      "inputTokens": 41631576,
+      "cachedInputTokens": 39723648,
+      "outputTokens": 195520
+    },
+    {
+      "date": "2026-10-10",
+      "requests": 14,
+      "toolRuns": 44,
+      "inputTokens": 8358921,
+      "cachedInputTokens": 7847808,
+      "outputTokens": 25103
+    },
+    {
+      "date": "2026-10-11",
+      "requests": 6,
+      "toolRuns": 88,
+      "inputTokens": 12645509,
+      "cachedInputTokens": 11929216,
+      "outputTokens": 90857
+    },
+    {
+      "date": "2026-10-12",
+      "requests": 10,
+      "toolRuns": 125,
+      "inputTokens": 16915321,
+      "cachedInputTokens": 15893120,
+      "outputTokens": 74788
+    },
+    {
+      "date": "2026-10-13",
+      "requests": 4,
+      "toolRuns": 63,
+      "inputTokens": 8197990,
+      "cachedInputTokens": 7567488,
+      "outputTokens": 22318
+    },
+    {
+      "date": "2026-10-14",
+      "requests": 4,
+      "toolRuns": 62,
+      "inputTokens": 9786709,
+      "cachedInputTokens": 9507712,
+      "outputTokens": 24624
+    },
+    {
+      "date": "2026-10-18",
+      "requests": 1,
+      "toolRuns": 33,
+      "inputTokens": 4108438,
+      "cachedInputTokens": 3770752,
+      "outputTokens": 48144
+    },
+    {
+      "date": "2026-10-19",
+      "requests": 4,
+      "toolRuns": 66,
+      "inputTokens": 8913492,
+      "cachedInputTokens": 8417152,
+      "outputTokens": 131077
+    },
+    {
+      "date": "2026-10-20",
+      "requests": 14,
+      "toolRuns": 234,
+      "inputTokens": 32864123,
+      "cachedInputTokens": 32047232,
+      "outputTokens": 71190
+    },
+    {
+      "date": "2026-10-22",
+      "requests": 2,
+      "toolRuns": 1,
+      "inputTokens": 392768,
+      "cachedInputTokens": 281344,
+      "outputTokens": 2802
+    },
+    {
+      "date": "2026-10-28",
+      "requests": 5,
+      "toolRuns": 174,
+      "inputTokens": 23995632,
+      "cachedInputTokens": 23531520,
+      "outputTokens": 51639
+    },
+    {
+      "date": "2026-10-29",
+      "requests": 10,
+      "toolRuns": 203,
+      "inputTokens": 30927026,
+      "cachedInputTokens": 30257152,
+      "outputTokens": 55932
+    },
+    {
+      "date": "2026-10-30",
+      "requests": 8,
+      "toolRuns": 188,
+      "inputTokens": 27749254,
+      "cachedInputTokens": 27107584,
+      "outputTokens": 51645
+    },
+    {
+      "date": "2026-10-31",
+      "requests": 4,
+      "toolRuns": 78,
+      "inputTokens": 9947040,
+      "cachedInputTokens": 9838848,
+      "outputTokens": 20344
+    },
+    {
+      "date": "2026-11-01",
+      "requests": 5,
+      "toolRuns": 142,
+      "inputTokens": 19229648,
+      "cachedInputTokens": 18861184,
+      "outputTokens": 21846
+    },
+    {
+      "date": "2026-11-02",
+      "requests": 15,
+      "toolRuns": 485,
+      "inputTokens": 119487578,
+      "cachedInputTokens": 118461696,
+      "outputTokens": 98119
+    },
+    {
+      "date": "2026-11-03",
+      "requests": 2,
+      "toolRuns": 21,
+      "inputTokens": 4042047,
+      "cachedInputTokens": 3844608,
+      "outputTokens": 4396
+    },
+    {
+      "date": "2026-11-05",
+      "requests": 1,
+      "toolRuns": 34,
+      "inputTokens": 2511034,
+      "cachedInputTokens": 2439296,
+      "outputTokens": 33407
+    }
+  ],
+  "projects": [
+    {
+      "name": "NoWayOut (UE5)",
+      "requests": 272,
+      "toolRuns": 4779,
+      "inputTokens": 717535148
+    },
+    {
+      "name": "포트폴리오 · 지원서",
+      "requests": 262,
+      "toolRuns": 557,
+      "inputTokens": 108785143
+    },
+    {
+      "name": "Orbit · Ourbit (Flutter)",
+      "requests": 174,
+      "toolRuns": 2966,
+      "inputTokens": 403632934
+    },
+    {
+      "name": "C++ FPS·TPS 학습",
+      "requests": 85,
+      "toolRuns": 101,
+      "inputTokens": 19708762
+    },
+    {
+      "name": "InteReal (UE5)",
+      "requests": 83,
+      "toolRuns": 1085,
+      "inputTokens": 75283166
+    },
+    {
+      "name": "기타 실험 · 학습",
+      "requests": 74,
+      "toolRuns": 457,
+      "inputTokens": 56042772
+    },
+    {
+      "name": "OverCooked2 (UE5)",
+      "requests": 39,
+      "toolRuns": 164,
+      "inputTokens": 20872117
+    }
+  ],
+  "stages": [
+    {
+      "name": "조사",
+      "turns": 12,
+      "inputTokens": 3144943
+    },
+    {
+      "name": "설계",
+      "turns": 59,
+      "inputTokens": 68237757
+    },
+    {
+      "name": "구현·제작",
+      "turns": 72,
+      "inputTokens": 122703901
+    },
+    {
+      "name": "검증",
+      "turns": 193,
+      "inputTokens": 777654628
+    },
+    {
+      "name": "수정",
+      "turns": 14,
+      "inputTokens": 16245705
+    },
+    {
+      "name": "기타",
+      "turns": 682,
+      "inputTokens": 413873108
+    }
+  ]
+}
