@@ -80,7 +80,7 @@ button { font: inherit; color: inherit; }
    ========================================================= */
 .topbar { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent); }
 .topbar__inner { display: flex; align-items: center; gap: 24px; height: 64px; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; }
+.brand { display: flex; align-items: center; gap: 4px; text-decoration: none; font-weight: 700; }
 .brand__mark { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: var(--ink); color: var(--bg); font-size: 12px; font-family: var(--mono); }
 .tabs { display: flex; gap: 2px; margin: 0 auto; padding: 4px; background: var(--surface-2); border-radius: 999px; }
 .tab { position: relative; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: var(--ink-2); padding: 8px 18px; border-radius: 999px; white-space: nowrap; transition: background .2s, color .2s; }
