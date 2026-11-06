@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T00:00:01+09:00",
+  "generatedAt": "2026-11-06T15:31:46+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
-    "to": "2026-11-05",
-    "activeDays": 84
+    "to": "2026-11-06",
+    "activeDays": 85
   },
   "totals": {
     "sessions": 39,
-    "requests": 994,
-    "toolRuns": 10161,
+    "requests": 996,
+    "toolRuns": 10168,
     "patches": 233,
-    "inputTokens": 1412415226,
-    "cachedInputTokens": 1354052608,
-    "outputTokens": 5759582,
-    "reasoningTokens": 1244701,
+    "inputTokens": 1412816502,
+    "cachedInputTokens": 1354420224,
+    "outputTokens": 5763849,
+    "reasoningTokens": 1245106,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9586788524184318
+    "cacheHitRate": 0.9586667639305363
   },
   "daily": [
     {
@@ -691,6 +691,14 @@
       "inputTokens": 13066218,
       "cachedInputTokens": 12771584,
       "outputTokens": 69394
+    },
+    {
+      "date": "2026-11-06",
+      "requests": 2,
+      "toolRuns": 7,
+      "inputTokens": 401276,
+      "cachedInputTokens": 367616,
+      "outputTokens": 4267
     }
   ],
   "projects": [
@@ -726,9 +734,9 @@
     },
     {
       "name": "기타 실험 · 학습",
-      "requests": 79,
-      "toolRuns": 509,
-      "inputTokens": 66597956
+      "requests": 81,
+      "toolRuns": 516,
+      "inputTokens": 66999232
     },
     {
       "name": "OverCooked2 (UE5)",
@@ -760,8 +768,8 @@
     },
     {
       "name": "수정",
-      "turns": 17,
-      "inputTokens": 23302443
+      "turns": 19,
+      "inputTokens": 23703719
     },
     {
       "name": "기타",
