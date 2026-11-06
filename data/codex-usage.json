@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T15:31:46+09:00",
+  "generatedAt": "2026-11-06T22:13:29+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
@@ -8,16 +8,16 @@
     "activeDays": 85
   },
   "totals": {
-    "sessions": 39,
-    "requests": 996,
-    "toolRuns": 10168,
+    "sessions": 40,
+    "requests": 1006,
+    "toolRuns": 10209,
     "patches": 233,
-    "inputTokens": 1412816502,
-    "cachedInputTokens": 1354420224,
-    "outputTokens": 5763849,
-    "reasoningTokens": 1245106,
+    "inputTokens": 1416489375,
+    "cachedInputTokens": 1357943424,
+    "outputTokens": 5775393,
+    "reasoningTokens": 1245830,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9586667639305363
+    "cacheHitRate": 0.9586682738089722
   },
   "daily": [
     {
@@ -694,25 +694,25 @@
     },
     {
       "date": "2026-11-06",
-      "requests": 2,
-      "toolRuns": 7,
-      "inputTokens": 401276,
-      "cachedInputTokens": 367616,
-      "outputTokens": 4267
+      "requests": 12,
+      "toolRuns": 48,
+      "inputTokens": 4074149,
+      "cachedInputTokens": 3890816,
+      "outputTokens": 15811
     }
   ],
   "projects": [
+    {
+      "name": "포트폴리오 · 지원서",
+      "requests": 272,
+      "toolRuns": 598,
+      "inputTokens": 112458016
+    },
     {
       "name": "NoWayOut (UE5)",
       "requests": 272,
       "toolRuns": 4779,
       "inputTokens": 717535148
-    },
-    {
-      "name": "포트폴리오 · 지원서",
-      "requests": 262,
-      "toolRuns": 557,
-      "inputTokens": 108785143
     },
     {
       "name": "Orbit · Ourbit (Flutter)",
@@ -773,8 +773,8 @@
     },
     {
       "name": "기타",
-      "turns": 682,
-      "inputTokens": 413873108
+      "turns": 692,
+      "inputTokens": 417545981
     }
   ]
 }
