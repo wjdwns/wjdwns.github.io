@@ -1,0 +1,992 @@
+{
+  "schemaVersion": 1,
+  "source": "https://velog.io/@wjdwns/posts",
+  "updatedAt": "2026-11-06T06:17:03.704Z",
+  "count": 97,
+  "posts": [
+    {
+      "title": "[UE 5] 스쿼드 단위 패킷 제어: Relevance와 멀티캐스트로 만드는 '팀 전용 RPC'",
+      "url": "https://velog.io/@wjdwns/UE-5-%EC%8A%A4%EC%BF%BC%EB%93%9C-%EB%8B%A8%EC%9C%84-%ED%8C%A8%ED%82%B7-%EC%A0%9C%EC%96%B4-Relevance%EC%99%80-%EB%A9%80%ED%8B%B0%EC%BA%90%EC%8A%A4%ED%8A%B8%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-%ED%8C%80-%EC%A0%84%EC%9A%A9-RPC",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/7c4f436a-6bf2-428c-b6c3-87d20efbb7f9/image.png",
+      "summary": "배틀로얄이나 팀 기반 전술 슈팅 게임(예: 배틀그라운드, 발로란트)을 개발할 때 가장 중요한 네트워크 최적화 과제 중 하나는 \"데이터의 수신 대상을 통제하는 것\"입니다.",
+      "date": "2026-09-16T14:26:39.499Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "Unreal Engine에서 Texture Atlas 적용하기",
+      "url": "https://velog.io/@wjdwns/Unreal-Engine%EC%97%90%EC%84%9C-Texture-Atlas-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/d9bfd8e4-ba5a-45c3-9681-0d5bc9e204f4/image.png",
+      "summary": "게임 UI에는 체력 포션, 장비, 재화, 스킬처럼 많은 아이콘이 사용됩니다. 아이콘마다 Texture2D를 따로 만들 수도 있지만, 여러 이미지를 한 장에 모은 Texture Atlas를 사용하면 관련 이미지를 하나의 에셋으로 관리할 수 있습니다.",
+      "date": "2026-07-24T13:07:54.577Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[언리얼 엔진 네트워크 아키텍처] PlayerController와 PlayerState",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-%EC%97%94%EC%A7%84-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-PlayerController%EC%99%80-PlayerState",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/49170ecb-93f9-421d-8e7f-07af25b5136b/image.png",
+      "summary": "멀티플레이어 게임에서 플레이어는 월드에 스폰된 캐릭터(Pawn)를 조종합니다. 하지만 캐릭터가 사망하여 파괴(Destroy)되더라도, 플레이어의 접속 유지 상태나 누적 킬/데스 기록은 사라지면 안 됩니다.",
+      "date": "2026-05-27T13:06:41.882Z",
+      "tags": [
+        "네트워크",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[언리얼 엔진 네트워크 아키텍처] GameMode와 GameState의 정보 격리",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-%EC%97%94%EC%A7%84-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-GameMode%EC%99%80-GameState%EC%9D%98-%EC%A0%95%EB%B3%B4-%EA%B2%A9%EB%A6%AC",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/c89d5be4-964e-4f27-bad4-504746a753b5/image.png",
+      "summary": "멀티플레이어 게임 개발로 넘어오면서 가장 먼저 겪는 구조적인 변화는 '프레임워크 클래스의 분할'입니다. 싱글플레이어 게임에서는 GameMode 클래스 하나에 플레이어의 점수, 남은 시간, 게임의 룰을 모두 몰아넣어도 문제가 없습니다.",
+      "date": "2026-05-22T08:10:51.027Z",
+      "tags": [
+        "네트워크",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[언리얼 엔진 네트워크 아키텍처] 일회성 사건의 동기화, RPC의 3가지 패턴",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-%EC%97%94%EC%A7%84-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%9D%BC%ED%9A%8C%EC%84%B1-%EC%82%AC%EA%B1%B4%EC%9D%98-%EB%8F%99%EA%B8%B0%ED%99%94-RPC%EC%9D%98-3%EA%B0%80%EC%A7%80-%ED%8C%A8%ED%84%B4",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/e49c0b97-4a01-4f04-a101-7bf413a74bbe/image.png",
+      "summary": "RPC(Remote Procedure Call)는 '총기 발사', '폭발', '스킬 사용'과 같이 특정 시점에 한 번 발생하는 사건(Event)을 동기화하는 데 사용됩니다. 언리얼 엔진의 RPC는 실행 주체와 대상에 따라 3가지 주요 유형으로 분류됩니다.",
+      "date": "2026-05-20T13:25:59.926Z",
+      "tags": [
+        "네트워크",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[언리얼 엔진 네트워크 아키텍처] 상태 동기화의 기초, 프로퍼티 리플리케이션과 Push Model",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-%EC%97%94%EC%A7%84-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%83%81%ED%83%9C-%EB%8F%99%EA%B8%B0%ED%99%94%EC%9D%98-%EA%B8%B0%EC%B4%88-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EB%A6%AC%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EA%B3%BC-Push-Model",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/ae0f5c45-0dce-4da7-85b7-6f9a9e59ccd4/image.png",
+      "summary": "멀티플레이어 게임에서 데이터의 일관성을 유지하기 위해 언리얼 엔진은 리플리케이션(Replication) 시스템을 제공합니다. 백엔드 개발 관점에서 보면, 이는 데이터베이스(서버)의 특정 레코드가 클라이언트의 로컬 캐시로 자동 동기화되는 과정과 같습니다.",
+      "date": "2026-05-13T12:02:30.047Z",
+      "tags": [
+        "네트워크",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[언리얼 엔진 네트워크 아키텍처] Actor Role과 권위(Authority)",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-%EC%97%94%EC%A7%84-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-Actor-Role%EA%B3%BC-%EA%B6%8C%EC%9C%84Authority",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/ff8a164c-c023-47ee-b7b5-056e6258a9de/image.jpeg",
+      "summary": "멀티플레이어 환경에서 하나의 캐릭터는 접속한 모든 PC에 복제되며, 언리얼 엔진은 이 복제본들이 각각 어떤 권한을 가지는지 3가지 역할(Authority, AutonomousProxy, SimulatedProxy)로 엄격하게 통제합니다.\\",
+      "date": "2026-05-12T13:22:44.376Z",
+      "tags": [
+        "네트워크",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[언리얼 엔진 네트워크 아키텍처] 데디케이티드 vs 리슨 서버의 구조적 차이",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-%EC%97%94%EC%A7%84-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%8D%B0%EB%94%94%EC%BC%80%EC%9D%B4%ED%8B%B0%EB%93%9C-vs-%EB%A6%AC%EC%8A%A8-%EC%84%9C%EB%B2%84%EC%9D%98-%EA%B5%AC%EC%A1%B0%EC%A0%81-%EC%B0%A8%EC%9D%B4",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/ea9fb8eb-7612-49b5-9470-fa601bfb9cee/image.png",
+      "summary": "언리얼 엔진의 네트워크(Replication) 시스템은 에픽게임즈가 수십 년 동안 멀티플레이어 게임(언리얼 토너먼트, 기어스 오브 워, 포트나이트 등)을 만들며 깎아낸 예술 작품입니다. 하지만 동시에 진입 장벽이 가장 높은 '통곡의 벽'이기도 합니다.",
+      "date": "2026-04-28T13:30:24.644Z",
+      "tags": [
+        "네트워크",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[언리얼 엔진 5 트러블슈팅] \"[VSM] Non-Nanite Marking Job Queue overflow\" 경고 해결",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-%EC%97%94%EC%A7%84-5-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-VSM-Non-Nanite-Marking-Job-Queue-overflow-%EA%B2%BD%EA%B3%A0-%ED%95%B4%EA%B2%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/8a90c8ae-152b-4089-81b7-66fd41a47a88/image.png",
+      "summary": "게임을 개발하다 보면 출력 로그(Output Log)에 불길한 노란색 경고 문구가 떠서 가슴이 철렁 내려앉을 때가 있죠. 특히 언리얼 엔진 5(UE5)로 프로젝트를 진행하다 보면 아래와 같은 경고를 꽤 자주 마주치게 됩니다.",
+      "date": "2026-04-27T12:47:09.836Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "로그 공간(Log Space)의 이해와 활용",
+      "url": "https://velog.io/@wjdwns/%EB%A1%9C%EA%B7%B8-%EA%B3%B5%EA%B0%84Log-Space%EC%9D%98-%EC%9D%B4%ED%95%B4%EC%99%80-%ED%99%9C%EC%9A%A9",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/8250ee54-fe34-4422-a1b0-bb429e832b3b/image.png",
+      "summary": "게임에서 로그는 단순히 $O(\\\\log N)$ 같은 알고리즘의 시간 복잡도를 표기할 때만 쓰이는 것이 아닙니다. 오디오 볼륨 조절, 카메라의 줌인/줌아웃, 그리고 RPG의 레벨업 경험치 밸런싱까지, 게임 내의 거대한 수치를 제어합니다.",
+      "date": "2026-04-26T14:54:36.377Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "수만 개 유닛의 충돌 최적화, 옥트리와 공간 해싱(Spatial Hashing)",
+      "url": "https://velog.io/@wjdwns/%EC%88%98%EB%A7%8C-%EA%B0%9C-%EC%9C%A0%EB%8B%9B%EC%9D%98-%EC%B6%A9%EB%8F%8C-%EC%B5%9C%EC%A0%81%ED%99%94-%EC%98%A5%ED%8A%B8%EB%A6%AC%EC%99%80-%EA%B3%B5%EA%B0%84-%ED%95%B4%EC%8B%B1Spatial-Hashing",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/41ded323-05cd-42f1-ac56-36dd71a37c04/image.jpeg",
+      "summary": "오브젝트 풀링으로 수만 개의 객체를 메모리 크래시 없이 띄우는 데 성공했습니다. 그런데 띄우기만 하면 끝일까요? 이 수만 개의 총알과 몬스터들이 서로 부딪히는지(Collision) 매 프레임 검사하기 시작하면, CPU는 바로 뻗어버릴 것입니다.",
+      "date": "2026-04-25T09:11:56.883Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "언리얼 리플렉션(Reflection) 시스템의 내부 구조",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-%EB%A6%AC%ED%94%8C%EB%A0%89%EC%85%98Reflection-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EB%82%B4%EB%B6%80-%EA%B5%AC%EC%A1%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/60a4da67-f52d-4db2-960d-6f84113f114d/image.png",
+      "summary": "우리가 지금까지 숨 쉬듯이 써왔던 UCLASS(), UPROPERTY(), UFUNCTION() 매크로의 진짜 정체가 무엇일까요? 가비지 컬렉션(GC)은 대체 어떻게 내가 선언한 변수가 메모리에 살아있는지 알고 쓰레기를 치워줄까요?",
+      "date": "2026-04-24T13:47:00.445Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "GAS(Gameplay Ability System)의 데이터 아키텍처",
+      "url": "https://velog.io/@wjdwns/GASGameplay-Ability-System%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/d9a9a0fe-fba5-4535-a67d-3ff1bc165128/image.png",
+      "summary": "RPG나 액션 게임을 개발할 때, 수십 개의 스킬, 수백 개의 아이템, 그리고 복잡하게 얽힌 버프와 디버프를 조건문(if, switch)만으로 짜는 것은 지옥으로 가는 지름길입니다.",
+      "date": "2026-04-23T13:27:22.910Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "오브젝트 풀링(Object Pooling)과 메모리 파편화 방지",
+      "url": "https://velog.io/@wjdwns/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%ED%92%80%EB%A7%81Object-Pooling%EA%B3%BC-%EB%A9%94%EB%AA%A8%EB%A6%AC-%ED%8C%8C%ED%8E%B8%ED%99%94-%EB%B0%A9%EC%A7%80",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/0c3d46b4-848e-444d-b1d1-252b11d31fc7/image.jpeg",
+      "summary": "상태 패턴과 StateTree를 통해 게임의 복잡한 논리를 안전하게 제어하는 챕터를 무사히 마쳤습니다. 이제 대망의 마지막 챕터에 진입합니다. 이 단계에서는 '기능이 동작하는가'를 넘어, 수많은 데이터가 쏟아지는 극한의 상황에서도 '프레임 드랍 없이 부드럽게 동작하는가",
+      "date": "2026-04-22T13:33:49.560Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "비헤이비어 트리의 한계와 언리얼 5 차세대 AI 아키텍처, StateTree",
+      "url": "https://velog.io/@wjdwns/%EB%B9%84%ED%97%A4%EC%9D%B4%EB%B9%84%EC%96%B4-%ED%8A%B8%EB%A6%AC%EC%9D%98-%ED%95%9C%EA%B3%84%EC%99%80-%EC%96%B8%EB%A6%AC%EC%96%BC-5-%EC%B0%A8%EC%84%B8%EB%8C%80-AI-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-StateTree",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/996f16da-cd29-40f7-8a7d-7cee3efe9137/image.jpeg",
+      "summary": "이전에 알아봤던 유한 상태 머신(FSM)과 상태 패턴을 통해 코드를 깔끔하게 객체지향적으로 분리하는 방법을 익혔습니다. 하지만 상태가 20개, 30개로 늘어나고 \"A 상태에서 B 상태로 넘어갈 수 있는가?\"",
+      "date": "2026-04-20T14:15:32.054Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "복잡성의 통제, FSM과 상태 패턴",
+      "url": "https://velog.io/@wjdwns/%EB%B3%B5%EC%9E%A1%EC%84%B1%EC%9D%98-%ED%86%B5%EC%A0%9C-FSM%EA%B3%BC-%EC%83%81%ED%83%9C-%ED%8C%A8%ED%84%B4",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/0e52aba0-0217-45b2-9208-7c82fc259721/image.png",
+      "summary": "게임 로직을 작성하다 보면, 알고리즘의 효율성보다 '로직이 꼬이지 않게 유지하는 것'이 훨씬 더 어려워지는 순간이 옵니다. 격투 게임의 연속 콤보 타이밍, 몬스터의 복잡한 공격 패턴 등을 단순한 조건문으로 짜다 보면 코드는 순식간에 유지보수가 불가능한 스파게티가 됩니다",
+      "date": "2026-04-19T06:28:54.134Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "순서와 규칙의 지배, 정렬(Sorting) 알고리즘",
+      "url": "https://velog.io/@wjdwns/%EC%88%9C%EC%84%9C%EC%99%80-%EA%B7%9C%EC%B9%99%EC%9D%98-%EC%A7%80%EB%B0%B0-%EC%A0%95%EB%A0%ACSorting-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/eb98166f-1be1-4ee4-8850-ddd7e8af4148/image.png",
+      "summary": "이전에 알아봤던 힙 구조는 데이터 더미에서 '가장 우선순위가 높은 데이터 딱 1개'를 뽑아내는 데 특화되어 있었습니다. 하지만 게임을 개발하다 보면 데이터 전체를 줄 세워야 하는 상황이 반드시 옵니다.",
+      "date": "2026-04-18T14:42:15.882Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "계층과 우선순위: 이진 트리와 힙(Heap)",
+      "url": "https://velog.io/@wjdwns/%EA%B3%84%EC%B8%B5%EA%B3%BC-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC%EC%99%80-%ED%9E%99Heap",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/db4f7177-6afa-47b0-8930-5246eba49efc/image.jpeg",
+      "summary": "길찾기와 공간 탐색을 다루기를 무사히 마쳤습니다. 이제부터 시작되는 계층과 우선순위에서는 수많은 데이터 중 '무엇을 가장 먼저 처리할 것인가'에 대한 최적화 기법을 다룹니다.",
+      "date": "2026-04-16T14:58:44.810Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "언리얼 NavMesh와 리캐스트(Recast) 시스템",
+      "url": "https://velog.io/@wjdwns/%EC%96%B8%EB%A6%AC%EC%96%BC-NavMesh%EC%99%80-%EB%A6%AC%EC%BA%90%EC%8A%A4%ED%8A%B8Recast-%EC%8B%9C%EC%8A%A4%ED%85%9C",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/16de6f7b-8f5b-4630-a24b-72ea455b1d85/image.png",
+      "summary": "A\\* 알고리즘은 바둑판 모양의 2D 격자(Grid) 환경에서 완벽하게 동작했습니다. 하지만 3D 게임에는 계단, 경사로, 다리, 장애물 등 복잡한 입체 지형이 존재합니다. 공간 전체를 촘촘한 3D 격자로 나누어 탐색한다면 슈퍼컴퓨터로도 연산량을 감당할 수 없습니다.",
+      "date": "2026-04-15T12:52:00.190Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "목적지를 아는 똑똑한 탐색, A* 알고리즘",
+      "url": "https://velog.io/@wjdwns/%EB%AA%A9%EC%A0%81%EC%A7%80%EB%A5%BC-%EC%95%84%EB%8A%94-%EB%98%91%EB%98%91%ED%95%9C-%ED%83%90%EC%83%89-A-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/f6cd0c5a-acc5-404c-9cb0-33eec6703a47/image.jpeg",
+      "summary": "다익스트라(Dijkstra) 알고리즘은 '현재까지 이동한 비용'을 계산하여 지형의 험난함(가중치)을 극복하고 최단 경로를 완벽하게 찾아냈습니다. 하지만 목적지가 동쪽에 있든 서쪽에 있든 상관없이, 출발점을 중심으로 모든 방향을 탐색해 나간다는 연산 낭비가 존재합니다.",
+      "date": "2026-04-14T13:07:16.476Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "가중치가 있는 길찾기, 다익스트라(Dijkstra) 알고리즘",
+      "url": "https://velog.io/@wjdwns/%EA%B0%80%EC%A4%91%EC%B9%98%EA%B0%80-%EC%9E%88%EB%8A%94-%EA%B8%B8%EC%B0%BE%EA%B8%B0-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BCDijkstra-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/e64d2401-6bdc-403f-aad2-4772e482b55c/image.png",
+      "summary": "이전에 알아봤던 BFS(너비 우선 탐색)는 1칸씩 정직하게 퍼져나가며 길을 찾았습니다. 하지만 실제 게임 월드는 체스판처럼 평등하지 않습니다.",
+      "date": "2026-04-13T12:52:55.145Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "무식하지만 확실한 탐색, BFS와 DFS",
+      "url": "https://velog.io/@wjdwns/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80-%EA%B2%8C%EC%9E%84-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B4%EC%8B%9D%ED%95%98%EC%A7%80%EB%A7%8C-%ED%99%95%EC%8B%A4%ED%95%9C-%ED%83%90%EC%83%89-BFS%EC%99%80-DFS%EC%9D%98-%EC%8B%A4%EB%AC%B4-%EA%B5%AC%EC%A1%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/5f895464-bd38-4840-b0b9-0234b9134d74/image.png",
+      "summary": "그래프(Graph) 이론을 통해 게임 월드를 정점(Node)과 간선(Edge)으로 모델링하는 방법을 구축했습니다. 지도를 완성했으니 이제 목적지를 향해 직접 걸어볼 차례입니다.",
+      "date": "2026-04-12T10:35:15.173Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "그래프(Graph) 이론과 게임 월드 모델링",
+      "url": "https://velog.io/@wjdwns/%EA%B7%B8%EB%9E%98%ED%94%84Graph-%EC%9D%B4%EB%A1%A0%EA%B3%BC-%EA%B2%8C%EC%9E%84-%EC%9B%94%EB%93%9C-%EB%AA%A8%EB%8D%B8%EB%A7%81",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/a66fe660-28ef-4813-8d9a-058c7bd7f9e2/image.png",
+      "summary": "이전에 알아봤던 선형적인 자료구조들은 데이터를 순차적으로 나열하거나 1:1로 대응시키는 데 집중했습니다. 하지만 게임 월드라는 복잡한 공간을 모델링하기 위해서는 데이터 간의 유기적인 연결 관계를 표현할 수 있는 구조가 필요합니다.",
+      "date": "2026-04-11T03:00:54.816Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "가비지 컬렉션(GC)과 자료구조의 생명 주기",
+      "url": "https://velog.io/@wjdwns/%EA%B0%80%EB%B9%84%EC%A7%80-%EC%BB%AC%EB%A0%89%EC%85%98GC%EA%B3%BC-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%9D%98-%EC%83%9D%EB%AA%85-%EC%A3%BC%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/3e2184a7-ec94-4767-8a26-1b2fe26c0a19/image.png",
+      "summary": "이전에 알아봤던 TArray, TMap, TSet을 통해 데이터를 구조적으로 저장하고 검색하는 방법을 익혔습니다. 하지만 프로그래밍에서 데이터를 '담는 것'만큼 중요한 것은, 필요 없어진 데이터를 제때 '비우는 것'입니다.",
+      "date": "2026-04-10T06:31:28.143Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "TSet과 데이터 필터링, 중복 제거",
+      "url": "https://velog.io/@wjdwns/TSet%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%84%ED%84%B0%EB%A7%81-%EC%A4%91%EB%B3%B5-%EC%A0%9C%EA%B1%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/b4fff0d3-89af-4279-9ad5-56bd19d9f0ad/image.png",
+      "summary": "이전에 알아봤던 TArray는 데이터를 순서대로 저장하는 데 유리하고, TMap은 키와 값의 쌍을 관리하는 데 최적화되어 있었습니다. 하지만 게임 개발 중에는 \"이 아이템이 인벤토리에 들어있는가?\" 혹은 \"이 캐릭터가 현재 특정 상태 이상(Buff)에 걸려있는가?\"..",
+      "date": "2026-04-09T12:20:44.049Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "해시 테이블의 원리와 TMap 응용",
+      "url": "https://velog.io/@wjdwns/%ED%95%B4%EC%8B%9C-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%98-%EC%9B%90%EB%A6%AC%EC%99%80-TMap-%EC%9D%91%EC%9A%A9",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/8b0b9991-7837-468d-bc56-d4454570d316/image.png",
+      "summary": "이전에 연속된 메모리 구조를 기반으로 한 TArray에 대해 알아보았습니다. 배열은 데이터를 순차적으로 보관하고 접근할 때는 효율적이지만, 특정 데이터를 찾기 위해 처음부터 끝까지 차례대로 확인해야 하므로 검색 시간 복잡도가 $O(N)$이 된다는 한계가 있습니다.",
+      "date": "2026-04-08T12:13:14.729Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "TArray와 메모리 구조",
+      "url": "https://velog.io/@wjdwns/TArray%EC%99%80-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EA%B5%AC%EC%A1%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/1e778840-048f-469d-ac8e-c66e7e312eb2/image.png",
+      "summary": "게임 알고리즘의 첫번째 파트는 가장 기본적인 배열(Array), 그리고 언리얼 엔진에서 자주 사용하는 \"\"TArray\"\"입니다. \"그냥 데이터 여러 개 넣는 거 아닌가?\"라고 생각하기 쉽지만, 게임 엔진 프로그래머에게 배열은 '메모리 캐시와의 전쟁' 그 자체입니다.",
+      "date": "2026-04-07T12:54:16.197Z",
+      "tags": [
+        "게임 알고리즘"
+      ]
+    },
+    {
+      "title": "빛과 수학의 융합: 기본 셰이딩 모델 (Phong & Blinn-Phong)",
+      "url": "https://velog.io/@wjdwns/%EB%B9%9B%EA%B3%BC-%EC%88%98%ED%95%99%EC%9D%98-%EC%9C%B5%ED%95%A9-%EA%B8%B0%EB%B3%B8-%EC%85%B0%EC%9D%B4%EB%94%A9-%EB%AA%A8%EB%8D%B8-Phong-Blinn-Phong",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/54d92887-81bb-4541-84af-7601727ee72c/image.png",
+      "summary": "공간을 쪼개고 삼각형 내부를 픽셀로 나누어 텍스처를 발랐지만, '빛(Light)'이 없다면 화면은 그저 평면적이고 밋밋한 2D 픽셀 덩어리에 불과합니다. 3D 모델이 진짜 입체적이고 매끄럽게 보이려면, 조명과 카메라의 각도에 따라 픽셀의 색상을 다르게 칠해줘야합니다.",
+      "date": "2026-04-06T12:08:43.648Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "거대한 월드의 효율적 통제: 공간 분할 기법 (Octree, BVH)",
+      "url": "https://velog.io/@wjdwns/%EA%B1%B0%EB%8C%80%ED%95%9C-%EC%9B%94%EB%93%9C%EC%9D%98-%ED%9A%A8%EC%9C%A8%EC%A0%81-%ED%86%B5%EC%A0%9C-%EA%B3%B5%EA%B0%84-%EB%B6%84%ED%95%A0-%EA%B8%B0%EB%B2%95-Octree-BVH",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/c3affde5-9cec-46bb-a03e-aa5cdf0453a2/image.png",
+      "summary": "우리는 3D 공간의 가장 작은 단위인 '삼각형' 내부의 미시 세계를 탐험했습니다. 이제 다시 카메라를 우주 끝까지 당겨, 수십만 개의 오브젝트가 배치된 거시 세계(Open World)로 돌아올 차례입니다.",
+      "date": "2026-04-05T06:54:55.635Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "삼각형 내부의 절대 좌표: 무게중심 좌표계 (Barycentric Coordinates)",
+      "url": "https://velog.io/@wjdwns/%EC%82%BC%EA%B0%81%ED%98%95-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%88%EB%8C%80-%EC%A2%8C%ED%91%9C-%EB%AC%B4%EA%B2%8C%EC%A4%91%EC%8B%AC-%EC%A2%8C%ED%91%9C%EA%B3%84-Barycentric-Coordinates",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/5a2ff7c8-6653-45bb-b4b0-7b9196b2dba4/image.png",
+      "summary": "금까지 '절두체 컬링'과 '바운딩 볼륨'을 통해 수만 개의 오브젝트를 뭉텅이로 쳐내는 거시적인(Macro) 최적화를 다루었습니다. 이제 3D 모델을 구성하는 가장 작은 단위인 '단일 삼각형(Triangle)' 내부의 미시적인 세계로 돋보기를 들이밀어 보겠습니다.",
+      "date": "2026-04-04T13:19:43.177Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "보이지 않는 것은 그리지 않는다: 절두체 컬링",
+      "url": "https://velog.io/@wjdwns/%EB%B3%B4%EC%9D%B4%EC%A7%80-%EC%95%8A%EB%8A%94-%EA%B2%83%EC%9D%80-%EA%B7%B8%EB%A6%AC%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4-%EC%A0%88%EB%91%90%EC%B2%B4-%EC%BB%AC%EB%A7%81",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/c24213bb-fe50-4f20-8026-09c0ab5649bc/image.png",
+      "summary": "저번에 우리는 복잡한 메시를 감싸는 '바운딩 볼륨(Bounding Volume)'을 배웠습니다. 이 바운딩 볼륨이 물리 충돌의 연산량을 줄이는 데 쓰였다면, 오늘은 이 껍데기들을 활용하여 '렌더링 연산량'을 극적으로 줄여보겠습니다.",
+      "date": "2026-04-03T05:19:58.792Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "복잡함을 단순함으로 감싸다: 바운딩 볼륨 (AABB, OBB, Sphere)",
+      "url": "https://velog.io/@wjdwns/%EB%B3%B5%EC%9E%A1%ED%95%A8%EC%9D%84-%EB%8B%A8%EC%88%9C%ED%95%A8%EC%9C%BC%EB%A1%9C-%EA%B0%90%EC%8B%B8%EB%8B%A4-%EB%B0%94%EC%9A%B4%EB%94%A9-%EB%B3%BC%EB%A5%A8-AABB-OBB-Sphere",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/5694cc2c-d378-4284-8dbb-a03f3ffff5fe/image.png",
+      "summary": "카메라 설정이나 렌더링 파이프라인에서 화면 바깥의 물체를 그리지 않고 쳐내는 '절두체 컬링(Frustum Culling)'을 수행할 때, 단순히 오브젝트의 중심점 '좌표' 하나만 가지고 내외부 판정을 하면 심각한 문제가 발생합니다.",
+      "date": "2026-04-02T14:13:42.456Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "허공을 가르는 궤적과 충돌: 광선(Ray)과 평면(Plane)",
+      "url": "https://velog.io/@wjdwns/%ED%97%88%EA%B3%B5%EC%9D%84-%EA%B0%80%EB%A5%B4%EB%8A%94-%EA%B6%A4%EC%A0%81%EA%B3%BC-%EC%B6%A9%EB%8F%8C-%EA%B4%91%EC%84%A0Ray%EA%B3%BC-%ED%8F%89%EB%A9%B4Plane",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/935b0dc3-7a8f-41b4-bf8c-010b95b582e1/image.png",
+      "summary": "이제 세계 속 물체들과 물리적으로 '상호작용'할 차례입니다. FPS 게임의 히트스캔 총기, 디아블로식 마우스 이동(Click-to-Move), 캐릭터가 절벽에서 떨어지지 않게 바닥의 높이를 감지하는 기능의 공통점은 무엇일까요?",
+      "date": "2026-04-01T13:19:04.082Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "부드러운 전환: 선형 보간(Lerp) 그리고 왜곡 없는 완벽한 회전:구면 선형 보간(Slerp)",
+      "url": "https://velog.io/@wjdwns/%EB%B6%80%EB%93%9C%EB%9F%AC%EC%9A%B4-%EC%A0%84%ED%99%98-%EC%84%A0%ED%98%95-%EB%B3%B4%EA%B0%84Lerp-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EC%99%9C%EA%B3%A1-%EC%97%86%EB%8A%94-%EC%99%84%EB%B2%BD%ED%95%9C-%ED%9A%8C%EC%A0%84%EA%B5%AC%EB%A9%B4-%EC%84%A0%ED%98%95-%EB%B3%B4%EA%B0%84Slerp",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/0e4778fb-3a5c-4695-98d9-3e309cb1ba74/image.png",
+      "summary": "지금까지 우리는 벡터, 행렬, 사원수를 통해 3D 공간의 위치와 방향을 '정의'하는 방법을 배웠습니다. 하지만 게임은 정지된 사진이 아닙니다. 캐릭터가 A 지점에서 B 지점으로 이동하고, 체력바가 서서히 줄어들며, 화면이 부드럽게 전환되어야 합니다.",
+      "date": "2026-03-31T13:34:44.378Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "짐벌락(Gimbal Lock)과 4차원 회전: 사원수(Quaternion)",
+      "url": "https://velog.io/@wjdwns/%EC%A7%90%EB%B2%8C%EB%9D%BDGimbal-Lock%EA%B3%BC-4%EC%B0%A8%EC%9B%90-%ED%9A%8C%EC%A0%84-%EC%82%AC%EC%9B%90%EC%88%98Quaternion",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/c5094573-e456-4caf-b5d9-123906074d8b/image.png",
+      "summary": "지금까지 우리는 벡터와 행렬을 통해 공간을 늘리고(Scale), 옮기고(Translation), 돌리는(Rotation) 법을 배웠습니다. 하지만 3D 그래픽스 역사상 가장 개발자들을 괴롭혀온 난제가 하나 있습니다. 바로 짐벌락입니다.",
+      "date": "2026-03-30T14:23:21.210Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "공간에 수직의 기둥을 세우다: 외적(Cross Product)과 로드리게스 회전 공식",
+      "url": "https://velog.io/@wjdwns/%EA%B3%B5%EA%B0%84%EC%97%90-%EC%88%98%EC%A7%81%EC%9D%98-%EA%B8%B0%EB%91%A5%EC%9D%84-%EC%84%B8%EC%9A%B0%EB%8B%A4-%EC%99%B8%EC%A0%81Cross-Product%EA%B3%BC-%EB%A1%9C%EB%93%9C%EB%A6%AC%EA%B2%8C%EC%8A%A4-%ED%9A%8C%EC%A0%84-%EA%B3%B5%EC%8B%9D",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/e9160226-02e9-45be-b771-48b4458a21fc/image.png",
+      "summary": "지난 포스팅에서 우리는 두 벡터를 곱해 스칼라(숫자)를 얻어내는 '내적(Dot Product)'을 배웠습니다. 내적은 앞뒤 판별과 시야각 검사에 탁월했지만, 치명적인 약점이 하나 있습니다.",
+      "date": "2026-03-29T11:34:02.671Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "적은 내 시야에 있는가?: 내적(Dot Product)과 투영",
+      "url": "https://velog.io/@wjdwns/%EC%A0%81%EC%9D%80-%EB%82%B4-%EC%8B%9C%EC%95%BC%EC%97%90-%EC%9E%88%EB%8A%94%EA%B0%80-%EB%82%B4%EC%A0%81Dot-Product%EA%B3%BC-%ED%88%AC%EC%98%81",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/34c97a58-b9d7-46c2-be90-a349cb65c602/image.png",
+      "summary": "게임에서 \"내 캐릭터가 바라보는 방향\"과 \"적의 위치\"라는 두 개의 화살표(벡터)가 주어졌을 때, 적이 내 앞통수 쪽에 있는지 뒤통수 쪽에 있는지 어떻게 알 수 있을까요? 매번 복잡한 삼각함수와 역함수(acos)를 돌려서 각도를 구하면 CPU가 남아나지 않을 것입니다.",
+      "date": "2026-03-28T13:28:31.606Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "원점의 속박을 벗어나다: 아핀 공간",
+      "url": "https://velog.io/@wjdwns/%EC%9B%90%EC%A0%90%EC%9D%98-%EC%86%8D%EB%B0%95%EC%9D%84-%EB%B2%97%EC%96%B4%EB%82%98%EB%8B%A4-%EC%95%84%ED%95%80-%EA%B3%B5%EA%B0%84",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/33a1b67f-2702-4b40-9ce5-a3247343bd52/image.png",
+      "summary": "우리가 앞서 배운 선형 공간(Linear Space)은 원점이 절대적으로 고정된, 아주 엄격하고 융통성 없는 세계였습니다. 하지만 게임 월드에는 무수히 많은 몬스터와 오브젝트가 각자의 위치를 가지며 이리저리 돌아다녀야 합니다.",
+      "date": "2026-03-27T14:50:41.936Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "3D 공간을 지배하는 규칙: 선형성과 행렬(Matrix)",
+      "url": "https://velog.io/@wjdwns/3D-%EA%B3%B5%EA%B0%84%EC%9D%84-%EC%A7%80%EB%B0%B0%ED%95%98%EB%8A%94-%EA%B7%9C%EC%B9%99-%EC%84%A0%ED%98%95%EC%84%B1%EA%B3%BC-%ED%96%89%EB%A0%ACMatrix",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/5093a529-330c-4b42-a2b9-a0f3bf1b9cfa/image.png",
+      "summary": "우리는 수의 구조부터 함수, 벡터, 그리고 회전을 위한 삼각함수까지 알아봤습니다. 이제 이 모든 개별적인 지식들을 하나로 묶어 거대한 '시스템'으로 만들 차례입니다. 그 가교 역할을 하는 것이 바로 선형성(Linearity)입니다.",
+      "date": "2026-03-26T13:04:17.635Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "회전의 언어: 호도법과 삼각함수",
+      "url": "https://velog.io/@wjdwns/%ED%9A%8C%EC%A0%84%EC%9D%98-%EC%96%B8%EC%96%B4-%ED%98%B8%EB%8F%84%EB%B2%95%EA%B3%BC-%EC%82%BC%EA%B0%81%ED%95%A8%EC%88%98",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/7322523f-467d-4ced-932b-2ad3f56006e5/image.png",
+      "summary": "지난번에 우리는 벡터라는 '화살표'를 통해 공간의 방향과 위치를 정의했습니다. 하지만 게임 속 캐릭터는 가만히 앞만 보고 걷지 않습니다. 마우스를 돌려 고개를 돌리고, 날아오는 화살의 궤적을 곡선으로 그리기도 하죠.",
+      "date": "2026-03-25T14:15:21.514Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "가상 공간의 탄생: 벡터의 연산과 선형 독립",
+      "url": "https://velog.io/@wjdwns/%EA%B0%80%EC%83%81-%EA%B3%B5%EA%B0%84%EC%9D%98-%ED%83%84%EC%83%9D-%EB%B2%A1%ED%84%B0%EC%9D%98-%EC%97%B0%EC%82%B0%EA%B3%BC-%EC%84%A0%ED%98%95-%EB%8F%85%EB%A6%BD",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/d2129b53-589a-4ed5-a8a6-e56272e50631/image.png",
+      "summary": "지난 번에 '함수'를 통해 가상 세계의 인과율과 공간 변환의 기초를 다졌습니다. 오늘은 텅 빈 메모리에 심자가를 그어 공간을 정의하는 데카르트 좌표계와 크기와 방향을 가진 화살표인 벡터(Vector)를 다뤄보겠습니다.",
+      "date": "2026-03-24T13:56:00.390Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "가상 세계를 움직이는 톱니바퀴: 함수(Function)",
+      "url": "https://velog.io/@wjdwns/%EA%B0%80%EC%83%81-%EC%84%B8%EA%B3%84%EB%A5%BC-%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%ED%86%B1%EB%8B%88%EB%B0%94%ED%80%B4-%ED%95%A8%EC%88%98Function",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/38e88e11-9941-4efb-bb79-23c626bf4ac1/image.png",
+      "summary": "지난번에 우리는 텅 빈 메모리 공간에 '수(Number)'라는 데이터로 가상 세계의 점을 찍는 법을 배웠습니다. 하지만 점들이 가만히 멈춰 있다면 그것은 게임이 아니라 한 장의 사진일 뿐입니다.",
+      "date": "2026-03-23T12:25:07.763Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "가상 세계를 이루는 가장 작은 단위: 수의 구조와 언리얼 LWC",
+      "url": "https://velog.io/@wjdwns/%EA%B0%80%EC%83%81-%EC%84%B8%EA%B3%84%EB%A5%BC-%EC%9D%B4%EB%A3%A8%EB%8A%94-%EA%B0%80%EC%9E%A5-%EC%9E%91%EC%9D%80-%EB%8B%A8%EC%9C%84-%EC%88%98%EC%9D%98-%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%96%B8%EB%A6%AC%EC%96%BC-LWC",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/edb5f50a-9e0f-4034-a2a8-36e340efd4a8/image.png",
+      "summary": "게임을 개발하다 보면 수학이라는 거대한 장벽을 만나게 됩니다. 렌더링 파이프라인의 공간 변환이나, 캐릭터의 스킬 데미지 계산, 물리 엔진의 충돌 처리 등 가상 세계에서 일어나는 모든 마법은 결국 '수학'이라는 언어로 작성되어 있습니다.",
+      "date": "2026-03-21T14:00:06.675Z",
+      "tags": [
+        "게임 수학"
+      ]
+    },
+    {
+      "title": "3D 렌더링 파이프라인: 가상 공간이 모니터에 그려지기까지 (4/4)",
+      "url": "https://velog.io/@wjdwns/3D-%EB%A0%8C%EB%8D%94%EB%A7%81-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-%EA%B0%80%EC%83%81-%EA%B3%B5%EA%B0%84%EC%9D%B4-%EB%AA%A8%EB%8B%88%ED%84%B0%EC%97%90-%EA%B7%B8%EB%A0%A4%EC%A7%80%EA%B8%B0%EA%B9%8C%EC%A7%80-44",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/a50d90fc-6065-420d-a778-b8e706edc178/image.png",
+      "summary": "1부에서 3D 모델의 뼈대를 잡고(지오메트리), 2부에서 모니터 픽셀 크기에 맞춰 쪼개고(래스터화), 3부에서 빛과 재질의 마법(픽셀 셰이딩)을 부려 완벽한 최종 색상 값을 가진 '프래그먼트(Fragment, 픽셀 후보)'들을 만들어냈습니다.",
+      "date": "2026-03-20T10:02:13.269Z",
+      "tags": [
+        "3D 렌더링"
+      ]
+    },
+    {
+      "title": "3D 렌더링 파이프라인: 가상 공간이 모니터에 그려지기까지 (3/4)",
+      "url": "https://velog.io/@wjdwns/3D-%EB%A0%8C%EB%8D%94%EB%A7%81-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-%EA%B0%80%EC%83%81-%EA%B3%B5%EA%B0%84%EC%9D%B4-%EB%AA%A8%EB%8B%88%ED%84%B0%EC%97%90-%EA%B7%B8%EB%A0%A4%EC%A7%80%EA%B8%B0%EA%B9%8C%EC%A7%80-34",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/d6787943-7f70-46db-a68e-3002480a4315/image.png",
+      "summary": "지난 2부에서 우리는 래스터화(Rasterization)를 통해 수학적인 3D 폴리곤을 모니터 픽셀 크기에 딱 맞는 '프래그먼트(Fragment, 픽셀 후보 조각)'들로 쪼개는 과정을 보았습니다.",
+      "date": "2026-03-19T13:27:57.125Z",
+      "tags": [
+        "3D 렌더링"
+      ]
+    },
+    {
+      "title": "3D 렌더링 파이프라인: 가상 공간이 모니터에 그려지기까지 (2/4)",
+      "url": "https://velog.io/@wjdwns/3D-%EB%A0%8C%EB%8D%94%EB%A7%81-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-%EA%B0%80%EC%83%81-%EA%B3%B5%EA%B0%84%EC%9D%B4-%EB%AA%A8%EB%8B%88%ED%84%B0%EC%97%90-%EA%B7%B8%EB%A0%A4%EC%A7%80%EA%B8%B0%EA%B9%8C%EC%A7%80-24",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/1eb18b9b-44b3-4486-9e18-c1533047334c/image.jpeg",
+      "summary": "3D 모델의 정점(Vertex)들은 기나긴 공간 변환을 마치고 마침내 2D 모니터 화면의 좌표 공간(Screen Space)으로 안착했습니다. 하지만 지금 그래픽 카드가 쥐고 있는 데이터는 그저 '수학적인 점(Point)과 선(Line)'일 뿐입니다.",
+      "date": "2026-03-18T13:44:37.302Z",
+      "tags": [
+        "3D 렌더링"
+      ]
+    },
+    {
+      "title": "3D 렌더링 파이프라인: 가상 공간이 모니터에 그려지기까지 (1/4)",
+      "url": "https://velog.io/@wjdwns/3D-%EB%A0%8C%EB%8D%94%EB%A7%81-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-%EA%B0%80%EC%83%81-%EA%B3%B5%EA%B0%84%EC%9D%B4-%EB%AA%A8%EB%8B%88%ED%84%B0%EC%97%90-%EA%B7%B8%EB%A0%A4%EC%A7%80%EA%B8%B0%EA%B9%8C%EC%A7%80-14",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/50cfd1a9-6372-4fa2-b756-58735392efcf/image.png",
+      "summary": "우리가 언리얼 엔진 에디터에 무심코 올려둔 3D 캐릭터가 모니터의 2D 픽셀로 그려지기까지, 내부에서는 초당 수백만 번의 엄청난 수학적 연산이 일어납니다. 이 일련의 공장 컨베이어 벨트 같은 과정을 렌더링 파이프라인(Rendering Pipeline)이라고 부릅니다.",
+      "date": "2026-03-17T14:28:47.664Z",
+      "tags": [
+        "3D 렌더링"
+      ]
+    },
+    {
+      "title": "Unreal Engine's Gameplay Ability System - Part 6: Weapons",
+      "url": "https://velog.io/@wjdwns/Unreal-Engines-Gameplay-Ability-System-Part-6-Weapons",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/dccb6c6f-4f04-4679-8801-62d8256a7555/image.jpeg",
+      "summary": "본 시리즈는 해외 크리에이터 Alizoh님의 Gameplay Ability System 튜토리얼을 기반으로 작성되었습니다. 원본 영상의 흐름을 따라가되, 개발자의 시선에서 필요한 살을 붙이고 코드를 최적화하는 형태로 진행됩니다.",
+      "date": "2026-03-16T13:44:07.285Z",
+      "tags": [
+        "Gas",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 4-5. 스택 (Stack)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-4-5.-%EC%8A%A4%ED%83%9D-Stack",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/70995eba-5544-40bc-96e3-69ea5bf70d44/image.png",
+      "summary": "스택과 큐는 선형 자료구조의 기본이지만, 데이터가 나가는 순서에 강력한 제약을 걸어 특정 문제를 효율적으로 풀게 해줍니다.스택은 후입선출(Last In First Out) 원칙을 따릅니다. 가장 나중에 들어온 데이터가 가장 먼저 나가는 구조죠.",
+      "date": "2026-03-15T10:09:00.352Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 4-4. 슬라이딩 윈도우(Sliding Window)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-4-4.-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9-%EC%9C%88%EB%8F%84%EC%9A%B0Sliding-Window",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/44e2cb6f-d802-42b8-aab5-ba537f81ea93/image.png",
+      "summary": "투 포인터의 원리를 고정된 범위로 확장한 기법인 슬라이딩 윈도우(Sliding Window)를 알아보겠습니다. 슬라이딩 윈도우는 두 포인터 사이의 거리가 고정되어 있는 상태로 배열을 훑는 기법입니다.",
+      "date": "2026-03-14T14:34:23.237Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 4-3. 투 포인터 (Two Pointers)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-4-3.-%ED%88%AC-%ED%8F%AC%EC%9D%B8%ED%84%B0-Two-Pointers",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/ae5055b6-59c2-4428-98e4-1a077bf0169b/image.png",
+      "summary": "투 포인터는 말 그대로 배열 내에서 두 개의 포인터(인덱스 변수)를 조작하여 원하는 해를 찾는 방법입니다. 보통 O(N^2)이 걸릴 문제를 O(N)으로 끝낼 수 있게 해주는 알고리즘입니다.",
+      "date": "2026-03-13T14:28:35.951Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 4-2. 구간 합 (Prefix Sum)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-4-2.-%EA%B5%AC%EA%B0%84-%ED%95%A9-Prefix-Sum",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/3e9a24e9-14fb-4af1-b6ae-1fc0b85e07b3/image.jpeg",
+      "summary": "구간 합(Prefix Sum)은 데이터가 변하지 않는 정적(Static)인 배열에서, 특정 구간의 합을 $O(1)$의 시간 복잡도로 구하는 매우 자주 사용되는 최적화 기법입니다.",
+      "date": "2026-03-11T15:55:27.096Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "Unreal Engine's Gameplay Ability System - Part 5: Damage Effects",
+      "url": "https://velog.io/@wjdwns/Unreal-Engines-Gameplay-Ability-System-Part-5-Damage-Effects",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/168a94e6-1138-4c40-9ee8-da20fe083abb/image.jpeg",
+      "summary": "[GAS 시리즈 포스팅 안내] 본 시리즈는 해외 크리에이터 Alizoh님의 [Gameplay Ability System] 튜토리얼을 기반으로 작성되었습니다. 원본 영상의 흐름을 따라가되, 개발자의 시선에서 필요한 살을 붙이고 코드를 최적화하는 형태로 진행됩니다.",
+      "date": "2026-03-11T14:56:53.302Z",
+      "tags": [
+        "Gas",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "Unreal Engine's Gameplay Ability Sysyem - Part 4: UI/Widgets",
+      "url": "https://velog.io/@wjdwns/Unreal-Engines-Gameplay-Ability-Sysyem-Part-4-UIWidgets",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/a621b3ae-9dba-4a2e-ad4d-63aecff64127/image.png",
+      "summary": "본 시리즈는 해외 크리에이터 Alizoh님의 Gameplay Ability System 튜토리얼을 기반으로 작성되었습니다. 원본 영상의 흐름을 따라가되, 개발자의 시선에서 필요한 살을 붙이고 코드를 최적화하는 형태로 진행됩니다.",
+      "date": "2026-03-10T14:56:11.134Z",
+      "tags": [
+        "Gas",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "Unreal Engine's Gameplay Ability Sysyem - Part 3: Attributes & Effects",
+      "url": "https://velog.io/@wjdwns/Unreal-Engines-Gameplay-Ability-Sysyem-Part-3-Attributes-Effects",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/4dec5d5d-249f-4014-8477-f6ca7ac134c4/image.png",
+      "summary": "[GAS 시리즈 포스팅 안내] 본 시리즈는 해외 크리에이터 Alizoh님의 [Gameplay Ability System] 튜토리얼을 기반으로 작성되었습니다. 원본 영상의 흐름을 따라가되, 개발자의 시선에서 필요한 살을 붙이고 코드를 최적화하는 형태로 진행됩니다.",
+      "date": "2026-03-09T00:11:29.672Z",
+      "tags": [
+        "Gas",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "Unreal Engine's Gameplay Ability Sysyem - Part 2: Dash Ability",
+      "url": "https://velog.io/@wjdwns/Unreal-Engines-Gameplay-Ability-Sysyem-Part-2-Dash-Ability",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/41bc8095-01c1-4f56-8afe-2d7f9a4f78ed/image.jpeg",
+      "summary": "[GAS 시리즈 포스팅 안내] 본 시리즈는 해외 크리에이터 Alizoh님의 [Gameplay Ability System] 튜토리얼을 기반으로 작성되었습니다. 원본 영상의 흐름을 따라가되, 개발자의 시선에서 필요한 살을 붙이고 코드를 최적화하는 형태로 진행됩니다.",
+      "date": "2026-03-08T04:25:38.255Z",
+      "tags": [
+        "Gas",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "Unreal Engine's Gameplay Ability Sysyem - Part 1: The Setup",
+      "url": "https://velog.io/@wjdwns/Unreal-Engines-Gameplay-Ability-Sysyem-Part-1-The-Setup",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/606e1d12-c1de-467c-a034-ded0da456d23/image.png",
+      "summary": "[GAS 시리즈 포스팅 안내] 본 시리즈는 해외 크리에이터 Alizoh님의 [Gameplay Ability System] 튜토리얼을 기반으로 작성되었습니다. 원본 영상의 흐름을 따라가되, 개발자의 시선에서 필요한 살을 붙이고 코드를 최적화하는 형태로 진행됩니다.",
+      "date": "2026-03-07T08:59:35.925Z",
+      "tags": [
+        "Gas",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 기존 UI 설계의 한계와 언리얼 공식 MVVM 플러그인의 등장",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EA%B8%B0%EC%A1%B4-UI-%EC%84%A4%EA%B3%84%EC%9D%98-%ED%95%9C%EA%B3%84%EC%99%80-%EC%96%B8%EB%A6%AC%EC%96%BC-%EA%B3%B5%EC%8B%9D-MVVM-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EC%9D%98-%EB%93%B1%EC%9E%A5",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/a73e0d4d-57d8-4baa-a116-fddfe23106bf/image.png",
+      "summary": "기존 UMG 위젯은 프로퍼티 바인딩(Property Binding)이나 Tick에 의존하여 백엔드 로직과 강하게 결합하는 문제가 있었습니다.",
+      "date": "2026-03-06T14:16:49.844Z",
+      "tags": []
+    },
+    {
+      "title": "[UE 5.7] 전역로직 설계하기: 서브시스템(Subsystems)의 개념과 종류",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EC%A0%84%EC%97%AD%EB%A1%9C%EC%A7%81-%EC%84%A4%EA%B3%84%ED%95%98%EA%B8%B0-%EC%84%9C%EB%B8%8C%EC%8B%9C%EC%8A%A4%ED%85%9CSubsystems%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%A2%85%EB%A5%98",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/988a2d6f-b390-460e-a2bd-de929386059c/image.png",
+      "summary": "언리얼 엔진 개발에서 개발자가 가장 흔하게 저지르는 설계 오류는 모든 전역 로직을 GameInstance나 GameMode에 욱여넣는 것입니다.",
+      "date": "2026-03-05T08:37:53.434Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] Tick Interval과 조건부 활성화를 통한 CPU 점유율 방어",
+      "url": "https://velog.io/@wjdwns/UE-5.7-Tick-Interval%EA%B3%BC-%EC%A1%B0%EA%B1%B4%EB%B6%80-%ED%99%9C%EC%84%B1%ED%99%94%EB%A5%BC-%ED%86%B5%ED%95%9C-CPU-%EC%A0%90%EC%9C%A0%EC%9C%A8-%EB%B0%A9%EC%96%B4",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/5f857341-741a-4617-a4db-302f4cc284b5/image.png",
+      "summary": "언리얼 엔진에서 Tick()은 매 프레임 로직을 수행하는 가장 강력한 도구이지만, 과도하게 사용하면 Stat Game수치를 빨간색으로 물들이는 주범이 됩니다. 성능 최적화에서 가장 먼저 손대야 할 부분이 \"이 엑터가 매 프레임마다 계산을 해야하는가?\"입니다.",
+      "date": "2026-03-04T06:04:36.397Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 4-1. 배열과 리스트 그리고 벡터 (Array, List, Vector)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-4-1.-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%B2%A1%ED%84%B0-Array-List-Vector",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/0a8a031c-e3c7-4c7d-887b-e4e23cf42c0c/image.png",
+      "summary": "세 자료구조는 모두 '데이터의 묶음'을 관리하지만, 메모리에 데이터를 배치하는 방식과 지원하는 연산의 효율성이 완전히 다릅니다.",
+      "date": "2026-03-03T13:30:50.937Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 오브젝트 풀링(Object Pooling) 시스템 설계와 구현",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%ED%92%80%EB%A7%81Object-Pooling-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84%EC%99%80-%EA%B5%AC%ED%98%84",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/2b985ba5-60c1-49b5-ae0f-9f36ce70f9aa/image.png",
+      "summary": "총기 액션 게임이나 탄막 슈팅 게임을 만들다 보면 수백, 수천 개의 발사체가 화면을 뒤덮게 됩니다. 이때마다 SpawnActor와 Destroy를 반복한다면 어떻게 될까요?심각한 프레임 드랍과 함께 가비지 컬렉터가 비명을 지르게 될 것입니다.",
+      "date": "2026-03-02T13:55:09.726Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] Tick() 그만! Timer Manager를 활용한 비동기 시간 제어",
+      "url": "https://velog.io/@wjdwns/UE-5.7-Tick-%EA%B7%B8%EB%A7%8C-Timer-Manager%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%8B%9C%EA%B0%84-%EC%A0%9C%EC%96%B4",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/13e5af7e-9197-42e4-a1f0-987110543aa8/image.png",
+      "summary": "게임 개발에서 빠질 수 없는 것이 '시간'을 다루는 것입니다. 하지만 Tick함수를 켜고 매 프레임 시간을 계산한다면, CPU는 불필요한 연산을 계속하게 됩니다.",
+      "date": "2026-03-01T09:35:29.531Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 나나이트(Nanite) 렌더링 파이프라인의 원리와 최적화",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EB%82%98%EB%82%98%EC%9D%B4%ED%8A%B8Nanite-%EB%A0%8C%EB%8D%94%EB%A7%81-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8%EC%9D%98-%EC%9B%90%EB%A6%AC%EC%99%80-%EC%B5%9C%EC%A0%81%ED%99%94",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/7af8b7e8-057b-41c4-9311-c1fe8a83a58f/image.jpg",
+      "summary": "불과 몇 년 전만 해도 배경 아티스트와 프로그래머의 가장 큰 갈등 원인은 '폴리곤 수(PolyCount)'였습니다.",
+      "date": "2026-02-28T09:05:41.087Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 3-7. 이차원 벡터 사용하기 (2D Vector)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-3-7.-%EC%9D%B4%EC%B0%A8%EC%9B%90-%EB%B2%A1%ED%84%B0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-2D-Vector",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/90181200-323a-42e5-b3bd-c0f968ba5e38/image.png",
+      "summary": "이차원 벡터는 쉽게 말해 벡터를 담고있는 벡터입니다. C++ STL의 std::vector를 중첩하여 격자판(Grid) 형태나 그래프의 인접 리스트를 표현할 때 사용합니다.C언어 숙련자라면 메모리 크기를 미리 할당하는 습관이 중요함을 알고 계실 겁니다. 이차원 벡터도",
+      "date": "2026-02-26T15:11:34.780Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 유령 버그: 에디터 재시작 시 세팅이 바뀌어져 있다... DefaultEngine.ini의 비밀",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EC%9C%A0%EB%A0%B9-%EB%B2%84%EA%B7%B8-%EC%97%90%EB%94%94%ED%84%B0-%EC%9E%AC-%EC%8B%9C%EC%9E%91-%EC%8B%9C-%EC%84%B8%ED%8C%85%EC%9D%B4-%EB%B0%94%EB%80%8C%EC%96%B4%EC%A0%B8-%EC%9E%88%EB%8B%A4...-DefaultEngine.ini%EC%9D%98-%EB%B9%84%EB%B0%80",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/761ae5df-3a44-4472-a3d7-cd27c415b562/image.png",
+      "summary": "오늘은 언리얼 엔진으로 개발하면서 최악의 '유령 버그(Ghost Bug)'중 하나를 알아보려고 합니다. 분명히 에디터를 끄기 전까지는 블루프린트 상속 구조가 완벽했고 게임도 잘 작동했는데, 다시 에디터를 켜보니 블루프린트의 부모 클래스가 엉뚱한 것으로 바뀌어 있나요?",
+      "date": "2026-02-26T06:43:38.092Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 로딩 렉 없이 에셋 불러오기: Asset Manager와 비동기 로딩",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EB%A1%9C%EB%94%A9-%EB%A0%89-%EC%97%86%EC%9D%B4-%EC%97%90%EC%85%8B-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0-Asset-Manager%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%A1%9C%EB%94%A9",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/8b16bcda-a8dd-4fcc-88c3-58dfd59973b2/image.png",
+      "summary": "언리얼 엔진 환경에서 대규모 에셋을 다룰 떄, 가장 피해야 할 코딩 습관 중 하나가 바로 메인 스레드(Main Thread)에서 무거운 에셋을 동기식으로 불러오는 것입니다.",
+      "date": "2026-02-25T08:17:45.045Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 하드 레퍼런스 탈출: TSoftObjectPtr와 비동기 로딩",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%ED%95%98%EB%93%9C-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4-%ED%83%88%EC%B6%9C-TSoftObjectPtr%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%A1%9C%EB%94%A9",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/4ec8e8a7-c2f7-4ffa-905c-07db04fbf003/image.png",
+      "summary": "언리얼 엔진 프로젝트의 규모가 커지면 가장 먼저 마주하는 문제가 바로 '로딩 속도'와 '메모리 점유율'입니다. 분명히 로직은 완벽한데, 게임을 시작할 때마다 에디터가 멈추거나 메모리가 터질 듯이 치솟는다면?하드 레퍼런스(Hard Reference)가 원인입니다. 오늘은",
+      "date": "2026-02-24T07:59:21.893Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 3-6. 다중 조건 정렬 익히기 (Custom Sorting)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-3-6.-%EB%8B%A4%EC%A4%91-%EC%A1%B0%EA%B1%B4-%EC%A0%95%EB%A0%AC-%EC%9D%B5%ED%9E%88%EA%B8%B0-Custom-Sorting",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/6786c971-c825-4531-a321-3ea631304af6/image.png",
+      "summary": "실전 문제에서는 단순한 int 배열보다 구조체(struct)나 클래스(class), 혹은 pair, tuple을 정렬해야 하는 경우가 훨씬 많습니다. 이때 우리가 원하는 정렬로직을 컴파일러에게 알려주는 방법이 필요합니다.",
+      "date": "2026-02-23T09:06:38.271Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 메모리를 지켜주는 가비지 컬렉션(GC)의 원리와 안전한 포인터 관리",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EB%A9%94%EB%AA%A8%EB%A6%AC%EB%A5%BC-%EC%A7%80%EC%BC%9C%EC%A3%BC%EB%8A%94-%EA%B0%80%EB%B9%84%EC%A7%80-%EC%BB%AC%EB%A0%89%EC%85%98GC%EC%9D%98-%EC%9B%90%EB%A6%AC%EC%99%80-%EC%95%88%EC%A0%84%ED%95%9C-%ED%8F%AC%EC%9D%B8%ED%84%B0-%EA%B4%80%EB%A6%AC",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/ffdf1be2-8768-4a40-9e31-140371cc37b0/image.png",
+      "summary": "언리얼 엔진으로 개발하다보면 C++임에도 불구하고 delete 키워드를 거의 쓰지 않는다는 사실을 깨닫게 됩니다. 왜냐하면 엔진이 메모리를 자동으로 치워주기 때문이죠.",
+      "date": "2026-02-22T09:38:46.606Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 3-5. 정렬 기초 다지기",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-3-5.-%EC%A0%95%EB%A0%AC-%EA%B8%B0%EC%B4%88-%EB%8B%A4%EC%A7%80%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/55be26b5-06ff-4a3f-bcc2-a59ba3afa9b4/image.png",
+      "summary": "정렬은 데이터를 특정 기준(오름차순, 내림차순 등)으로 나열하는 과정입니다. 코딩 테스트 문제의 절반 이상이 정렬을 직간접적으로 활용하므로, 그 원리를 정확히 알고 사용하는 것이 중요합니다.",
+      "date": "2026-02-21T14:20:28.513Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] Enhanced Input 세팅은 어떻게 하는거야?",
+      "url": "https://velog.io/@wjdwns/UE-5.7-Enhanced-Input-%EC%84%B8%ED%8C%85%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%8A%94%EA%B1%B0%EC%95%BC",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/831e89a7-987a-4326-bc7f-f539f1fdac44/image.png",
+      "summary": "과거의 레거시 입력 방식이 단순히 \"키가 눌렸다\"는 신호만 보냈다면, Enhanced Input은 입력의 '의미'와 '데이터의 형태'를 분리하는데 그 중심에는 InputAction(IA)의 Value Type이 있습니다.",
+      "date": "2026-02-20T07:41:41.877Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 언리얼 엔진 명명 규칙(Naming Rule) 정리",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EC%96%B8%EB%A6%AC%EC%96%BC-%EC%97%94%EC%A7%84-%EB%AA%85%EB%AA%85-%EA%B7%9C%EC%B9%99Naming-Rule-%EC%A0%95%EB%A6%AC",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/c220eb8e-be55-4fc8-a47d-55105a4ddfec/image.png",
+      "summary": "언리얼 엔진 소스코드를 열어보면 모든 클래스나 변수 앞에 알 수 없는 접두사(Prefix)가 붙어 있는 것을 볼 수 있습니다. 이는 단순히 취향으로 붙인 것이 아니라, 엔진 시스템이 객체의 정체를 파악하고 리플렉션 시스템에 등록하는 중요한 기준이 됩니다.",
+      "date": "2026-02-19T04:38:21.166Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 3-4. 나머지 연산의 중요성",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-3-4.-%EB%82%98%EB%A8%B8%EC%A7%80-%EC%97%B0%EC%82%B0%EC%9D%98-%EC%A4%91%EC%9A%94",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/7a077b22-d219-417c-b082-e52b8f3a6d95/image.png",
+      "summary": "코딩 테스트 문제를 풀다 보면 \"정답이 매우 커질 수 있으니 $M$으로 나눈 나머지를 출력하라\"는 조건을 자주 봅니다. 이는 단순히 숫자를 작게 만들기 위함이 아니라, 컴퓨터의 정수 오버플로우 한계 내에서 연산을 수행하기 위한 장치입니다.",
+      "date": "2026-02-18T13:25:30.365Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 3-3. 인덱스에 의미 부여하며 풀어 보기 (Hashing, Counting)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-3-3.-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EC%97%90-%EC%9D%98%EB%AF%B8-%EB%B6%80%EC%97%AC%ED%95%98%EB%A9%B0-%ED%92%80%EC%96%B4-%EB%B3%B4%EA%B8%B0-Hashing-Counting",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/9f1cabb7-84d4-43f5-b702-bb5844563e69/image.png",
+      "summary": "보통 배열을 사용할 때 우리는 arr0, arr1처럼 위치를 나타내는 용도로 인덱스를 씁니다. 하지만 \"데이터의 값 = 배열의 인덱스\"로 매핑하는 순간, 검색 속도가 $O(1)$이 되는 강력한 무기가 됩니다. 이를 보통 카운팅 배열(Counting Array) 또는 직",
+      "date": "2026-02-17T14:09:44.840Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 3-2. 시간 초과의 원인을 찾아 해결하기",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-3-2.-%EC%8B%9C%EA%B0%84-%EC%B4%88%EA%B3%BC%EC%9D%98-%EC%9B%90%EC%9D%B8%EC%9D%84-%EC%B0%BE%EC%95%84-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/3a61e42b-8b5f-4746-857b-cfdc9a618172/image.png",
+      "summary": "C++은 현존하는 코딩 테스트 언어 중 가장 빠릅니다. 그런데도 '시간 초과'가 발생한다면, 단순히 알고리즘의 시간 복잡도($O(N)$ 등)의 문제일 수도 있지만, C++의 표준 입출력 병목이나 불필요한 객체 생성 때문일 확률도 높습니다.",
+      "date": "2026-02-16T03:47:23.853Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 언리얼 C++ 프로젝트 해부해보기",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EC%96%B8%EB%A6%AC%EC%96%BC-C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%95%B4%EB%B6%80%ED%95%B4%EB%B3%B4%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/a121a6a1-dd68-49aa-9c18-82f831258ad6/image.png",
+      "summary": "블루프린트 프로젝트에서 C++ 클래스 추가를 누르거나, 처음부터 C++ 템플릿으로 프로젝트를 생성하면 IDE(통합 개발 환경)가 열리면서 수많은 파일이 우리를 반깁니다.처음 파일들을 접하면 이것들은 대체 무엇들이고, 왜 있는 걸까? 라고 생각할 수 있습니다.",
+      "date": "2026-02-15T11:28:28.919Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 3-1. 예상치 못한 음수 결과 해결하기 (Integer Overflow)",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-3-1.-%EC%98%88%EC%83%81%EC%B9%98-%EB%AA%BB%ED%95%9C-%EC%9D%8C%EC%88%98-%EA%B2%B0%EA%B3%BC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0-Integer-Overflow",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/ffcb247a-e7ad-4126-89e5-f99f914119b7/image.png",
+      "summary": "C++로 알고리즘을 구현하다 보면 분명 양수끼리 더하거나 곱했는데 결과가 음수가 나오는 황당한 상황을 마주하게 됩니다. 이는 C언어 계열에서 가장 빈번하게 발생하는 정수 오버플로우(Integer Overflow) 현상 때문입니다.",
+      "date": "2026-02-14T06:22:37.863Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 데미지 시스템으로 배우는 델리게이트 활용법",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EB%8D%B0%EB%AF%B8%EC%A7%80-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%8D%B8%EB%A6%AC%EA%B2%8C%EC%9D%B4%ED%8A%B8-%ED%99%9C%EC%9A%A9%EB%B2%95",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/cb35b746-5ec8-4057-bc91-e56e964265d0/image.png",
+      "summary": "게임 개발에서 가장 중요한 원칙 중 하나는 느슨한 결합(Loose Coupling)입니다.캐릭터(C++)가 체력이 깎였을 때, UI(블루프린트)를 직접 찾아서 UI->UpdateHP()를 호출하는 방식은 좋지 않습니다.",
+      "date": "2026-02-13T07:24:11.097Z",
+      "tags": [
+        "C++",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] UPROPERTY: 코드와 에디터를 연결하는 마법의 주문",
+      "url": "https://velog.io/@wjdwns/UE-5.7-UPROPERTY-%EC%BD%94%EB%93%9C%EC%99%80-%EC%97%90%EB%94%94%ED%84%B0%EB%A5%BC-%EC%97%B0%EA%B2%B0%ED%95%98%EB%8A%94-%EB%A7%88%EB%B2%95%EC%9D%98-%EC%A3%BC%EB%AC%B8",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/58a6f8e4-425d-4825-a56b-bc0b21682f56/image.png",
+      "summary": "안녕하세요! 이제 막 블루프린트에서 C++로 넘어오면서 코드를 작성하고 있는데, UPROPERTY()라는 매크로를 지겹도록 보고있습니다. 여러분도 마찬가지로 보고 있으시겠죠?",
+      "date": "2026-02-12T01:22:47.364Z",
+      "tags": [
+        "C++",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] C++ UI 아키텍처: UUserWidget 상속과 BindWidget 메타 속성의 활용",
+      "url": "https://velog.io/@wjdwns/UE-5.7-C-UI-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-UUserWidget-%EC%83%81%EC%86%8D%EA%B3%BC-BindWidget-%EB%A9%94%ED%83%80-%EC%86%8D%EC%84%B1%EC%9D%98-%ED%99%9C%EC%9A%A9",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/8bdc33ca-3a54-4ea6-aed8-a7464cec1151/image.png",
+      "summary": "언리얼 엔진에서 UI(UMG)를 개발할 때, 초보자는 위젯 블루프린트 그래프에 모든 로직을 구현하곤 합니다. 하지만 이는 유지보수성을 떨어뜨리고 스파게티 로직을 양산하는 주범이 됩니다.전문적인 개발 환경에서는 디자인은 에디터, 로직은 C++으로 철저히 분리합니다.",
+      "date": "2026-02-11T01:38:10.116Z",
+      "tags": [
+        "C++",
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 2-2. 디버깅 활용 사례 살펴보기",
+      "url": "https://velog.io/@wjdwns/2-2.-%EB%94%94%EB%B2%84%EA%B9%85-%ED%99%9C%EC%9A%A9-%EC%82%AC%EB%A1%80-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/7cb9197a-77e7-4c2b-bdd4-bfc568c45cb0/image.png",
+      "summary": "디버깅은 단순히 \"어디가 틀렸지?\"를 찾는 것이 아니라, \"내 가설이 어디서부터 어긋났는가?\"를 증명하는 과정입니다. C++ 환경에서 자주 발생하는 3가지 사례를 통해 디버깅의 정석을 배워보겠습니다.",
+      "date": "2026-02-10T12:38:56.140Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 발사체 시스템의 완성: Projectile Movement Component와 유도(Homing) 메커니즘의 결합",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EB%B0%9C%EC%82%AC%EC%B2%B4-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EC%99%84%EC%84%B1-Projectile-Movement-Component%EC%99%80-%EC%9C%A0%EB%8F%84Homing-%EB%A9%94%EC%BB%A4%EB%8B%88%EC%A6%98%EC%9D%98-%EA%B2%B0%ED%95%A9",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/0383e764-fa40-426d-90c8-68ba2b6ddab6/image.png",
+      "summary": "이번 Monster Hunter: Wilds 활 캐릭터 모작 프로젝트에서 화살을 사용하면서 Projectile Movement Component를 사용하였습니다.",
+      "date": "2026-02-06T08:52:55.164Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 레벨 너머의 데이터 수호자: 게임 인스턴스(Game Instance)의 역할과 생명주기",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EB%A0%88%EB%B2%A8-%EB%84%88%EB%A8%B8%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%ED%98%B8%EC%9E%90-%EA%B2%8C%EC%9E%84-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4Game-Instance%EC%9D%98-%EC%97%AD%ED%95%A0%EA%B3%BC-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/d8601491-5520-43d9-9cf1-31d453d3bab5/image.png",
+      "summary": "언리얼 엔진에서 레벨(Level)이 전환되면 기존 레벨에 있던 모든 액터와 변수는 메모리에서 사라집니다. 하지만 실제 게임에서는 스테이지를 넘어가도 점수가 유지되어야 하고, 로비에서 설정한 옵션이 인게임까지 이어져야 하죠!",
+      "date": "2026-02-05T08:28:05.638Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 2-1. 디버깅은 왜 중요할까?",
+      "url": "https://velog.io/@wjdwns/2-1.-%EB%94%94%EB%B2%84%EA%B9%85%EC%9D%80-%EC%99%9C-%EC%A4%91%EC%9A%94%ED%95%A0%EA%B9%8C",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/747a88e8-a62f-4e9f-88c6-042c84d21ace/image.png",
+      "summary": "코딩 테스트를 치르다 보면 분명히 논리적으로 완벽하게 짰다고 생각했는데, 막상 제출하면 '틀렸습니다'나 '런타임 에러'가 발생하는 경우가 많습니다. 이때 우리에게 필요한 것이 바로 디버깅(Debugging)입니다.",
+      "date": "2026-02-04T04:43:16.184Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 시각적 피드백: 나이아가라(Niagara) 시스템의 구조와 작동 원리",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EC%8B%9C%EA%B0%81%EC%A0%81-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%98-%EC%A0%95%EC%88%98-%EB%82%98%EC%9D%B4%EC%95%84%EA%B0%80%EB%9D%BCNiagara-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%9E%91%EB%8F%99-%EC%9B%90%EB%A6%AC",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/9cfd36c1-81b1-48f1-8c0e-0cca91467c09/image.jpg",
+      "summary": "언리얼 엔진5에서 '타격감'이나 '화려함'을 담당하는 핵심은 단연 나이아가라(Niagara) 시스템입니다. 단순히 이펙트를 배치하는 것을 넘어 나이아가라가 내부적으로 어떻게 데이터를 처리하고 시각화하는지 그 구조적 원리를 정리해 보겠습니다.과거 언리얼의 캐스케이드(Ca",
+      "date": "2026-02-03T04:55:36.127Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 클래스 간의 '느슨한 결합': 블루프린트 인터페이스(Interface)의 원리와 이점",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B0%84%EC%9D%98-%EB%8A%90%EC%8A%A8%ED%95%9C-%EA%B2%B0%ED%95%A9-%EB%B8%94%EB%A3%A8%ED%94%84%EB%A6%B0%ED%8A%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4Interface%EC%9D%98-%EC%9B%90%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A0%90",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/216249bf-7189-4d1d-ae19-160ce2215bc1/image.png",
+      "summary": "보통 다른 액터의 기능을 실행할 때 Cast To (클래스명) 노드를 사용합니다. 하지만 이 방식은 두 가지 큰 단점이 있습니다.",
+      "date": "2026-02-02T05:03:38.524Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 1-2. 시간 복잡도 활용하기",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-1-2.-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84-%ED%99%9C%EC%9A%A9%ED%95%98",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/89524718-f08f-4a99-a20c-42a52920453d/image.png",
+      "summary": "앞서 시간 복잡도의 개념을 배웠으니, 이제는 실제 문제의 제한 시간과 데이터 범위를 보고 어떤 알고리즘을 선택해야 할지 판단하는 능력을 길러야합니다.",
+      "date": "2026-02-01T06:15:16.271Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "C++ 코딩테스트 시리즈 1-1. 시간 복잡도(Time Complexity) 표기법 알아보기",
+      "url": "https://velog.io/@wjdwns/C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%A6%AC%EC%A6%88-1-1.-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84Time-Complexity-%ED%91%9C%EA%B8%B0%EB%B2%95-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/1800a3e2-b177-41ae-99af-e3485e18c006/image.png",
+      "summary": "코딩 테스트 문제를 풀 때 가장 먼저 해야 할 고민은 이 알고리즘이 제한 시간 안에 돌아갈까?입니다. 이를 판단하기 위한 기준이 바로 시간 복잡도입니다!시간 복잡도는 단순히 \"프로그램이 실행되는 시간\"을 의미하지 않습니다. 컴퓨터의 성능이나 프로그래밍 언어에 따라 실제",
+      "date": "2026-01-31T15:32:20.660Z",
+      "tags": [
+        "C++알고리즘"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 거대한 클래스를 방지하는 법: 액터 컴포넌트(Actor Component)중심 설계하기",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EA%B1%B0%EB%8C%80%ED%95%9C-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EB%B0%A9%EC%A7%80%ED%95%98%EB%8A%94-%EB%B2%95-%EC%95%A1%ED%84%B0-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8Actor-Component%EC%A4%91%EC%8B%AC-%EC%84%A4%EA%B3%84%ED%95%98%EA%B8%B0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/a025ecea-7be2-44e2-a28b-73de3c2445de/image.png",
+      "summary": "언리얼 엔진에서 액터(Actor)는 게임 월드에 존재하는 모든 것입니다. 하지만 모든 기능을 액터 하나에 몰아넣으면 코드가 비대해지고 재사용이 어려워집니다.",
+      "date": "2026-01-31T13:13:16.579Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] 물리적 상호작용의 핵심: 충돌(Collision) 시스템 정리",
+      "url": "https://velog.io/@wjdwns/UE-5.7-%EB%AC%BC%EB%A6%AC%EC%A0%81-%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9%EC%9D%98-%ED%95%B5%EC%8B%AC-%EC%B6%A9%EB%8F%8CCollision-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%A0%95%EB%A6%AC",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/ba027d88-be15-4e7c-8ee2-3865452583e5/image.png",
+      "summary": "언리얼 엔진에서 객체가 서로 부딪히거나 통과하는 현상은 단순한 물리 법칙이 아니라, 고도로 설계된 Collision System에 의해 제어됩니다. 특히 언리얼 5환경에서 최적화된 게임을 만들기 위해서는 이 충돌 응답 체계를 정확히 이해하는 것이 중요합니다.",
+      "date": "2026-01-30T04:29:46.507Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "[UE 5.7] Old vs New: 레거시 입력을 버리고 Enhanced Input을 써야 하는 이유",
+      "url": "https://velog.io/@wjdwns/UE-5.7.1-Old-vs-New-%EB%A0%88%EA%B1%B0%EC%8B%9C-%EC%9E%85%EB%A0%A5%EC%9D%84-%EB%B2%84%EB%A6%AC%EA%B3%A0-Enhanced-Input%EC%9D%84-%EC%8D%A8%EC%95%BC-%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0",
+      "thumbnail": "https://velog.velcdn.com/images/wjdwns/post/4231d7df-56af-4c1d-b4b7-deea440293e0/image.png",
+      "summary": "안녕하세요!!앞으로 언리얼 Velog를 꾸준하게 써보려고 합니다.언리얼 개발 입문자다보니 제가 궁금한 것들에 대해서 정리하면서 글을 작성할텐데 글을 보시다가 궁금한 것들이나 써줬으면 하는 주제 있으시다면 언제든지 환영합니다!",
+      "date": "2026-01-29T06:33:53.918Z",
+      "tags": [
+        "언리얼엔진5"
+      ]
+    },
+    {
+      "title": "ANR(Application Not Responding)에 대해",
+      "url": "https://velog.io/@wjdwns/ANRApplication-Not-Responding%EC%97%90-%EB%8C%80%ED%95%B4",
+      "thumbnail": null,
+      "summary": "ANR(앱이 응답하지 않음, Application Not Responding)은 안드로이드 애플리케이션이 사용자 입력에 대해 적절하게 응답하지 않을 때 발생하는 상태를 나타냅니다. 사용자 입력에 대한 응답이 없으면 안드로이드 시스템은 ANR을 감지하고 사용자에게 경고를",
+      "date": "2024-03-14T13:07:49.119Z",
+      "tags": [
+        "android"
+      ]
+    },
+    {
+      "title": "Android 4대 컴포넌트",
+      "url": "https://velog.io/@wjdwns/Android-4%EB%8C%80-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8",
+      "thumbnail": null,
+      "summary": "Android 4대 컴포넌트란 Android 앱의 필수 구성요소입니다. 각 구성요소는 시스템이나 사용자가 앱에 진입할 수 있는 진입점이며, 일부 구성요소는 다른 구성요소에 종속됩니다. 맨 밑에 한줄요약 있음. 앱 구성요소에는 네 가지 유형이 있으며 이를 Android",
+      "date": "2024-03-14T12:28:43.235Z",
+      "tags": [
+        "android"
+      ]
+    },
+    {
+      "title": "앱이 설치되었는데 아이콘이 안보이는 버그",
+      "url": "https://velog.io/@wjdwns/%EC%95%B1%EC%9D%B4-%EC%84%A4%EC%B9%98%EB%90%98%EC%97%88%EB%8A%94%EB%8D%B0-%EC%95%84%EC%9D%B4%EC%BD%98%EC%9D%B4-%EC%95%88%EB%B3%B4%EC%9D%B4%EB%8A%94-%EA%B2%BD%EC%9A%B0",
+      "thumbnail": null,
+      "summary": "기기나 애뮬레이터에 앱을 실행 시켰는데 앱은 설치되었는데 아이콘이 안보이는 경우에 manifest의 intent-filter가 잘못되었을 수 있다. 이런식으로 intent필터가 분리되지 않고 한 intent필터에 한번에 적혀있는 경우 앱 아이콘이 보이지 않는 버그가 발",
+      "date": "2022-07-10T14:40:58.096Z",
+      "tags": [
+        "android",
+        "error"
+      ]
+    },
+    {
+      "title": "CTA 버튼을 키보드 위로 올리게 설정하였을 때 화면마다 다르게 하기",
+      "url": "https://velog.io/@wjdwns/CTA-%EB%B2%84%ED%8A%BC%EC%9D%84-%ED%82%A4%EB%B3%B4%EB%93%9C-%EC%9C%84%EB%A1%9C-%EC%98%AC%EB%A6%AC%EA%B2%8C-%EC%84%A4%EC%A0%95%ED%95%98%EC%98%80%EC%9D%84-%EB%95%8C-%ED%99%94%EB%A9%B4%EB%A7%88%EB%8B%A4-%EB%8B%A4%EB%A5%B4%EA%B2%8C-%ED%95%98%EA%B8%B0",
+      "thumbnail": null,
+      "summary": "CTA버튼을 키보드 위에 올리게 하려면 manifest에 adjustsize를 설정하고 버튼이 있는 레이아웃을 바텀에 고정시키면 되는데 만약에 이렇게 설정하였을 때 다른 화면에서는 키보드 위로 올라오게 하기 싫을 경우에는 fragment일 때 onViewCreated부",
+      "date": "2022-07-10T14:36:47.611Z",
+      "tags": [
+        "android"
+      ]
+    },
+    {
+      "title": "플레이스토어 배포할 때 SHA-1키 사용하여 키 재등록",
+      "url": "https://velog.io/@wjdwns/%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%ED%86%A0%EC%96%B4-%EB%B0%B0%ED%8F%AC%ED%95%A0-%EB%95%8C-SHA-1%ED%82%A4-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%ED%82%A4-%EC%9E%AC%EB%93%B1%EB%A1%9D",
+      "thumbnail": null,
+      "summary": "예를 들어 구글 로그인 같은 경우에는 SHA-1키를 사용하여 구글 로그인 권한을 줄 수 있기 때문에 새로 발급받은 SHA-1키를 새로 등록해주어야한다.Google Play Consle에 들어가서 개발자 계정으로 배포한 앱으로 접속한 후대시 보드 -> 접속할 앱 선택 -",
+      "date": "2022-07-10T14:31:09.890Z",
+      "tags": [
+        "android"
+      ]
+    }
+  ]
+}
