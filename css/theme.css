@@ -222,3 +222,38 @@ body {
   .contact__actions .btn--primary { grid-column: 1 / -1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .footer { padding-left: 16px; padding-right: 16px; }
 }
+
+/* 차분한 색상과 읽기 쉬운 간격 */
+:root {
+  --bg: #f5f7fa; --surface: #ffffff; --surface-2: #eaf0f6; --line: #dce4ed;
+  --ink: #172536; --ink-2: #46586b; --muted: #62758a;
+  --accent: #245ca6; --accent-ink: #174e91; --accent-soft: #e8f1fc; --on-accent: #ffffff;
+  --node-line: var(--line); --hard: 0 4px 18px rgba(23, 37, 54, .06); --hard-hover: 0 10px 28px rgba(23, 37, 54, .12);
+  --radius: 14px; --radius-sm: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101923; --surface: #192633; --surface-2: #223342; --line: #34495b;
+    --ink: #edf4fa; --ink-2: #c3d1dc; --muted: #a2b3c1;
+    --accent: #8abafa; --accent-ink: #a8ccff; --accent-soft: #1e3854; --on-accent: #102034;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101923; --surface: #192633; --surface-2: #223342; --line: #34495b;
+  --ink: #edf4fa; --ink-2: #c3d1dc; --muted: #a2b3c1;
+  --accent: #8abafa; --accent-ink: #a8ccff; --accent-soft: #1e3854; --on-accent: #102034;
+}
+body { background-image: none; line-height: 1.7; }
+.topbar { background: color-mix(in srgb, var(--bg) 94%, transparent); }
+.tab[aria-selected="true"] { box-shadow: inset 0 0 0 1px var(--line), 0 2px 8px rgba(23,37,54,.06); }
+.tab[aria-selected="true"] .tab__no { color: var(--accent-ink); }
+.stat, .card, .jump__card, .tl, .facts__group, .principle, .tool, .usage, .save, .case, .anatomy, .design__note, .skills__grid, .post > a { border: 1px solid var(--line); }
+.btn { border: 1px solid var(--line); box-shadow: var(--hard); }
+.btn:hover, .card:hover, .jump__card:hover, .post > a:hover { transform: translateY(-2px); box-shadow: var(--hard-hover); border-color: var(--line); }
+.btn--primary { border-color: var(--accent); }
+.node__head, .card__media, .post__thumb { border-color: var(--line); }
+.blogsearch input { border: 1px solid var(--line); box-shadow: none; }
+.chip[aria-pressed="true"] { border-color: var(--accent); box-shadow: none; }
+.contact__inner { background-image: none; border-color: var(--line); box-shadow: var(--hard); }
+.drawer { border: 1px solid var(--line); box-shadow: 0 24px 70px rgba(0,0,0,.25); }
+.post__sum, .habit p, .domain p, .tl li, .intent p { line-height: 1.7; }
