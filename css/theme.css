@@ -266,3 +266,10 @@ body { background-image: none; line-height: 1.7; }
 .drawer .gallery--overcooked button:first-child img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: var(--surface-2); }
 .drawer .gallery--overcooked span { flex: 1; }
 @media (max-width: 600px) { .drawer .gallery--overcooked { grid-template-columns: 1fr; } }
+
+/* 단계 사이 화살표가 카드 배경을 가리지 않도록 간격 중앙에 배치 */
+.pipeline { gap: 20px; }
+.pstep:not(:last-child)::after { right: -19px; width: 18px; background: transparent; }
+@media (max-width: 1024px) {
+  .pstep:not(:last-child)::after { right: auto; bottom: -20px; width: 18px; background: transparent; }
+}
