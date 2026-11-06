@@ -140,7 +140,7 @@ const renderPortfolio = () => {
         </ol>
 
         <h3 class="dh3">화면</h3>
-        <div class="gallery">
+        <div class="gallery ${p.id === "overcooked2" ? "gallery--overcooked" : ""}">
           ${p.gallery.map((g) => `
             <button type="button" data-zoom="${g.src}" data-cap="${esc(g.caption)}">
               <img src="${g.src}" alt="${esc(g.caption)}" loading="lazy" /><span>${esc(g.caption)}</span>

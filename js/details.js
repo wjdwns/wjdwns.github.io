@@ -55,7 +55,7 @@ window.PORTFOLIO_DETAILS = {
       why: "재료를 집합이나 해시로 바꾸는 방법도 있지만, 한 요리의 재료 수가 적고 비교 과정을 눈으로 확인하기 쉬워 ID 정렬 후 비교를 택했습니다. 정렬 비용은 생기지만 결정적인 비교 결과와 디버깅 편의성을 우선했습니다.",
     },
     {
-      figures: [{ src: "assets/img/oc-cook.jpg", caption: "재료 · 조리 도구 상호작용과 플레이어 외형 동기화" }],
+      figures: [{ src: "assets/img/oc-sync.png", caption: "플레이어 외형 동기화" }],
       outcomes: [
         "Listen Server 다중 접속에서 플레이어 색상 · 외형이 간헐적으로 빠지던 문제 해소",
         "PlayerState와 Pawn이 모두 준비된 시점을 기준으로 초기화 순서 정리",
