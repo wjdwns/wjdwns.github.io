@@ -59,6 +59,7 @@
         <div class="hero__cta">
           <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
           <a class="btn" href="#ai">AI 활용능력</a>
+          <a class="btn" href="#blog">블로그</a>
         </div>
         <ul class="hero__links" id="heroLinks"></ul>
       </div>
@@ -70,10 +71,42 @@
       <div class="skills__grid" id="skills"></div>
     </section>
 
+    <!-- HOME: 핵심 역량 -->
+    <section class="wrap home-sec" aria-labelledby="strengthTitle">
+      <div class="home-sec__head">
+        <p class="eyebrow">// Core strengths</p>
+        <h2 id="strengthTitle">이런 문제를 풀어 왔습니다</h2>
+        <p>각 항목의 근거를 누르면 해당 프로젝트의 구현 상세로 바로 이동합니다.</p>
+      </div>
+      <ol class="strengths" id="strengths"></ol>
+    </section>
+
+    <!-- HOME: 대표 프로젝트 -->
+    <section class="wrap home-sec" aria-labelledby="featuredTitle">
+      <div class="home-sec__head">
+        <p class="eyebrow">// Featured project</p>
+        <h2 id="featuredTitle">대표 프로젝트</h2>
+      </div>
+      <article class="featured" id="featured"></article>
+    </section>
+
+    <!-- HOME: 최근 블로그 글 -->
+    <section class="wrap home-sec" aria-labelledby="latestTitle">
+      <div class="home-sec__head home-sec__head--row">
+        <div>
+          <p class="eyebrow">// Latest posts</p>
+          <h2 id="latestTitle">최근 블로그 글</h2>
+        </div>
+        <a class="home-sec__more" href="#blog">블로그 전체 보기 →</a>
+      </div>
+      <ul class="posts posts--home" id="homePosts"></ul>
+    </section>
+
     <!-- HOME: 탭 바로가기 -->
     <section class="wrap jump" aria-label="탭 바로가기">
       <a class="jump__card" href="#projects"><span class="eyebrow">02 · Projects</span><b>프로젝트 5개</b><span>네트워크 · GAS · 게임 AI · 3D 자동화를 문제 → 해결 → 결과로</span><i>→</i></a>
       <a class="jump__card" href="#career"><span class="eyebrow">03 · Experience</span><b>경력 · 학력</b><span>앱 · 서버 실무 2년 2개월, 수상과 자격</span><i>→</i></a>
+      <a class="jump__card" href="#blog"><span class="eyebrow">04 · Blog</span><b>기술 블로그</b><span>Velog에 정리한 언리얼 · 네트워크 · 게임 수학 글</span><i>→</i></a>
       <a class="jump__card jump__card--dark" href="#ai"><span class="eyebrow">05 · AI skills</span><b>AI 활용능력</b><span>Codex · ChatGPT 역할 분담, 질문 습관, 검증 파이프라인</span><i>→</i></a>
       <a class="jump__card jump__card--dark" href="#ai-log"><span class="eyebrow">06 · AI log</span><b>AI 사용로그</b><span>Codex 세션 · 요청 · 도구 실행을 집계한 실제 기록</span><i>→</i></a>
     </section>
@@ -276,5 +309,6 @@
   <script src="js/details.js"></script>
   <script src="js/main.js"></script>
   <script src="js/blog.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

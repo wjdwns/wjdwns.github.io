@@ -25,6 +25,61 @@ window.PORTFOLIO = {
     { value: "988", unit: "건", label: "Codex 작업 요청", sub: "39개 세션 · 도구 실행 10,100회" },
   ],
 
+  /* 홈 화면: 핵심 역량(근거는 프로젝트 구현 상세로 바로 연결) · 대표 프로젝트 */
+  home: {
+    featured: "intereal",
+    strengths: [
+      {
+        key: "NET",
+        title: "네트워크 동기화",
+        sub: "서버가 결정하고, 클라이언트는 표현한다",
+        body: "Listen Server 환경에서 상호작용 확정 · 조리 상태 · 외형 동기화를 서버 권한으로 정리하고, GAS 콤보는 Local Prediction으로 반응성을 확보했습니다.",
+        tags: ["RPC", "Replication", "Local Prediction", "NetSerialize"],
+        evidence: [
+          { label: "OverCooked2 · 로컬 탐색 + 서버 확정", href: "#project-overcooked2/1" },
+          { label: "OverCooked2 · 서버 상태 / 클라이언트 연출", href: "#project-overcooked2/2" },
+          { label: "FURI · Custom EffectContext", href: "#project-furi/2" },
+        ],
+      },
+      {
+        key: "DATA",
+        title: "데이터 중심 설계",
+        sub: "코드를 고치지 않고 콘텐츠를 늘린다",
+        body: "레시피 · 스킬 수치 · 탄도 설정을 DataTable과 DataAsset으로 분리해, 새 콘텐츠를 데이터 추가만으로 확장하도록 만들었습니다.",
+        tags: ["DataTable", "PrimaryDataAsset", "SetByCaller", "Subsystem"],
+        evidence: [
+          { label: "OverCooked2 · 데이터 기반 레시피 판정", href: "#project-overcooked2/3" },
+          { label: "FURI · DataAsset 스킬 수치", href: "#project-furi/3" },
+          { label: "Monster Hunter · 3단계 차지 탄도", href: "#project-hunters/2" },
+        ],
+      },
+      {
+        key: "PIPE",
+        title: "런타임 3D 파이프라인",
+        sub: "외부 데이터를 편집 가능한 공간으로",
+        body: "도면 JSON을 검증 · 정규화해 DynamicMesh로 공간을 생성하고, Base와 Delta를 분리해 다시 생성해도 사용자의 편집 상태를 복원했습니다.",
+        tags: ["Geometry Script", "DynamicMesh", "HTTP · Mock", "Delegate"],
+        evidence: [
+          { label: "InteReal · 도면 JSON → Runtime Geometry", href: "#project-intereal/1" },
+          { label: "InteReal · Base와 Delta 분리", href: "#project-intereal/2" },
+          { label: "InteReal · HTTP · Mock 파이프라인", href: "#project-intereal/3" },
+        ],
+      },
+      {
+        key: "AI",
+        title: "게임 AI · 물리",
+        sub: "판단은 구조로, 비용은 주기로",
+        body: "StateTree와 EQS로 적 · 아군이 같은 전투 로직을 공유하게 하고, 탐색 주기 제한과 Actor Pool로 반복 비용을 줄였습니다.",
+        tags: ["StateTree", "EQS", "Actor Pool", "CCD"],
+        evidence: [
+          { label: "GearOfThree · 적 · 아군 공통 타깃 판정", href: "#project-gearofthree/1" },
+          { label: "GearOfThree · EQS 엄폐 → Crouch", href: "#project-gearofthree/2" },
+          { label: "GearOfThree · 충돌 법선 반사 + Pool", href: "#project-gearofthree/3" },
+        ],
+      },
+    ],
+  },
+
   skills: [
     { group: "Engine", items: ["Unreal Engine 5"] },
     { group: "Gameplay", items: ["GAS", "StateTree", "EQS", "Enhanced Input", "Animation BP", "Niagara"] },
