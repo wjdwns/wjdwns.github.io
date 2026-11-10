@@ -15,12 +15,12 @@ window.PORTFOLIO_DETAILS = {
     {
       figures: [{ src: "assets/img/oc-seq.jpg", caption: "Player(Client) → InteractionComp(Local) → Server(Authority) → Target 시퀀스" }],
       intent: [
-        { t: "가중치 기반 타겟팅", d: "Sphere Sweep으로 후보를 찾고 거리와 시선 각도를 함께 계산해 플레이어 의도에 가까운 대상을 우선 선택" },
+        { t: "거리 기반 대상 선택", d: "Sphere Sweep으로 후보를 찾아 거리순으로 정렬하고, 가장 가까운 상호작용 대상만 하이라이트" },
         { t: "클라이언트와 서버의 역할 분리", d: "탐색과 하이라이트는 로컬에서 처리하고, 선택한 대상은 RPC로 전달해 서버가 유효성을 확인한 뒤 실행" },
         { t: "상태 기반 행동 결정", d: "아이템 소유 여부와 대상의 현재 상태로 집기 · 놓기 · 사용 · 재료 추가를 결정하도록 흐름 통합" },
       ],
       outcomes: [
-        "여러 오브젝트가 인접해도 거리 · 각도 기준으로 우선 대상을 일관되게 선택",
+        "여러 오브젝트가 인접해도 가장 가까운 대상을 일관되게 선택",
         "클라이언트는 요청, 서버는 최종 실행 — 플레이어 간 상태 불일치 가능성 감소",
         "현재 대상 · 진행 상태 · 종료 시점을 InteractionComponent 한 곳에서 관리",
         "새 조리 오브젝트를 연결할 때 캐릭터 코드 수정 범위 축소",
@@ -146,7 +146,7 @@ window.PORTFOLIO_DETAILS = {
       outcomes: [
         "공격 Ability가 만든 방어 · 무적 · 피격 정보를 Effect 처리 단계까지 전달",
         "공격 Ability가 대상의 피격 함수를 직접 호출하지 않음",
-        "직접 계측한 테스트 데이터에서 DamageInfo 직렬화 48B → 8B",
+        "필요한 필드만 직렬화하는 커스텀 NetSerialize 적용 (enum → uint8, bool → 비트)",
       ],
     },
     {

@@ -22,7 +22,7 @@ window.PORTFOLIO = {
     { value: "5", unit: "개", label: "UE5 팀 프로젝트", sub: "네트워크 · GAS · AI · 3D 자동화" },
     { value: "2년 2개월", unit: "", label: "실무 경력", sub: "케이업스튜디오 · 풀스택/앱" },
     { value: "1등", unit: "", label: "원티드 협업과정 최우수상", sub: "AI Agent × Unreal · 2026" },
-    { value: "988", unit: "건", label: "Codex 작업 요청", sub: "39개 세션 · 도구 실행 10,100회" },
+    { value: "100", unit: "ms", label: "지연 환경 네트워크 테스트", sub: "FURI · 2인 Listen Server 전투" },
   ],
 
   /* 홈 화면: 핵심 역량(근거는 프로젝트 구현 상세로 바로 연결) · 대표 프로젝트 */
@@ -111,14 +111,15 @@ window.PORTFOLIO = {
       role: "Player · Interaction · Cooking/Table 시스템",
       tags: ["network", "data"],
       keywords: ["Listen Server", "Replication", "Subsystem", "DataTable"],
-      cover: "assets/img/oc-cover-original.png",
+      cover: "assets/img/oc-cover.jpg",
+      clip: { src: "assets/clips/clip-oc.mp4", poster: "assets/clips/clip-oc.jpg" },
       video: "https://youtu.be/1loOkpTWnko",
       result: "다중 플레이어의 상호작용 · 조리 상태 · 외형 동기화 흐름을 플레이 테스트로 검증",
       points: [
         {
           title: "로컬 탐색 + 서버 확정 InteractionComponent",
           problem: "밀집된 조리대에서 여러 오브젝트가 겹치면 의도와 다른 대상이 선택되고, 클라이언트 판정만 믿으면 상태가 어긋납니다.",
-          solution: "Sphere Sweep으로 후보를 찾고 거리·시선 각도 가중치로 대상을 고른 뒤, 실제 상호작용은 RPC로 서버가 유효성을 검증해 확정합니다.",
+          solution: "Sphere Sweep으로 후보를 찾아 거리순으로 정렬하고 가장 가까운 상호작용 대상을 로컬에서 하이라이트한 뒤, 실제 상호작용은 Server RPC로 넘겨 서버가 대상 유형별 조건을 확인하고 실행합니다.",
           result: "대상 선택 안정성 개선, 상호작용 종료 책임을 컴포넌트 한 곳으로 모아 재사용 가능한 구조 확보.",
         },
         {
@@ -165,6 +166,7 @@ window.PORTFOLIO = {
       tags: ["pipeline", "data", "network"],
       keywords: ["DynamicMesh", "Geometry Script", "HTTP · Mock", "Delegate"],
       cover: "assets/img/ir-hero.jpg",
+      clip: { src: "assets/clips/clip-ir.mp4", poster: "assets/clips/clip-ir.jpg" },
       video: "https://youtu.be/Sd2ZA1hPX5g",
       result: "실제 도면 기반 3D 공간 생성·재생성 시연, 협업과정 최우수상(1등) 수상",
       points: [
@@ -215,9 +217,9 @@ window.PORTFOLIO = {
       tags: ["gas", "network", "data"],
       keywords: ["Local Prediction", "EffectContext", "NetSerialize", "SetByCaller"],
       cover: "assets/img/gas-hero.jpg",
+      clip: { src: "assets/clips/clip-furi.mp4", poster: "assets/clips/clip-furi.jpg" },
       video: "https://youtu.be/Xfxez2yIG-M",
-      result: "100ms 지연 환경에서 전투 검증, DamageInfo 직렬화 48B → 8B",
-      metric: { before: "48B", after: "8B", label: "DamageInfo 직렬화 크기 (NetSerialize 직접 측정)" },
+      result: "2인 Listen Server · 100ms 지연 환경에서 전투 테스트, 커스텀 NetSerialize로 DamageInfo의 필요한 필드만 전송",
       points: [
         {
           title: "InputTag + Gameplay Event 콤보",
@@ -229,7 +231,7 @@ window.PORTFOLIO = {
           title: "Custom GameplayEffectContext",
           problem: "기본 Context로는 방어 가능 여부·무적 관통·피격 반응 같은 고유 데미지 정보를 AttributeSet까지 전달하기 어려웠습니다.",
           solution: "FFuriGameplayEffectContext에 DamageInfo를 담고, 수치는 SetByCaller로 Spec에 주입. 피격 판정은 AttributeSet에서 일괄 처리.",
-          result: "공격자·피격 처리 결합도 감소, 커스텀 NetSerialize로 직렬화 크기 48B → 8B.",
+          result: "공격자·피격 처리 결합도 감소, 커스텀 NetSerialize로 필요한 필드만 직렬화(enum → uint8, bool → 비트).",
         },
         {
           title: "DataAsset 기반 스킬 수치",
@@ -241,7 +243,6 @@ window.PORTFOLIO = {
       gallery: [
         { src: "assets/img/gas-hero.jpg", caption: "GAS 기반 콤보 전투" },
         { src: "assets/img/gas-shots.jpg", caption: "시네마틱 · HUD · 콤보 · 디버깅" },
-        { src: "assets/img/gas-ns.jpg", caption: "콤보 윈도우 로그 · NetSerialize 48B → 8B" },
       ],
       aiUse: "검증 질문 12개를 담은 읽기 전용 분석 프롬프트로, EffectContext · NetSerialize · Local Prediction이 실제 코드 경로에서 쓰이는지 Git 작성자(jun) 기준으로 확인했습니다. '비트 단위 최적화 · 패킷 75%' 같은 근거 없는 표현은 뺐습니다.",
     },
@@ -557,7 +558,7 @@ window.PORTFOLIO = {
       title: "확인되지 않은 문장은 지웠습니다",
       body: "포트폴리오를 정리할 때도 Codex에 읽기 전용 분석을 맡겨 초안의 주장을 하나씩 코드와 Git 기록에 대조했습니다. 근거가 없는 수치는 모두 빼고, 직접 측정하거나 시연한 내용만 남겼습니다.",
       cases: [
-        { project: "FURI", before: "패킷 75% 절감, 판정 오차 제거", after: "단일 DamageInfo 직렬화 48B → 8B (직접 측정)" },
+        { project: "FURI", before: "패킷 75% 절감 · DamageInfo 48B → 8B", after: "필요한 필드만 직렬화한 구현 사실만 기재 (48B는 고정값, 8B는 보정값이라 제외)" },
         { project: "OverCooked! 2", before: "RPC 66.58% 감소, 평균 FPS 20% 향상", after: "계산식·원본 트레이스 요구 → 기준/개선 각 3회 재측정 → 해당 수치 제외" },
         { project: "InteReal", before: "용량 대폭 절감, 모든 토폴로지 완전 지원", after: "실제 도면 기반 생성·재생성 과정 시연" },
         { project: "GearOfThree", before: "성능·메모리 수치 향상", after: "StateTree·EQS 디버그 시각화로 판정 흐름 검증" },

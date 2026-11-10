@@ -23,10 +23,11 @@ const renderPortfolio = () => {
   $("#heroTitle").innerHTML = P.headline.map((l, i) => `<span${i === 1 ? ' class="hl"' : ""}>${esc(l)}</span>`).join("");
   $("#heroSummary").textContent = P.summary;
   $("#heroLinks").innerHTML = [
+    ["이력서 PDF", "assets/resume-parkjeongjun.pdf"],
     ["GitHub", P.github],
     ["Velog 기술 블로그", P.velog],
     [P.email, "mailto:" + P.email],
-  ].map(([t, h]) => `<li><a href="${esc(h)}" ${h.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>${esc(t)} ↗</a></li>`).join("");
+  ].map(([t, h]) => `<li><a href="${esc(h)}" ${h.startsWith("http") || h.endsWith(".pdf") ? 'target="_blank" rel="noopener"' : ""}>${esc(t)} ↗</a></li>`).join("");
   $("#heroStats").innerHTML = D.heroStats.map((s) => `
     <li class="stat">
       <span class="stat__label">${esc(s.label)}</span>
@@ -38,12 +39,16 @@ const renderPortfolio = () => {
     <div class="skillcol"><h3>${esc(g.group)}</h3><ul>${g.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("");
 
   /* ---------------- Projects: 케이스 스터디 목록 (클릭 없이 핵심을 바로) ---------------- */
+  const CODE = window.PORTFOLIO_CODE || {};
+  const codeOf = (id, k) => ((CODE[id] && CODE[id].snippets) || []).filter((c) => c.point === k);
   const grid = $("#projectGrid");
   grid.className = "cases";
   grid.innerHTML = D.projects.map((p) => `
     <li class="pcase reveal" data-tags="${p.tags.join(" ")}">
       <a class="pcase__media" href="#project-${p.id}" aria-label="${esc(p.title)} 상세 보기">
-        <img src="${p.cover}" alt="${esc(p.title)} 플레이 화면" loading="lazy" />
+        ${p.clip
+          ? `<video class="pcase__video" muted loop playsinline preload="none" poster="${esc(p.clip.poster)}" aria-label="${esc(p.title)} 플레이 영상 (소리 없음)"><source src="${esc(p.clip.src)}" type="video/mp4" /></video><span class="pcase__live" aria-hidden="true">▶ 플레이</span>`
+          : `<img src="${p.cover}" alt="${esc(p.title)} 플레이 화면" loading="lazy" />`}
         ${p.award ? `<span class="pcase__award">${esc(p.award)}</span>` : ""}
       </a>
       <div class="pcase__body">
@@ -56,15 +61,27 @@ const renderPortfolio = () => {
           <div><dt>담당</dt><dd>${esc(p.role)}</dd></div>
         </dl>
         <ol class="pcase__points" aria-label="핵심 구현">
-          ${p.points.map((pt, k) => `<li><a href="#project-${p.id}/${k + 1}"><span>${String(k + 1).padStart(2, "0")}</span>${esc(pt.title)}</a></li>`).join("")}
+          ${p.points.map((pt, k) => `<li><a href="#project-${p.id}/${k + 1}"><span>${String(k + 1).padStart(2, "0")}</span>${esc(pt.title)}${codeOf(p.id, k).length ? `<em class="pcase__code">코드</em>` : ""}</a></li>`).join("")}
         </ol>
         <p class="pcase__result"><b>성과</b>${esc(p.result)}</p>
         <div class="pcase__cta">
           <a class="btn btn--primary" href="#project-${p.id}">상세 보기</a>
           ${p.video ? `<a class="btn" href="${esc(p.video)}" target="_blank" rel="noopener">▶ 시연 영상</a>` : ""}
+          ${CODE[p.id] ? `<a class="btn" href="${esc(CODE[p.id].repo)}" target="_blank" rel="noopener">GitHub ↗</a>` : ""}
         </div>
       </div>
     </li>`).join("");
+
+  // 플레이 클립: 화면에 보일 때만 재생 (모션 줄이기 설정이면 정지 화면 유지)
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    const vio = new IntersectionObserver((entries) => entries.forEach((en) => {
+      const vid = en.target;
+      if (en.isIntersecting) { if (vid.preload === "none") vid.preload = "auto"; vid.play().catch(() => {}); }
+      else vid.pause();
+    }), { threshold: 0.35 });
+    grid.querySelectorAll(".pcase__video").forEach((vid) => vio.observe(vid));
+  }
 
   const filterBar = $("#filters");
   filterBar.innerHTML = D.filters.map((f, i) => {
@@ -120,6 +137,7 @@ const renderPortfolio = () => {
             </dl>
             <div class="dactions">
               ${p.video ? `<a class="btn btn--primary" href="${esc(p.video)}" target="_blank" rel="noopener">▶ 시연 영상</a>` : ""}
+              ${CODE[p.id] ? `<a class="btn" href="${esc(CODE[p.id].repo)}" target="_blank" rel="noopener">GitHub 저장소 ↗</a>` : ""}
               ${p.metric ? `<span class="dintro__metric"><s>${esc(p.metric.before)}</s> → <b>${esc(p.metric.after)}</b> <small>${esc(p.metric.label)}</small></span>` : ""}
             </div>
           </div>
@@ -147,6 +165,13 @@ const renderPortfolio = () => {
               ${det.intent?.length ? `<div class="impl__points"><b>설계 포인트</b><ul>${det.intent.map((x) => `<li>${esc(x.t)}</li>`).join("")}</ul>
                 ${det.why ? `<p class="impl__why"><b>한계</b>${esc(det.why)}</p>` : ""}</div>` : ""}
             </div>` : ""}
+            ${codeOf(p.id, k).map((c) => `
+            <details class="code">
+              <summary><span>코드 보기</span>${esc(c.title)}<i>${esc(c.file.split("/").pop())}</i></summary>
+              <p class="code__why">${esc(c.why)}</p>
+              <pre><code>${esc(c.code)}</code></pre>
+              <a class="code__src" href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.file)} · GitHub에서 원본 보기 ↗</a>
+            </details>`).join("")}
           </section>`;
         }).join("")}
 
@@ -417,7 +442,8 @@ const renderPortfolio = () => {
   $("#contactActions").innerHTML = `
     <a class="btn btn--primary" href="mailto:${esc(P.email)}">✉ ${esc(P.email)}</a>
     <a class="btn" href="${esc(P.github)}" target="_blank" rel="noopener">GitHub ↗</a>
-    <a class="btn" href="${esc(P.velog)}" target="_blank" rel="noopener">Velog ↗</a>`;
+    <a class="btn" href="${esc(P.velog)}" target="_blank" rel="noopener">Velog ↗</a>
+    <a class="btn" href="assets/resume-parkjeongjun.pdf" target="_blank" rel="noopener">이력서 PDF ↗</a>`;
 
   /* ---------------- Behaviors ---------------- */
   // Theme
