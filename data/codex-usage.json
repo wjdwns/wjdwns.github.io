@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T23:42:54+09:00",
+  "generatedAt": "2026-11-11T00:00:03+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
@@ -9,15 +9,15 @@
   },
   "totals": {
     "sessions": 40,
-    "requests": 1017,
-    "toolRuns": 10311,
+    "requests": 1018,
+    "toolRuns": 10317,
     "patches": 233,
-    "inputTokens": 1451547098,
-    "cachedInputTokens": 1392319104,
-    "outputTokens": 5800185,
-    "reasoningTokens": 1248950,
+    "inputTokens": 1454258351,
+    "cachedInputTokens": 1394641920,
+    "outputTokens": 5801545,
+    "reasoningTokens": 1249112,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9591966433045082
+    "cacheHitRate": 0.9590056120640424
   },
   "daily": [
     {
@@ -710,19 +710,19 @@
     },
     {
       "date": "2026-11-10",
-      "requests": 1,
-      "toolRuns": 2,
-      "inputTokens": 1079957,
-      "cachedInputTokens": 726528,
-      "outputTokens": 766
+      "requests": 2,
+      "toolRuns": 8,
+      "inputTokens": 3791210,
+      "cachedInputTokens": 3049344,
+      "outputTokens": 2126
     }
   ],
   "projects": [
     {
       "name": "NoWayOut (UE5)",
-      "requests": 283,
-      "toolRuns": 4881,
-      "inputTokens": 752592871
+      "requests": 284,
+      "toolRuns": 4887,
+      "inputTokens": 755304124
     },
     {
       "name": "포트폴리오 · 지원서",
@@ -789,8 +789,8 @@
     },
     {
       "name": "기타",
-      "turns": 699,
-      "inputTokens": 433490349
+      "turns": 700,
+      "inputTokens": 436201602
     }
   ]
 }
