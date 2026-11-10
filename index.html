@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/case.css" />
   <script>
     try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
@@ -130,54 +132,75 @@
       <div class="wrap">
         <div class="section__head">
           <p class="eyebrow"><span class="sec-no">05</span>How I work with AI</p>
-          <h2 id="aiTitle">AI는 빠르게 쓰고,<br />결과는 직접 검증합니다</h2>
+          <h2 id="aiTitle">AI에게 맡기고,<br />판단과 검증은 제가 합니다</h2>
           <p class="section__lead" id="aiLead"></p>
         </div>
 
-        <ol class="principles" id="principles"></ol>
+        <nav class="ainav" id="aiNav" aria-label="AI 활용능력 목차">
+          <button type="button" data-jump="ai-s1"><span>01</span>요약</button>
+          <button type="button" data-jump="ai-s2"><span>02</span>작업 방식</button>
+          <button type="button" data-jump="ai-s3"><span>03</span>프롬프트 · 효율</button>
+          <button type="button" data-jump="ai-s4"><span>04</span>검증 · 판단</button>
+          <button type="button" data-jump="ai-s5"><span>05</span>실제 사례</button>
+          <button type="button" data-jump="ai-s6"><span>06</span>부록</button>
+        </nav>
 
-        <h3 class="subhead">도구마다 맡기는 일이 다릅니다</h3>
-        <div class="tools" id="tools"></div>
-        <div class="handoff" id="handoff"></div>
+        <section class="aiblock" id="ai-s1" aria-labelledby="ai-s1-t">
+          <div class="aiblock__head"><span class="aiblock__no">01</span><div><h3 id="ai-s1-t">30초 요약</h3><p class="aiblock__take">AI를 많이 쓰는 것보다, 결과를 어떻게 믿을 수 있게 만드는지가 핵심입니다.</p></div></div>
+          <ul class="aisum" id="aiSummary"></ul>
+        </section>
 
-        <h3 class="subhead">토큰은 이렇게 아낍니다</h3>
-        <p class="subhead__lead" id="tokenLead"></p>
-        <ol class="saves" id="saves"></ol>
+        <section class="aiblock" id="ai-s2" aria-labelledby="ai-s2-t">
+          <div class="aiblock__head"><span class="aiblock__no">02</span><div><h3 id="ai-s2-t">작업 방식</h3><p class="aiblock__take">도구마다 역할을 나누고, AI가 만든 모든 변경은 5단계 검증을 거쳐 반영합니다.</p></div></div>
+          <ol class="principles" id="principles"></ol>
+          <h4 class="subhead">AI 코드 검증 파이프라인</h4>
+          <ol class="pipeline" id="pipeline"></ol>
+          <h4 class="subhead">도구별 역할 분담</h4>
+          <div class="tools" id="tools"></div>
+          <div class="handoff" id="handoff"></div>
+        </section>
 
-        <h3 class="subhead">원하는 결과를 한 번에 받는 프롬프트 구조</h3>
-        <p class="subhead__lead" id="designLead"></p>
-        <div class="design">
-          <ol class="anatomy" id="anatomy" aria-label="프롬프트 구성 순서"></ol>
-          <div class="design__side">
-            <p class="design__note" id="designPlacement"></p>
-            <p class="design__note design__note--retry" id="designRetry"></p>
+        <section class="aiblock" id="ai-s3" aria-labelledby="ai-s3-t">
+          <div class="aiblock__head"><span class="aiblock__no">03</span><div><h3 id="ai-s3-t">프롬프트 · 효율</h3><p class="aiblock__take">지시는 재사용 가능한 명세 파일로 만들고, 맥락은 필요한 만큼만 넣습니다.</p></div></div>
+          <h4 class="subhead">원하는 결과를 한 번에 받는 프롬프트 구조</h4>
+          <p class="subhead__lead" id="designLead"></p>
+          <div class="design">
+            <ol class="anatomy" id="anatomy" aria-label="프롬프트 구성 순서"></ol>
+            <div class="design__side">
+              <p class="design__note" id="designPlacement"></p>
+              <p class="design__note design__note--retry" id="designRetry"></p>
+            </div>
           </div>
-        </div>
+          <h4 class="subhead">토큰을 아끼는 다섯 가지 습관</h4>
+          <p class="subhead__lead" id="tokenLead"></p>
+          <ol class="saves" id="saves"></ol>
+        </section>
 
-        <h3 class="subhead">이렇게 묻고, 이렇게 씁니다</h3>
-        <p class="subhead__lead">ChatGPT 대화 기록을 돌아보며 정리한 질문 습관과 활용 분야입니다.</p>
-        <div class="askgrid">
-          <ol class="habits" id="habits"></ol>
-          <figure class="panel domains">
-            <figcaption>
-              <strong>ChatGPT 활용 분야</strong>
-              <span>대화 주제의 빈도와 깊이 기준 · 정성 평가</span>
-            </figcaption>
-            <ul id="domains"></ul>
-          </figure>
-        </div>
+        <section class="aiblock" id="ai-s4" aria-labelledby="ai-s4-t">
+          <div class="aiblock__head"><span class="aiblock__no">04</span><div><h3 id="ai-s4-t">검증 · 판단</h3><p class="aiblock__take">AI가 낸 결과라도 근거가 없으면 쓰지 않고, 품질 기준은 제가 정합니다.</p></div></div>
+          <div class="verify" id="verify"></div>
+          <h4 class="subhead">AI 결과를 받아들이지 않은 순간</h4>
+          <ul class="rejects" id="rejects"></ul>
+        </section>
 
-        <h3 class="subhead">AI 코드 검증 파이프라인</h3>
-        <p class="subhead__lead">AI가 만든 변경을 바로 반영하지 않고, 다섯 단계를 거칩니다.</p>
-        <ol class="pipeline" id="pipeline"></ol>
+        <section class="aiblock" id="ai-s5" aria-labelledby="ai-s5-t">
+          <div class="aiblock__head"><span class="aiblock__no">05</span><div><h3 id="ai-s5-t">실제 사례</h3><p class="aiblock__take">이 방식으로 기능 하나를 직접 만들고, 효율과 정확도를 측정했습니다.</p></div></div>
+          <section class="case" id="caseStudy" aria-labelledby="caseTitle"></section>
+        </section>
 
-        <div class="verify" id="verify"></div>
-
-        <h3 class="subhead">AI 결과를 받아들이지 않은 순간</h3>
-        <p class="subhead__lead">품질 기준은 제가 정합니다. 요구사항을 충족하지 않으면 쓰지 않습니다.</p>
-        <ul class="rejects" id="rejects"></ul>
-
-        <section class="case" id="caseStudy" aria-labelledby="caseTitle"></section>
+        <details class="aiblock aiblock--more" id="ai-s6">
+          <summary class="aiblock__head"><span class="aiblock__no">06</span><div><h3>부록 · 질문 습관과 ChatGPT 활용 분야</h3><p class="aiblock__take">ChatGPT 대화 기록을 돌아보며 정리했습니다. 눌러서 펼치기</p></div></summary>
+          <div class="askgrid">
+            <ol class="habits" id="habits"></ol>
+            <figure class="panel domains">
+              <figcaption>
+                <strong>ChatGPT 활용 분야</strong>
+                <span>대화 주제의 빈도와 깊이 기준 · 정성 평가</span>
+              </figcaption>
+              <ul id="domains"></ul>
+            </figure>
+          </div>
+        </details>
 
         <div class="refs">
           <h3>근거 자료</h3>
@@ -310,5 +333,6 @@
   <script src="js/main.js"></script>
   <script src="js/blog.js"></script>
   <script src="js/home.js"></script>
+  <script src="js/ai-page.js"></script>
 </body>
 </html>
