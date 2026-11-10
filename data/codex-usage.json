@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T19:53:42+09:00",
+  "generatedAt": "2026-11-10T21:43:30+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
-    "to": "2026-11-06",
-    "activeDays": 85
+    "to": "2026-11-09",
+    "activeDays": 86
   },
   "totals": {
     "sessions": 40,
-    "requests": 1006,
-    "toolRuns": 10209,
+    "requests": 1016,
+    "toolRuns": 10309,
     "patches": 233,
-    "inputTokens": 1416489375,
-    "cachedInputTokens": 1357943424,
-    "outputTokens": 5775393,
-    "reasoningTokens": 1245830,
+    "inputTokens": 1450467141,
+    "cachedInputTokens": 1391592576,
+    "outputTokens": 5799419,
+    "reasoningTokens": 1248940,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9586682738089722
+    "cacheHitRate": 0.9594099284735192
   },
   "daily": [
     {
@@ -699,20 +699,28 @@
       "inputTokens": 4074149,
       "cachedInputTokens": 3890816,
       "outputTokens": 15811
+    },
+    {
+      "date": "2026-11-09",
+      "requests": 10,
+      "toolRuns": 100,
+      "inputTokens": 33977766,
+      "cachedInputTokens": 33649152,
+      "outputTokens": 24026
     }
   ],
   "projects": [
+    {
+      "name": "NoWayOut (UE5)",
+      "requests": 282,
+      "toolRuns": 4879,
+      "inputTokens": 751512914
+    },
     {
       "name": "포트폴리오 · 지원서",
       "requests": 272,
       "toolRuns": 598,
       "inputTokens": 112458016
-    },
-    {
-      "name": "NoWayOut (UE5)",
-      "requests": 272,
-      "toolRuns": 4779,
-      "inputTokens": 717535148
     },
     {
       "name": "Orbit · Ourbit (Flutter)",
@@ -753,13 +761,13 @@
     },
     {
       "name": "설계",
-      "turns": 59,
-      "inputTokens": 68237757
+      "turns": 60,
+      "inputTokens": 72508561
     },
     {
       "name": "구현·제작",
-      "turns": 72,
-      "inputTokens": 122703901
+      "turns": 75,
+      "inputTokens": 137546452
     },
     {
       "name": "검증",
@@ -773,8 +781,8 @@
     },
     {
       "name": "기타",
-      "turns": 692,
-      "inputTokens": 417545981
+      "turns": 698,
+      "inputTokens": 432410392
     }
   ]
 }
