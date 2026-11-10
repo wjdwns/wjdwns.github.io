@@ -37,26 +37,33 @@ const renderPortfolio = () => {
   $("#skills").innerHTML = D.skills.map((g) => `
     <div class="skillcol"><h3>${esc(g.group)}</h3><ul>${g.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("");
 
-  /* ---------------- Projects ---------------- */
+  /* ---------------- Projects: 케이스 스터디 목록 (클릭 없이 핵심을 바로) ---------------- */
   const grid = $("#projectGrid");
+  grid.className = "cases";
   grid.innerHTML = D.projects.map((p) => `
-    <li class="card reveal" data-tags="${p.tags.join(" ")}" style="--pc:${p.color}">
-      <button class="card__btn" type="button" data-open="${p.id}" aria-label="${esc(p.title)} 자세히 보기">
-        <div class="node__head" aria-hidden="true"><i class="pin"></i><span>PROJECT_${p.no}</span><em>${esc(p.team)}</em><i class="pin pin--out"></i></div>
-        <div class="card__media">
-          <img src="${p.cover}" alt="${esc(p.title)} 플레이 화면" loading="lazy" />
-          <span class="card__no">PROJECT ${p.no}</span>
-          ${p.award ? `<span class="card__award">🏆 최우수상</span>` : ""}
+    <li class="pcase reveal" data-tags="${p.tags.join(" ")}">
+      <a class="pcase__media" href="#project-${p.id}" aria-label="${esc(p.title)} 상세 보기">
+        <img src="${p.cover}" alt="${esc(p.title)} 플레이 화면" loading="lazy" />
+        ${p.award ? `<span class="pcase__award">${esc(p.award)}</span>` : ""}
+      </a>
+      <div class="pcase__body">
+        <p class="pcase__eyebrow">Project ${esc(p.no)} · ${p.keywords.slice(0, 3).map(esc).join(" · ")}</p>
+        <h3><a href="#project-${p.id}">${esc(p.title)}</a></h3>
+        <p class="pcase__tag">${esc(p.tagline)}</p>
+        <dl class="pcase__meta">
+          <div><dt>기간</dt><dd>${esc(p.period)}</dd></div>
+          <div><dt>팀</dt><dd>${esc(p.team)}</dd></div>
+          <div><dt>담당</dt><dd>${esc(p.role)}</dd></div>
+        </dl>
+        <ol class="pcase__points" aria-label="핵심 구현">
+          ${p.points.map((pt, k) => `<li><a href="#project-${p.id}/${k + 1}"><span>${String(k + 1).padStart(2, "0")}</span>${esc(pt.title)}</a></li>`).join("")}
+        </ol>
+        <p class="pcase__result"><b>성과</b>${esc(p.result)}</p>
+        <div class="pcase__cta">
+          <a class="btn btn--primary" href="#project-${p.id}">상세 보기</a>
+          ${p.video ? `<a class="btn" href="${esc(p.video)}" target="_blank" rel="noopener">▶ 시연 영상</a>` : ""}
         </div>
-        <div class="card__body">
-          <div class="card__meta"><span>${esc(p.period)}</span><span>${esc(p.team)}</span></div>
-          <h3>${esc(p.title)}</h3>
-          <p class="card__tagline">${esc(p.tagline)}</p>
-          <div class="tags">${p.keywords.map((k) => `<span class="tag">${esc(k)}</span>`).join("")}</div>
-          <p class="card__result"><b>성과</b><span>${esc(p.result)}</span></p>
-          <span class="card__more">자세히 보기</span>
-        </div>
-      </button>
+      </div>
     </li>`).join("");
 
   const filterBar = $("#filters");
@@ -69,16 +76,16 @@ const renderPortfolio = () => {
     if (!b) return;
     filterBar.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", c === b));
     const f = b.dataset.filter;
-    grid.querySelectorAll(".card").forEach((c) => {
+    grid.querySelectorAll(".pcase").forEach((c) => {
       c.classList.toggle("is-hidden", f !== "all" && !c.dataset.tags.split(" ").includes(f));
     });
   });
 
-  /* ---------------- Drawer ---------------- */
+  /* ---------------- 상세 패널: 한 단계, 모든 구현을 한 화면에 ---------------- */
   const drawer = $("#drawer");
   const body = $("#drawerBody");
   let current = -1;
-  let currentPoint = -1; // -1: 1단계(개요), 0 이상: 2단계(구현 상세)
+  let currentPoint = -1; // 주소로 열린 구현 번호(라우팅 비교용)
   let lastFocus = null;
   const DET = window.PORTFOLIO_DETAILS || {};
   const detailOf = (id, k) => (DET[id] && DET[id][k]) || {};
@@ -98,46 +105,50 @@ const renderPortfolio = () => {
           <button class="iconbtn" type="button" data-close aria-label="닫기">✕</button>
         </div>
       </div>
-      <div class="dhero" data-zoom="${p.cover}" data-cap="${esc(p.title)}"><img src="${p.cover}" alt="${esc(p.title)} 대표 화면" /></div>
       <div class="dsec">
-        <div class="dtitle">
-          <p class="eyebrow">Project ${esc(p.no)}${p.award ? " · " + esc(p.award) : ""}</p>
-          <h2>${esc(p.title)}</h2>
-          <p>${esc(p.tagline)}</p>
+        <div class="dintro">
+          <button class="dintro__img" type="button" data-zoom="${p.cover}" data-cap="${esc(p.title)}" aria-label="대표 화면 크게 보기"><img src="${p.cover}" alt="${esc(p.title)} 대표 화면" /></button>
+          <div class="dintro__text">
+            <p class="eyebrow">Project ${esc(p.no)}${p.award ? " · " + esc(p.award) : ""}</p>
+            <h2>${esc(p.title)}</h2>
+            <p class="dintro__tag">${esc(p.tagline)}</p>
+            <dl class="pcase__meta">
+              <div><dt>기간</dt><dd>${esc(p.period)}</dd></div>
+              <div><dt>팀</dt><dd>${esc(p.team)}</dd></div>
+              <div><dt>기술</dt><dd>${esc(p.stack)}</dd></div>
+              <div><dt>담당</dt><dd>${esc(p.role)}</dd></div>
+            </dl>
+            <div class="dactions">
+              ${p.video ? `<a class="btn btn--primary" href="${esc(p.video)}" target="_blank" rel="noopener">▶ 시연 영상</a>` : ""}
+              ${p.metric ? `<span class="dintro__metric"><s>${esc(p.metric.before)}</s> → <b>${esc(p.metric.after)}</b> <small>${esc(p.metric.label)}</small></span>` : ""}
+            </div>
+          </div>
         </div>
-        <dl class="dmeta">
-          <div><dt>기간</dt><dd>${esc(p.period)}</dd></div>
-          <div><dt>팀</dt><dd>${esc(p.team)}</dd></div>
-          <div><dt>기술</dt><dd>${esc(p.stack)}</dd></div>
-          <div><dt>담당</dt><dd>${esc(p.role)}</dd></div>
-        </dl>
-        <div class="dactions">
-          ${p.video ? `<a class="btn btn--primary" href="${esc(p.video)}" target="_blank" rel="noopener">▶ 시연 영상 보기</a>` : ""}
-        </div>
-        ${p.metric ? `
-          <div class="dmetric">
-            <span class="dmetric__nums"><s>${esc(p.metric.before)}</s> → <b>${esc(p.metric.after)}</b></span>
-            <p>${esc(p.metric.label)}</p>
-          </div>` : ""}
 
-        <h3 class="dh3">핵심 구현 · 눌러서 자세히 보기</h3>
-        <ol class="plist">
-          ${p.points.map((pt, k) => {
-            const det = detailOf(p.id, k);
-            return `
-            <li>
-              <button class="prow" type="button" data-point="${k}">
-                <span class="prow__n">${String(k + 1).padStart(2, "0")}</span>
-                <span class="prow__body">
-                  <b>${esc(pt.title)}</b>
-                  <span>${esc(pt.result)}</span>
-                  <span class="prow__meta">${det.figures?.length ? `<i>구조도</i>` : ""}${det.intent?.length ? `<i>설계 의도 ${det.intent.length}</i>` : ""}${det.why ? `<i>선택 이유 · 한계</i>` : ""}</span>
-                </span>
-                <span class="prow__go" aria-hidden="true">›</span>
-              </button>
-            </li>`;
-          }).join("")}
-        </ol>
+        <nav class="pjump" aria-label="핵심 구현 바로가기">
+          ${p.points.map((pt, k) => `<button type="button" data-goto="${k}"><span>${String(k + 1).padStart(2, "0")}</span>${esc(pt.title)}</button>`).join("")}
+        </nav>
+
+        ${p.points.map((pt, k) => {
+          const det = detailOf(p.id, k);
+          const fig = det.figures?.[0];
+          return `
+          <section class="impl" id="impl-${k}" aria-labelledby="impl-${k}-t">
+            <h3 class="impl__title" id="impl-${k}-t"><span>${String(k + 1).padStart(2, "0")}</span>${esc(pt.title)}</h3>
+            <div class="psr psr--cards">
+              <div><b>문제</b><span>${esc(pt.problem)}</span></div>
+              <div><b>해결</b><span>${esc(pt.solution)}</span></div>
+              <div><b>결과</b><span>${esc(pt.result)}</span></div>
+            </div>
+            ${fig || det.intent?.length ? `
+            <div class="impl__grid ${fig ? "" : "impl__grid--one"}">
+              ${fig ? `<button class="impl__fig" type="button" data-zoom="${fig.src}" data-cap="${esc(fig.caption)}">
+                <img src="${fig.src}" alt="${esc(fig.caption)}" loading="lazy" /><span>${esc(fig.caption)}</span></button>` : ""}
+              ${det.intent?.length ? `<div class="impl__points"><b>설계 포인트</b><ul>${det.intent.map((x) => `<li>${esc(x.t)}</li>`).join("")}</ul>
+                ${det.why ? `<p class="impl__why"><b>한계</b>${esc(det.why)}</p>` : ""}</div>` : ""}
+            </div>` : ""}
+          </section>`;
+        }).join("")}
 
         <h3 class="dh3">화면</h3>
         <div class="gallery ${p.id === "overcooked2" ? "gallery--overcooked" : ""}">
@@ -151,104 +162,35 @@ const renderPortfolio = () => {
         <div class="aibox"><span class="aibox__icon">AI</span><p>${todo(p.aiUse)}</p></div>
       </div>`;
     currentPoint = -1;
-    body.classList.remove("is-depth2");
-    body.scrollTop = 0;
     body.scrollTop = 0;
     try { history.replaceState(null, "", "#project-" + p.id); } catch (e) {}
   }
 
-  /* 2단계: 구현 상세 */
-  function renderPoint(i, k) {
-    const p = D.projects[i];
-    const pt = p.points[k];
-    if (!pt) return renderProject(i);
-    const det = detailOf(p.id, k);
-    const n = p.points.length;
-    const prevPt = k > 0 ? p.points[k - 1] : null;
-    const nextPt = k < n - 1 ? p.points[k + 1] : null;
-    current = i;
-    currentPoint = k;
-    body.style.setProperty("--pc", p.color);
-    body.innerHTML = `
-      <div class="dhead">
-        <button class="dback" type="button" data-back aria-label="${esc(p.title)} 개요로 돌아가기">‹</button>
-        <nav class="crumb" aria-label="현재 위치">
-          <button type="button" data-back>${esc(p.title)}</button>
-          <span aria-hidden="true">›</span>
-          <b id="drawerTitle">구현 ${k + 1} / ${n}</b>
-        </nav>
-        <div class="dhead__nav">
-          <button class="iconbtn" type="button" data-pstep="-1" ${prevPt ? "" : "disabled"} aria-label="이전 구현">↑</button>
-          <button class="iconbtn" type="button" data-pstep="1" ${nextPt ? "" : "disabled"} aria-label="다음 구현">↓</button>
-          <button class="iconbtn" type="button" data-close aria-label="닫기">✕</button>
-        </div>
-      </div>
-      <div class="dsec depth2">
-        <div class="dtitle">
-          <p class="eyebrow">Project ${esc(p.no)} · 핵심 구현 ${String(k + 1).padStart(2, "0")}</p>
-          <h2>${esc(pt.title)}</h2>
-        </div>
-
-        <div class="psr psr--cards">
-          <div><b>문제</b><span>${esc(pt.problem)}</span></div>
-          <div><b>해결</b><span>${esc(pt.solution)}</span></div>
-          <div><b>결과</b><span>${esc(pt.result)}</span></div>
-        </div>
-
-        ${det.figures?.length ? `
-          <h3 class="dh3">구조도 · 화면</h3>
-          <div class="figs ${det.figures.length > 1 ? "figs--2" : ""}">
-            ${det.figures.map((f) => `
-              <button class="fig" type="button" data-zoom="${f.src}" data-cap="${esc(f.caption)}">
-                <img src="${f.src}" alt="${esc(f.caption)}" loading="lazy" />
-                <span>${esc(f.caption)} <i>크게 보기</i></span>
-              </button>`).join("")}
-          </div>` : ""}
-
-        ${det.intent?.length ? `
-          <h3 class="dh3">설계 의도</h3>
-          <ol class="intent">
-            ${det.intent.map((x, j) => `<li><span>${j + 1}</span><div><b>${esc(x.t)}</b><p>${esc(x.d)}</p></div></li>`).join("")}
-          </ol>` : ""}
-
-        ${det.outcomes?.length ? `
-          <h3 class="dh3">구현 결과</h3>
-          <ul class="outcomes">${det.outcomes.map((o) => `<li>${esc(o)}</li>`).join("")}</ul>` : ""}
-
-        ${det.why ? `
-          <div class="why"><b>선택 이유와 한계</b><p>${esc(det.why)}</p></div>` : ""}
-
-        <div class="pnav">
-          ${prevPt ? `<button class="pnav__btn" type="button" data-pstep="-1"><span>‹ 이전 구현</span><b>${esc(prevPt.title)}</b></button>` : `<button class="pnav__btn" type="button" data-back><span>‹ 개요로</span><b>${esc(p.title)}</b></button>`}
-          ${nextPt ? `<button class="pnav__btn pnav__btn--next" type="button" data-pstep="1"><span>다음 구현 ›</span><b>${esc(nextPt.title)}</b></button>` : `<button class="pnav__btn pnav__btn--next" type="button" data-back><span>개요로 ›</span><b>${esc(p.title)}</b></button>`}
-        </div>
-      </div>`;
-    body.classList.add("is-depth2");
-    body.scrollTop = 0;
-    try { history.replaceState(null, "", `#project-${p.id}/${k + 1}`); } catch (e) {}
-  }
-
-  function backToProject() {
-    const k = currentPoint;
-    renderProject(current);
-    const row = body.querySelector(`[data-point="${k}"]`);
-    if (row) { row.scrollIntoView({ block: "center" }); row.focus({ preventScroll: true }); }
+  function gotoPoint(k, smooth) {
+    const el = body.querySelector(`#impl-${k}`);
+    if (!el) return;
+    const head = body.querySelector(".dhead")?.offsetHeight || 60;
+    body.scrollTo({ top: el.offsetTop - head - 12, behavior: smooth ? "smooth" : "auto" });
   }
 
   function openProject(id, pointIndex = -1) {
     const i = D.projects.findIndex((p) => p.id === id);
     if (i < 0) return;
     if (!drawer.open) lastFocus = document.activeElement;
-    if (pointIndex >= 0 && D.projects[i].points[pointIndex]) renderPoint(i, pointIndex);
-    else renderProject(i);
+    renderProject(i);
     if (!drawer.open) drawer.showModal();
     document.body.style.overflow = "hidden";
-    $(".dhead [data-close]", body)?.focus();
+    $(".dhead [data-close]", body)?.focus({ preventScroll: true });
+    if (pointIndex >= 0 && D.projects[i].points[pointIndex]) {
+      currentPoint = pointIndex;
+      requestAnimationFrame(() => gotoPoint(pointIndex, false));
+    }
   }
   function closeDrawer() { drawer.close(); }
 
   drawer.addEventListener("close", () => {
     document.body.style.overflow = "";
+    currentPoint = -1;
     if (/^#project-/.test(location.hash)) { try { history.replaceState(null, "", "#projects"); } catch (e) {} }
     lastFocus?.focus?.();
   });
@@ -256,33 +198,16 @@ const renderPortfolio = () => {
     if (e.target === drawer) return closeDrawer(); // backdrop
     const step = e.target.closest("[data-step]");
     if (step) { renderProject((current + Number(step.dataset.step) + D.projects.length) % D.projects.length); $(".dhead [data-close]", body)?.focus(); return; }
-    const point = e.target.closest("[data-point]");
-    if (point) { renderPoint(current, Number(point.dataset.point)); $(".dback", body)?.focus(); return; }
-    const pstep = e.target.closest("[data-pstep]");
-    if (pstep) { renderPoint(current, currentPoint + Number(pstep.dataset.pstep)); $(".dback", body)?.focus(); return; }
-    if (e.target.closest("[data-back]")) return backToProject();
+    const go = e.target.closest("[data-goto]");
+    if (go) return gotoPoint(Number(go.dataset.goto), true);
     if (e.target.closest("[data-close]")) return closeDrawer();
     const z = e.target.closest("[data-zoom]");
     if (z) openLightbox(z.dataset.zoom, z.dataset.cap);
   });
-  // 2단계에서 Esc는 패널을 닫지 않고 한 단계 뒤로
-  drawer.addEventListener("cancel", (e) => {
-    if (currentPoint >= 0) { e.preventDefault(); backToProject(); }
-  });
   drawer.addEventListener("keydown", (e) => {
     if (e.target.closest("input, textarea")) return;
-    const n = D.projects[current]?.points.length || 0;
-    if (currentPoint >= 0) {
-      if (e.key === "ArrowRight" && currentPoint < n - 1) { e.preventDefault(); renderPoint(current, currentPoint + 1); $(".dback", body)?.focus(); }
-      if (e.key === "ArrowLeft" && currentPoint > 0) { e.preventDefault(); renderPoint(current, currentPoint - 1); $(".dback", body)?.focus(); }
-      return;
-    }
     if (e.key === "ArrowRight") { renderProject((current + 1) % D.projects.length); $(".dhead [data-close]", body)?.focus(); }
     if (e.key === "ArrowLeft") { renderProject((current - 1 + D.projects.length) % D.projects.length); $(".dhead [data-close]", body)?.focus(); }
-  });
-  grid.addEventListener("click", (e) => {
-    const b = e.target.closest("[data-open]");
-    if (b) openProject(b.dataset.open);
   });
 
   /* Lightbox */

@@ -131,6 +131,88 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.025em; }
 .post__ph { background-image: none; }
 
 /* =========================================================
+   프로젝트: 케이스 스터디 목록 (클릭 없이 핵심 확인)
+   ========================================================= */
+.cases { display: flex; flex-direction: column; gap: 20px; }
+.pcase { display: grid; grid-template-columns: minmax(0, 440px) 1fr; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.pcase.is-hidden { display: none; }
+.pcase__media { position: relative; display: block; background: var(--surface-2); min-height: 300px; overflow: hidden; border-right: 1px solid var(--line); }
+.pcase__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.pcase__media:hover img { transform: scale(1.03); }
+.pcase__award { position: absolute; left: 14px; bottom: 14px; font-size: 12px; font-weight: 600; color: #1a1205; background: #f5c451; padding: 5px 10px; border-radius: 999px; }
+.pcase__body { padding: 26px 30px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.pcase__eyebrow { font-size: 12px; font-weight: 500; color: var(--accent); }
+.pcase h3 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.pcase h3 a { text-decoration: none; color: inherit; }
+.pcase h3 a:hover { color: var(--accent); }
+.pcase__tag { color: var(--ink-2); font-size: 15px; margin-top: -4px; }
+.pcase__meta { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 14px; font-size: 13.5px; }
+.pcase__meta div { display: contents; }
+.pcase__meta dt { color: var(--muted); }
+.pcase__meta dd { margin: 0; font-weight: 500; }
+.pcase__points { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; border-top: 1px solid var(--line); }
+.pcase__points a { display: flex; gap: 10px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; }
+.pcase__points a span { flex: none; font-size: 12px; color: var(--accent); font-variant-numeric: tabular-nums; }
+.pcase__points a:hover { color: var(--accent); }
+.pcase__result { display: flex; gap: 10px; font-size: 14px; color: var(--ink); }
+.pcase__result b { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.pcase__cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 4px; }
+
+/* 상세 패널: 한 단계 */
+.dintro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 28px; padding-top: 28px; align-items: start; }
+.dintro__img { all: unset; cursor: zoom-in; display: block; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16 / 10; background: var(--surface-2); }
+.dintro__img img { width: 100%; height: 100%; object-fit: cover; }
+.dintro__img:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.dintro__text { display: flex; flex-direction: column; gap: 10px; }
+.dintro__text h2 { font-size: 28px; font-weight: 600; letter-spacing: -0.03em; }
+.dintro__tag { color: var(--ink-2); }
+.dintro__metric { display: inline-flex; align-items: baseline; gap: 6px; font-size: 18px; font-weight: 600; }
+.dintro__metric s { color: var(--muted); font-weight: 500; }
+.dintro__metric b { color: var(--accent); }
+.dintro__metric small { font-size: 12px; font-weight: 400; color: var(--ink-2); }
+.drawer .dactions { align-items: center; gap: 16px; }
+.pjump { position: sticky; top: 61px; z-index: 1; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 28px -36px 0; padding: 10px 36px; background: color-mix(in srgb, var(--bg) 94%, transparent); border-bottom: 1px solid var(--line); }
+.pjump::-webkit-scrollbar { display: none; }
+.pjump button { flex: 0 0 auto; display: inline-flex; gap: 6px; align-items: baseline; height: 34px; padding: 0 12px; line-height: 34px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-2); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; }
+.pjump button span { color: var(--accent); font-size: 11px; }
+.pjump button:hover { color: var(--ink); border-color: var(--line-2); }
+.impl { padding: 36px 0 8px; border-bottom: 1px solid var(--line); }
+.impl__title { display: flex; gap: 12px; align-items: baseline; font-size: 21px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 16px; }
+.impl__title span { font-size: 13px; color: var(--accent); font-variant-numeric: tabular-nums; }
+.impl .psr--cards { margin-top: 0; }
+.impl .psr--cards span { font-size: 14px; line-height: 1.6; }
+.impl__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 16px; margin: 14px 0 24px; align-items: start; }
+.impl__grid--one { grid-template-columns: 1fr; }
+.impl__fig { all: unset; cursor: zoom-in; box-sizing: border-box; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: #fff; }
+.impl__fig img { width: 100%; max-height: 300px; object-fit: contain; padding: 10px; box-sizing: border-box; }
+.impl__fig span { font-size: 12.5px; color: var(--ink-2); padding: 8px 12px; border-top: 1px solid var(--line); background: var(--surface); }
+.impl__fig:focus-visible { outline: 2px solid var(--accent); }
+.impl__points > b { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+.impl__points ul { display: flex; flex-direction: column; }
+.impl__points li { position: relative; padding: 8px 0 8px 16px; border-bottom: 1px solid var(--line); font-size: 14.5px; font-weight: 500; }
+.impl__points li::before { content: ""; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.impl__why { margin-top: 14px; font-size: 13px; color: var(--ink-2); line-height: 1.65; }
+.impl__why b { display: block; font-size: 12px; color: var(--muted); font-weight: 600; margin-bottom: 2px; }
+.drawer .gallery { margin-top: 4px; }
+
+@media (max-width: 1024px) {
+  .pcase { grid-template-columns: 1fr; }
+  .pcase__media { min-height: 0; aspect-ratio: 16 / 8; border-right: 0; border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 860px) {
+  .dintro { grid-template-columns: 1fr; gap: 18px; }
+  .impl__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .pcase__body { padding: 18px; }
+  .pcase h3 { font-size: 21px; }
+  .pcase__points { grid-template-columns: 1fr; }
+  .pjump { margin: 20px -18px 0; padding: 8px 18px; top: 58px; }
+  .impl { padding-top: 28px; }
+  .impl__title { font-size: 18px; }
+}
+
+/* =========================================================
    AI 활용능력: 번호 섹션 · 목차 · 30초 요약 (가독성 정리)
    ========================================================= */
 .section--ai .section__head { margin-bottom: 24px; }
@@ -216,6 +298,24 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.025em; }
   .aisum__item, .aisum__item:nth-child(3) { border-left: 0; padding-left: 0; padding-right: 0; }
   .aisum__item + .aisum__item { border-top: 1px solid var(--line); }
 }
+
+/* =========================================================
+   라이트: 전부 흰 바탕 · 회색 면 대신 얇은 선
+   ========================================================= */
+:root { --surface-2: #f7f7f7; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --surface-2: #1d1d20; } }
+:root[data-theme="dark"] { --surface-2: #1d1d20; }
+
+.jump__card--dark { background: var(--surface); border-color: var(--line); }
+.skillcol li, .tag, .strength__tags span, .chip { background: var(--surface); border: 1px solid var(--line); }
+.post__tags span { background: transparent; border: 1px solid var(--line); color: var(--accent); }
+
+/* 연락처: 검은 블록 대신 흰 카드 */
+.contact__inner { background-color: var(--surface) !important; color: var(--ink) !important; border: 1px solid var(--line) !important; }
+.contact h2 { color: var(--ink); }
+.contact__inner > p:not(.contact__code) { color: var(--ink-2) !important; }
+.contact .btn { background: var(--bg); color: var(--ink); border: 1px solid var(--line-2); }
+.contact .btn--primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
 @media (max-width: 860px) {
   .brand__name::after { content: none; }
