@@ -259,6 +259,7 @@ window.PORTFOLIO = {
       tags: ["ai", "data"],
       keywords: ["StateTree", "EQS", "Actor Pool", "CCD"],
       cover: "assets/img/gears-hero.jpg",
+      clip: { src: "assets/clips/clip-gear.mp4", poster: "assets/clips/clip-gear.jpg" },
       video: "https://youtu.be/IjFOWDw8AMk",
       result: "디버그 시각화와 인게임 전투로 타깃 판정 · 엄폐 선택 · 톱날 재사용 흐름 검증",
       points: [
@@ -301,6 +302,7 @@ window.PORTFOLIO = {
       tags: ["gas", "data"],
       keywords: ["Actor Component", "DataAsset", "Projectile", "Interface"],
       cover: "assets/img/mh-cover.jpg",
+      clip: { src: "assets/clips/clip-mh.mp4", poster: "assets/clips/clip-mh.jpg" },
       video: "https://youtu.be/8WBqwhuAUGc",
       result: "조준 · 차지 · 발사 · 피격 흐름과 단계별 사거리 · 낙차 차이를 인게임으로 검증",
       points: [
