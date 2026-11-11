@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T16:08:20+09:00",
+  "generatedAt": "2026-11-12T00:00:02+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
-    "to": "2026-11-10",
-    "activeDays": 87
+    "to": "2026-11-11",
+    "activeDays": 88
   },
   "totals": {
-    "sessions": 40,
-    "requests": 1018,
-    "toolRuns": 10317,
+    "sessions": 44,
+    "requests": 1024,
+    "toolRuns": 10439,
     "patches": 233,
-    "inputTokens": 1454258351,
-    "cachedInputTokens": 1394641920,
-    "outputTokens": 5801545,
-    "reasoningTokens": 1249112,
+    "inputTokens": 1467232690,
+    "cachedInputTokens": 1407147776,
+    "outputTokens": 5924524,
+    "reasoningTokens": 1277116,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9590056120640424
+    "cacheHitRate": 0.9590488172670144
   },
   "daily": [
     {
@@ -715,14 +715,22 @@
       "inputTokens": 3791210,
       "cachedInputTokens": 3049344,
       "outputTokens": 2126
+    },
+    {
+      "date": "2026-11-11",
+      "requests": 6,
+      "toolRuns": 122,
+      "inputTokens": 12974339,
+      "cachedInputTokens": 12505856,
+      "outputTokens": 122979
     }
   ],
   "projects": [
     {
       "name": "NoWayOut (UE5)",
-      "requests": 284,
-      "toolRuns": 4887,
-      "inputTokens": 755304124
+      "requests": 288,
+      "toolRuns": 4953,
+      "inputTokens": 761168666
     },
     {
       "name": "포트폴리오 · 지원서",
@@ -743,16 +751,16 @@
       "inputTokens": 19708762
     },
     {
+      "name": "기타 실험 · 학습",
+      "requests": 83,
+      "toolRuns": 572,
+      "inputTokens": 74109029
+    },
+    {
       "name": "InteReal (UE5)",
       "requests": 83,
       "toolRuns": 1085,
       "inputTokens": 75283166
-    },
-    {
-      "name": "기타 실험 · 학습",
-      "requests": 81,
-      "toolRuns": 516,
-      "inputTokens": 66999232
     },
     {
       "name": "OverCooked2 (UE5)",
@@ -774,8 +782,8 @@
     },
     {
       "name": "구현·제작",
-      "turns": 75,
-      "inputTokens": 137546452
+      "turns": 80,
+      "inputTokens": 150520791
     },
     {
       "name": "검증",
@@ -789,7 +797,7 @@
     },
     {
       "name": "기타",
-      "turns": 700,
+      "turns": 701,
       "inputTokens": 436201602
     }
   ]
