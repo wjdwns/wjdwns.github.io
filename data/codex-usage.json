@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T00:00:02+09:00",
+  "generatedAt": "2026-11-12T14:04:21+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
-    "to": "2026-11-11",
-    "activeDays": 88
+    "to": "2026-11-12",
+    "activeDays": 89
   },
   "totals": {
-    "sessions": 44,
-    "requests": 1024,
-    "toolRuns": 10439,
+    "sessions": 45,
+    "requests": 1027,
+    "toolRuns": 10527,
     "patches": 233,
-    "inputTokens": 1467232690,
-    "cachedInputTokens": 1407147776,
-    "outputTokens": 5924524,
-    "reasoningTokens": 1277116,
+    "inputTokens": 1474971548,
+    "cachedInputTokens": 1414730240,
+    "outputTokens": 5978585,
+    "reasoningTokens": 1288703,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9590488172670144
+    "cacheHitRate": 0.9591576474260234
   },
   "daily": [
     {
@@ -723,6 +723,14 @@
       "inputTokens": 12974339,
       "cachedInputTokens": 12505856,
       "outputTokens": 122979
+    },
+    {
+      "date": "2026-11-12",
+      "requests": 3,
+      "toolRuns": 88,
+      "inputTokens": 7738858,
+      "cachedInputTokens": 7582464,
+      "outputTokens": 54061
     }
   ],
   "projects": [
@@ -745,16 +753,16 @@
       "inputTokens": 403632934
     },
     {
+      "name": "기타 실험 · 학습",
+      "requests": 86,
+      "toolRuns": 660,
+      "inputTokens": 81847887
+    },
+    {
       "name": "C++ FPS·TPS 학습",
       "requests": 85,
       "toolRuns": 101,
       "inputTokens": 19708762
-    },
-    {
-      "name": "기타 실험 · 학습",
-      "requests": 83,
-      "toolRuns": 572,
-      "inputTokens": 74109029
     },
     {
       "name": "InteReal (UE5)",
@@ -782,8 +790,8 @@
     },
     {
       "name": "구현·제작",
-      "turns": 80,
-      "inputTokens": 150520791
+      "turns": 82,
+      "inputTokens": 158259649
     },
     {
       "name": "검증",
