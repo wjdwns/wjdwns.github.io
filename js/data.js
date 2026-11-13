@@ -131,7 +131,7 @@ window.PORTFOLIO = {
         {
           title: "데이터 중심 레시피 판정",
           problem: "재료 투입 순서에 따라 같은 레시피가 다르게 판정되고, 레시피마다 조건 분기가 늘어났습니다.",
-          solution: "재료 ID를 정렬해 조합을 정규화하고, DataTable → PrimaryDataAsset → GameInstanceSubsystem 경로로 레시피를 조회.",
+          solution: "넣은 순서와 관계없이 재료 종류·상태를 하나씩 대조하고, DataTable → PrimaryDataAsset → GameInstanceSubsystem 경로로 레시피를 조회.",
           result: "레시피별 조건 분기 감소, 새 레시피는 DataTable에 추가만 하면 되는 구조.",
         },
         {
