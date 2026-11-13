@@ -167,6 +167,7 @@ window.PORTFOLIO = {
       keywords: ["DynamicMesh", "Geometry Script", "HTTP · Mock", "Delegate"],
       cover: "assets/img/ir-hero.jpg",
       clip: { src: "assets/clips/clip-ir.mp4", poster: "assets/clips/clip-ir.jpg" },
+      repo: "https://github.com/Imeamangryang/InteReal",
       video: "https://youtu.be/Sd2ZA1hPX5g",
       result: "실제 도면 기반 3D 공간 생성·재생성 시연, 협업과정 최우수상(1등) 수상",
       points: [

@@ -67,7 +67,7 @@ const renderPortfolio = () => {
         <div class="pcase__cta">
           <a class="btn btn--primary" href="#project-${p.id}">상세 보기</a>
           ${p.video ? `<a class="btn" href="${esc(p.video)}" target="_blank" rel="noopener">▶ 시연 영상</a>` : ""}
-          ${CODE[p.id] ? `<a class="btn" href="${esc(CODE[p.id].repo)}" target="_blank" rel="noopener">GitHub ↗</a>` : ""}
+          ${(p.repo || CODE[p.id]) ? `<a class="btn" href="${esc(p.repo || CODE[p.id].repo)}" target="_blank" rel="noopener">GitHub ↗</a>` : ""}
         </div>
       </div>
     </li>`).join("");
@@ -137,7 +137,7 @@ const renderPortfolio = () => {
             </dl>
             <div class="dactions">
               ${p.video ? `<a class="btn btn--primary" href="${esc(p.video)}" target="_blank" rel="noopener">▶ 시연 영상</a>` : ""}
-              ${CODE[p.id] ? `<a class="btn" href="${esc(CODE[p.id].repo)}" target="_blank" rel="noopener">GitHub 저장소 ↗</a>` : ""}
+              ${(p.repo || CODE[p.id]) ? `<a class="btn" href="${esc(p.repo || CODE[p.id].repo)}" target="_blank" rel="noopener">GitHub 저장소 ↗</a>` : ""}
               ${p.metric ? `<span class="dintro__metric"><s>${esc(p.metric.before)}</s> → <b>${esc(p.metric.after)}</b> <small>${esc(p.metric.label)}</small></span>` : ""}
             </div>
           </div>
