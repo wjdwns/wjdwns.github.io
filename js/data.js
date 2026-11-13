@@ -303,6 +303,7 @@ window.PORTFOLIO = {
       tags: ["gas", "data"],
       keywords: ["Actor Component", "DataAsset", "Projectile", "Interface"],
       cover: "assets/img/mh-cover.jpg",
+      repo: "https://github.com/wjdwns/Hunters",
       clip: { src: "assets/clips/clip-mh.mp4", poster: "assets/clips/clip-mh.jpg" },
       video: "https://youtu.be/8WBqwhuAUGc",
       result: "조준 · 차지 · 발사 · 피격 흐름과 단계별 사거리 · 낙차 차이를 인게임으로 검증",
