@@ -175,7 +175,7 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.025em; }
 .drawer .dactions { align-items: center; gap: 16px; }
 .pjump { position: sticky; top: 61px; z-index: 1; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 28px -36px 0; padding: 10px 36px; background: color-mix(in srgb, var(--bg) 94%, transparent); border-bottom: 1px solid var(--line); }
 .pjump::-webkit-scrollbar { display: none; }
-.pjump button { flex: 0 0 auto; display: inline-flex; gap: 6px; align-items: baseline; height: 34px; padding: 0 12px; line-height: 34px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-2); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; }
+.pjump button { flex: 0 0 auto; display: inline-flex; gap: 6px; align-items: center; box-sizing: border-box; height: 34px; padding: 0 12px; line-height: 1; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-2); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; }
 .pjump button span { color: var(--accent); font-size: 11px; }
 .pjump button:hover { color: var(--ink); border-color: var(--line-2); }
 .impl { padding: 36px 0 8px; border-bottom: 1px solid var(--line); }
