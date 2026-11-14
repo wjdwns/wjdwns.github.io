@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T17:12:45+09:00",
+  "generatedAt": "2026-11-15T04:18:25+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
-    "to": "2026-11-12",
-    "activeDays": 89
+    "to": "2026-11-14",
+    "activeDays": 90
   },
   "totals": {
-    "sessions": 46,
-    "requests": 1029,
-    "toolRuns": 10584,
+    "sessions": 50,
+    "requests": 1034,
+    "toolRuns": 10607,
     "patches": 233,
-    "inputTokens": 1482410870,
-    "cachedInputTokens": 1421879168,
-    "outputTokens": 6037424,
-    "reasoningTokens": 1300420,
+    "inputTokens": 1483777547,
+    "cachedInputTokens": 1423184000,
+    "outputTokens": 6080424,
+    "reasoningTokens": 1305677,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9591667173892215
+    "cacheHitRate": 0.9591626473102305
   },
   "daily": [
     {
@@ -731,6 +731,14 @@
       "inputTokens": 15178180,
       "cachedInputTokens": 14731392,
       "outputTokens": 112900
+    },
+    {
+      "date": "2026-11-14",
+      "requests": 5,
+      "toolRuns": 23,
+      "inputTokens": 1366677,
+      "cachedInputTokens": 1304832,
+      "outputTokens": 43000
     }
   ],
   "projects": [
@@ -754,9 +762,9 @@
     },
     {
       "name": "기타 실험 · 학습",
-      "requests": 88,
-      "toolRuns": 717,
-      "inputTokens": 89287209
+      "requests": 93,
+      "toolRuns": 740,
+      "inputTokens": 90653886
     },
     {
       "name": "C++ FPS·TPS 학습",
@@ -780,8 +788,8 @@
   "stages": [
     {
       "name": "조사",
-      "turns": 12,
-      "inputTokens": 3144943
+      "turns": 13,
+      "inputTokens": 3231297
     },
     {
       "name": "설계",
@@ -795,8 +803,8 @@
     },
     {
       "name": "검증",
-      "turns": 194,
-      "inputTokens": 781153074
+      "turns": 195,
+      "inputTokens": 782254549
     },
     {
       "name": "수정",
@@ -805,8 +813,8 @@
     },
     {
       "name": "기타",
-      "turns": 701,
-      "inputTokens": 436201602
+      "turns": 704,
+      "inputTokens": 436380450
     }
   ]
 }
