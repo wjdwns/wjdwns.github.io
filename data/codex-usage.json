@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T19:11:05+09:00",
+  "generatedAt": "2026-11-19T00:00:03+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
-    "to": "2026-11-16",
-    "activeDays": 91
+    "to": "2026-11-18",
+    "activeDays": 92
   },
   "totals": {
-    "sessions": 51,
-    "requests": 1048,
-    "toolRuns": 10710,
+    "sessions": 56,
+    "requests": 1061,
+    "toolRuns": 10752,
     "patches": 233,
-    "inputTokens": 1502283880,
-    "cachedInputTokens": 1441474560,
-    "outputTokens": 6193334,
-    "reasoningTokens": 1325029,
+    "inputTokens": 1504568124,
+    "cachedInputTokens": 1443527296,
+    "outputTokens": 6234198,
+    "reasoningTokens": 1327025,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9595220844678171
+    "cacheHitRate": 0.9594296682042428
   },
   "daily": [
     {
@@ -747,6 +747,14 @@
       "inputTokens": 18506333,
       "cachedInputTokens": 18290560,
       "outputTokens": 112910
+    },
+    {
+      "date": "2026-11-18",
+      "requests": 13,
+      "toolRuns": 42,
+      "inputTokens": 2284244,
+      "cachedInputTokens": 2052736,
+      "outputTokens": 40864
     }
   ],
   "projects": [
@@ -770,9 +778,9 @@
     },
     {
       "name": "기타 실험 · 학습",
-      "requests": 107,
-      "toolRuns": 843,
-      "inputTokens": 109160219
+      "requests": 120,
+      "toolRuns": 885,
+      "inputTokens": 111444463
     },
     {
       "name": "C++ FPS·TPS 학습",
@@ -796,8 +804,8 @@
   "stages": [
     {
       "name": "조사",
-      "turns": 13,
-      "inputTokens": 3231297
+      "turns": 15,
+      "inputTokens": 3390122
     },
     {
       "name": "설계",
@@ -806,13 +814,13 @@
     },
     {
       "name": "구현·제작",
-      "turns": 93,
-      "inputTokens": 182372796
+      "turns": 94,
+      "inputTokens": 182481667
     },
     {
       "name": "검증",
-      "turns": 195,
-      "inputTokens": 782254549
+      "turns": 200,
+      "inputTokens": 783809864
     },
     {
       "name": "수정",
@@ -821,8 +829,8 @@
     },
     {
       "name": "기타",
-      "turns": 708,
-      "inputTokens": 436903167
+      "turns": 713,
+      "inputTokens": 437364400
     }
   ]
 }
