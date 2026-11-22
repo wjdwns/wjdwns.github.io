@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T12:00:02+09:00",
+  "generatedAt": "2026-11-22T16:32:11+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
-    "to": "2026-11-20",
-    "activeDays": 94
+    "to": "2026-11-21",
+    "activeDays": 95
   },
   "totals": {
-    "sessions": 66,
-    "requests": 1091,
-    "toolRuns": 10900,
+    "sessions": 67,
+    "requests": 1093,
+    "toolRuns": 10904,
     "patches": 233,
-    "inputTokens": 1515904385,
-    "cachedInputTokens": 1454263040,
-    "outputTokens": 6377807,
-    "reasoningTokens": 1338196,
+    "inputTokens": 1516085783,
+    "cachedInputTokens": 1454420736,
+    "outputTokens": 6378609,
+    "reasoningTokens": 1338203,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9593369175457593
+    "cacheHitRate": 0.9593261491589358
   },
   "daily": [
     {
@@ -771,6 +771,14 @@
       "inputTokens": 4638743,
       "cachedInputTokens": 4303232,
       "outputTokens": 58883
+    },
+    {
+      "date": "2026-11-21",
+      "requests": 2,
+      "toolRuns": 4,
+      "inputTokens": 181398,
+      "cachedInputTokens": 157696,
+      "outputTokens": 802
     }
   ],
   "projects": [
@@ -794,9 +802,9 @@
     },
     {
       "name": "기타 실험 · 학습",
-      "requests": 150,
-      "toolRuns": 1033,
-      "inputTokens": 122780724
+      "requests": 152,
+      "toolRuns": 1037,
+      "inputTokens": 122962122
     },
     {
       "name": "C++ FPS·TPS 학습",
@@ -845,8 +853,8 @@
     },
     {
       "name": "기타",
-      "turns": 719,
-      "inputTokens": 437806232
+      "turns": 721,
+      "inputTokens": 437987630
     }
   ]
 }
