@@ -254,7 +254,7 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.025em; }
 .aiblock .subhead__lead { font-size: 14px; color: var(--ink-2); margin-bottom: 16px; max-width: 52em; }
 
 /* 30초 요약 */
-.aisum { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.aisum { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
 .aisum__item { display: flex; flex-direction: column; gap: 6px; padding: 22px 20px 20px; border-left: 1px solid var(--line); }
 .aisum__item:first-child { border-left: 0; padding-left: 0; }
 .aisum__label { font-size: 13px; color: var(--ink-2); font-weight: 500; }
@@ -301,9 +301,43 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.025em; }
 
 .refs { border-top: 1px solid var(--line); }
 
+/* 실전 훈련 (AI 협업 평가 모의 응시) */
+.train { margin-top: 0; }
+.train__env { margin: 20px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+.train__env > div { display: grid; grid-template-columns: 6.5em 1fr; gap: 10px; padding: 10px 0; border-top: 1px solid var(--ai-line); }
+.train__env dt { font-size: 13px; color: var(--ai-ink-2); }
+.train__env dd { margin: 0; font-size: 14px; line-height: 1.55; }
+.train__sub { margin: 32px 0 12px; font-size: 16px; font-weight: 600; letter-spacing: -0.02em; }
+.train__sub span { margin-left: 8px; font-size: 12px; font-weight: 400; color: var(--ai-ink-2); }
+.train .case__steps { margin-top: 0; }
+.runs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.run { display: grid; grid-template-columns: 2.6em 11em 1fr 3em; grid-template-areas: "n task track score" ". note note note"; gap: 4px 12px; align-items: center; background: var(--ai-bg); border-radius: 12px; padding: 12px 16px; }
+.run__n { grid-area: n; font-family: var(--mono); font-size: 12px; color: var(--ai-ink-2); }
+.run__task { grid-area: task; font-size: 14px; font-weight: 600; }
+.run__track { grid-area: track; height: 8px; border-radius: 99px; background: var(--ai-line); overflow: hidden; }
+.run__fill { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+.run:last-child .run__fill { background: var(--good); }
+.run__score { grid-area: score; text-align: right; font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.run:last-child .run__score { color: var(--good); }
+.run__note { grid-area: note; font-size: 13px; color: var(--ai-ink-2); }
+.train__notes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.train__notes .case__lesson { margin-top: 16px; }
+.train__gap b { color: var(--accent); }
+.principles { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 860px) {
+  .train__env, .train__notes { grid-template-columns: 1fr; }
+  .train__notes .case__lesson + .case__lesson { margin-top: 0; }
+}
+@media (max-width: 560px) {
+  .train__env > div { grid-template-columns: 1fr; gap: 2px; }
+  .run { grid-template-columns: 2.6em 1fr 3em; grid-template-areas: "n task score" "track track track" "note note note"; padding: 12px 14px; }
+}
+
 @media (max-width: 1024px) {
   .aisum { grid-template-columns: 1fr 1fr; }
-  .aisum__item:nth-child(3) { border-left: 0; padding-left: 0; }
+  .aisum__item:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .principles { grid-template-columns: 1fr 1fr; }
   .aisum__item:nth-child(n+3) { border-top: 1px solid var(--line); }
 }
 @media (max-width: 560px) {
@@ -313,7 +347,8 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.025em; }
   .aiblock__no { padding-top: 0; }
   .aiblock__no::after { display: none; }
   .aisum { grid-template-columns: 1fr; }
-  .aisum__item, .aisum__item:nth-child(3) { border-left: 0; padding-left: 0; padding-right: 0; }
+  .principles { grid-template-columns: 1fr; }
+  .aisum__item, .aisum__item:nth-child(odd) { border-left: 0; padding-left: 0; padding-right: 0; }
   .aisum__item + .aisum__item { border-top: 1px solid var(--line); }
 }
 

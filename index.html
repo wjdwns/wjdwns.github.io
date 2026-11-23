@@ -15,10 +15,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=6f8cd59b83" />
-  <link rel="stylesheet" href="css/theme.css?v=6f8cd59b83" />
+  <link rel="stylesheet" href="css/style.css?v=6567c86555" />
+  <link rel="stylesheet" href="css/theme.css?v=6567c86555" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="css/case.css?v=6f8cd59b83" />
+  <link rel="stylesheet" href="css/case.css?v=6567c86555" />
   <script>
     try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
@@ -109,7 +109,7 @@
       <a class="jump__card" href="#projects"><span class="eyebrow">02 · Projects</span><b>프로젝트 5개</b><span>네트워크 · GAS · 게임 AI · 3D 자동화를 문제 → 해결 → 결과로</span><i>→</i></a>
       <a class="jump__card" href="#career"><span class="eyebrow">03 · Experience</span><b>경력 · 학력</b><span>앱 · 서버 실무 2년 2개월, 수상과 자격</span><i>→</i></a>
       <a class="jump__card" href="#blog"><span class="eyebrow">04 · Blog</span><b>기술 블로그</b><span>Velog에 정리한 언리얼 · 네트워크 · 게임 수학 글</span><i>→</i></a>
-      <a class="jump__card jump__card--dark" href="#ai"><span class="eyebrow">05 · AI skills</span><b>AI 활용능력</b><span>Codex · ChatGPT 역할 분담, 질문 습관, 검증 파이프라인</span><i>→</i></a>
+      <a class="jump__card jump__card--dark" href="#ai"><span class="eyebrow">05 · AI skills</span><b>AI 활용능력</b><span>Codex · ChatGPT 역할 분담, 검증 파이프라인, AI 협업 평가 훈련</span><i>→</i></a>
       <a class="jump__card jump__card--dark" href="#ai-log"><span class="eyebrow">06 · AI log</span><b>AI 사용로그</b><span>Codex 세션 · 요청 · 도구 실행을 집계한 실제 기록</span><i>→</i></a>
     </section>
     </div>
@@ -142,7 +142,8 @@
           <button type="button" data-jump="ai-s3"><span>03</span>프롬프트 · 효율</button>
           <button type="button" data-jump="ai-s4"><span>04</span>검증 · 판단</button>
           <button type="button" data-jump="ai-s5"><span>05</span>실제 사례</button>
-          <button type="button" data-jump="ai-s6"><span>06</span>부록</button>
+          <button type="button" data-jump="ai-s6"><span>06</span>실전 훈련</button>
+          <button type="button" data-jump="ai-s7"><span>07</span>부록</button>
         </nav>
 
         <section class="aiblock" id="ai-s1" aria-labelledby="ai-s1-t">
@@ -188,8 +189,13 @@
           <section class="case" id="caseStudy" aria-labelledby="caseTitle"></section>
         </section>
 
-        <details class="aiblock aiblock--more" id="ai-s6">
-          <summary class="aiblock__head"><span class="aiblock__no">06</span><div><h3>부록 · 질문 습관과 ChatGPT 활용 분야</h3><p class="aiblock__take">ChatGPT 대화 기록을 돌아보며 정리했습니다. 눌러서 펼치기</p></div></summary>
+        <section class="aiblock" id="ai-s6" aria-labelledby="ai-s6-t">
+          <div class="aiblock__head"><span class="aiblock__no">06</span><div><h3 id="ai-s6-t">실전 훈련 · AI 협업 평가</h3><p class="aiblock__take">평가와 같은 규칙의 연습 환경을 만들고, 채점 결과를 보며 작업 방식을 네 번 고쳤습니다.</p></div></div>
+          <section class="case train" id="trainCase" aria-labelledby="trainTitle"></section>
+        </section>
+
+        <details class="aiblock aiblock--more" id="ai-s7">
+          <summary class="aiblock__head"><span class="aiblock__no">07</span><div><h3>부록 · 질문 습관과 ChatGPT 활용 분야</h3><p class="aiblock__take">ChatGPT 대화 기록을 돌아보며 정리했습니다. 눌러서 펼치기</p></div></summary>
           <div class="askgrid">
             <ol class="habits" id="habits"></ol>
             <figure class="panel domains">
@@ -328,13 +334,13 @@
 
   <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
 
-  <script src="js/data.js?v=6f8cd59b83"></script>
-  <script src="js/details.js?v=6f8cd59b83"></script>
-  <script src="js/code.js?v=6f8cd59b83"></script>
-  <script src="js/main.js?v=6f8cd59b83"></script>
-  <script src="js/blog.js?v=6f8cd59b83"></script>
-  <script src="js/home.js?v=6f8cd59b83"></script>
-  <script src="js/ai-page.js?v=6f8cd59b83"></script>
-  <script src="js/analytics.js?v=6f8cd59b83"></script>
+  <script src="js/data.js?v=6567c86555"></script>
+  <script src="js/details.js?v=6567c86555"></script>
+  <script src="js/code.js?v=6567c86555"></script>
+  <script src="js/main.js?v=6567c86555"></script>
+  <script src="js/blog.js?v=6567c86555"></script>
+  <script src="js/home.js?v=6567c86555"></script>
+  <script src="js/ai-page.js?v=6567c86555"></script>
+  <script src="js/analytics.js?v=6567c86555"></script>
 </body>
 </html>

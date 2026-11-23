@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T17:46:13+09:00",
+  "generatedAt": "2026-11-23T21:06:26+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
-    "to": "2026-11-21",
-    "activeDays": 95
+    "to": "2026-11-23",
+    "activeDays": 96
   },
   "totals": {
-    "sessions": 67,
-    "requests": 1093,
-    "toolRuns": 10904,
+    "sessions": 68,
+    "requests": 1094,
+    "toolRuns": 10919,
     "patches": 233,
-    "inputTokens": 1516085783,
-    "cachedInputTokens": 1454420736,
-    "outputTokens": 6378609,
-    "reasoningTokens": 1338203,
+    "inputTokens": 1516764683,
+    "cachedInputTokens": 1455059840,
+    "outputTokens": 6384957,
+    "reasoningTokens": 1338864,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9593261491589358
+    "cacheHitRate": 0.9593181172454818
   },
   "daily": [
     {
@@ -779,6 +779,14 @@
       "inputTokens": 181398,
       "cachedInputTokens": 157696,
       "outputTokens": 802
+    },
+    {
+      "date": "2026-11-23",
+      "requests": 1,
+      "toolRuns": 15,
+      "inputTokens": 678900,
+      "cachedInputTokens": 639104,
+      "outputTokens": 6348
     }
   ],
   "projects": [
@@ -790,9 +798,9 @@
     },
     {
       "name": "포트폴리오 · 지원서",
-      "requests": 272,
-      "toolRuns": 598,
-      "inputTokens": 112458016
+      "requests": 273,
+      "toolRuns": 613,
+      "inputTokens": 113136916
     },
     {
       "name": "Orbit · Ourbit (Flutter)",
@@ -838,8 +846,8 @@
     },
     {
       "name": "구현·제작",
-      "turns": 98,
-      "inputTokens": 184667842
+      "turns": 99,
+      "inputTokens": 185346742
     },
     {
       "name": "검증",

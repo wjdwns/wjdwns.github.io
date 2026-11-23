@@ -416,6 +416,38 @@ const renderPortfolio = () => {
       <p class="case__files">만든 파일 · <code>${esc(CS.files)}</code></p>`;
   }
 
+  const TR = A.training;
+  if (TR) {
+    const col = (side, cls) => `
+      <div class="case__col ${cls}">
+        <h5>${esc(side.label)}</h5>
+        <dl>${side.items.map((it) => `<div><dt>${esc(it.k)}</dt><dd><b>${esc(it.v)}</b>${it.note ? `<span>${esc(it.note)}</span>` : ""}</dd></div>`).join("")}</dl>
+      </div>`;
+    const maxScore = 300;
+    $("#trainCase").innerHTML = `
+      <p class="eyebrow">Practice · 모의 응시 4회</p>
+      <h3 id="trainTitle">${esc(TR.title)}</h3>
+      <p class="case__lead">${esc(TR.lead)}</p>
+      <dl class="train__env">${TR.env.map((e) => `<div><dt>${esc(e.k)}</dt><dd>${esc(e.v)}</dd></div>`).join("")}</dl>
+      <h4 class="train__sub">회차별 점수 <span>300점 만점 · 기술 + 의도 + 인지</span></h4>
+      <ol class="runs">${TR.runs.map((r) => `
+        <li class="run">
+          <span class="run__n">${esc(r.n)}</span>
+          <span class="run__task">${esc(r.task)}</span>
+          <span class="run__track" aria-hidden="true"><span class="run__fill" style="width:${(r.score / maxScore) * 100}%"></span></span>
+          <b class="run__score">${r.score}</b>
+          <span class="run__note">${esc(r.note)}</span>
+        </li>`).join("")}</ol>
+      <h4 class="train__sub">지금의 작업 방식</h4>
+      <ol class="case__steps">${TR.steps.map((s) => `<li><span>${esc(s.k)}</span><div><b>${esc(s.title)}</b><p>${esc(s.body)}</p></div></li>`).join("")}</ol>
+      <div class="case__compare">${col(TR.compare.before, "case__col--before")}<span class="case__vs" aria-hidden="true">→</span>${col(TR.compare.after, "case__col--after")}</div>
+      <div class="train__notes">
+        <p class="case__lesson"><b>토큰을 나눠 보니</b>${esc(TR.tokens)}</p>
+        <p class="case__lesson train__gap"><b>아직 부족한 것</b>${esc(TR.gap)}</p>
+      </div>
+      <p class="case__lesson"><b>배운 점</b>${esc(TR.lesson)}</p>`;
+  }
+
   $("#refs").innerHTML = (A.references || []).map((r) => `
     <li id="ref-${r.n}"><span class="refs__n">${r.n}</span><div><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a><span>${esc(r.org)} · ${esc(r.year)}</span></div></li>`).join("");
   // 인용 번호 클릭 시 탭 전환 없이 해당 출처로 스크롤

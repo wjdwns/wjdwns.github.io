@@ -41,6 +41,12 @@
         desc: `막힌 지점 ${before("막힌 지점")} → ${after("막힌 지점")}, 검증 단계에서 기존 분석의 누락까지 발견`,
         go: "ai-s5", goLabel: "사례 보기",
       },
+      A.training?.runs?.length && {
+        big: `${A.training.runs[0].score} → ${A.training.runs.at(-1).score}`,
+        label: "AI 협업 평가 모의 응시",
+        desc: `300점 만점 · ${A.training.runs.length}회 응시하며 작업 방식을 고쳐 숨은 점검 ${A.training.compare.after.items.find((x) => x.k === "숨은 점검")?.v || ""} 통과`,
+        go: "ai-s6", goLabel: "훈련 기록 보기",
+      },
       cases.length && {
         big: `${cases.length}건`,
         label: "근거 없는 수치 제거",
