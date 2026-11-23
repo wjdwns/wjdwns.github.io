@@ -28,12 +28,25 @@ const renderPortfolio = () => {
     ["Velog 기술 블로그", P.velog],
     [P.email, "mailto:" + P.email],
   ].map(([t, h]) => `<li><a href="${esc(h)}" ${h.startsWith("http") || h.endsWith(".pdf") ? 'target="_blank" rel="noopener"' : ""}>${esc(t)} ↗</a></li>`).join("");
-  $("#heroStats").innerHTML = D.heroStats.map((s) => `
-    <li class="stat">
-      <span class="stat__label">${esc(s.label)}</span>
-      <span class="stat__value">${esc(s.value)}${s.unit ? `<small>${esc(s.unit)}</small>` : ""}</span>
-      <span class="stat__sub">${esc(s.sub)}</span>
-    </li>`).join("");
+  {
+    const kpis = D.heroStats.filter((s) => !s.foot);
+    const foot = D.heroStats.find((s) => s.foot);
+    const projName = (label) => String(label).split(" · ")[0];
+    const focus = (D.home?.strengths || []).map((s) => {
+      const names = [...new Set((s.evidence || []).map((e) => projName(e.label)))].slice(0, 2);
+      return { key: s.key, title: s.title, names: names.join(" · "), href: s.evidence?.[0]?.href || "#projects" };
+    });
+    $("#heroGlance").innerHTML = `
+      <div class="glance__head"><span>// At a glance</span><span class="glance__stack">UE5 · C++ · Blueprint</span></div>
+      <ul class="glance__kpis">${kpis.map((s) => `
+        <li><a href="${esc(s.href)}"><b>${esc(s.value)}${s.unit ? `<small>${esc(s.unit)}</small>` : ""}</b><span>${esc(s.label)}</span></a></li>`).join("")}
+      </ul>
+      <p class="glance__sub">해결해 온 문제</p>
+      <ul class="glance__focus">${focus.map((f) => `
+        <li><a href="${esc(f.href)}"><span class="glance__key">${esc(f.key)}</span><b>${esc(f.title)}</b><em>${esc(f.names)}</em><i aria-hidden="true">→</i></a></li>`).join("")}
+      </ul>
+      ${foot ? `<a class="glance__foot" href="${esc(foot.href)}"><i class="glance__dot" aria-hidden="true"></i><span><b>${esc(foot.label)} ${esc(foot.value)}${esc(foot.unit)}</b>${esc(foot.sub)}</span><em aria-hidden="true">→</em></a>` : ""}`;
+  }
 
   $("#skills").innerHTML = D.skills.map((g) => `
     <div class="skillcol"><h3>${esc(g.group)}</h3><ul>${g.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("");
@@ -423,13 +436,13 @@ const renderPortfolio = () => {
         <h5>${esc(side.label)}</h5>
         <dl>${side.items.map((it) => `<div><dt>${esc(it.k)}</dt><dd><b>${esc(it.v)}</b>${it.note ? `<span>${esc(it.note)}</span>` : ""}</dd></div>`).join("")}</dl>
       </div>`;
-    const maxScore = 300;
+    const maxScore = TR.max || 200;
     $("#trainCase").innerHTML = `
       <p class="eyebrow">Practice · 모의 응시 4회</p>
       <h3 id="trainTitle">${esc(TR.title)}</h3>
       <p class="case__lead">${esc(TR.lead)}</p>
       <dl class="train__env">${TR.env.map((e) => `<div><dt>${esc(e.k)}</dt><dd>${esc(e.v)}</dd></div>`).join("")}</dl>
-      <h4 class="train__sub">회차별 점수 <span>300점 만점 · 기술 + 의도 + 인지</span></h4>
+      <h4 class="train__sub">회차별 점수 <span>${maxScore}점 만점 · 기술 + 의도</span></h4>
       <ol class="runs">${TR.runs.map((r) => `
         <li class="run">
           <span class="run__n">${esc(r.n)}</span>
@@ -604,7 +617,7 @@ function applyCodexUsage(J) {
   }
   U.daily = J.daily || [];
   const hero = window.PORTFOLIO.heroStats.find((h) => h.label === "Codex 작업 요청");
-  if (hero) { hero.value = nf.format(T.requests); hero.sub = `${T.sessions}개 세션 · 도구 실행 ${nf.format(T.toolRuns)}회`; }
+  if (hero) { hero.value = nf.format(T.requests); hero.sub = `${T.sessions}개 세션 · 도구 실행 ${nf.format(T.toolRuns)}회 · 결과는 직접 검증`; }
   const ins = window.PORTFOLIO.ai.usage.insights;
   if (ins[0]) { ins[0].big = `${(T.toolRuns / Math.max(1, T.requests)).toFixed(1)}회`; ins[0].body = `${nf.format(T.requests)}건의 요청이 ${nf.format(T.toolRuns)}번의 명령 실행·파일 수정으로 이어졌습니다. 질문 하나가 아니라 '탐색 → 수정 → 빌드 확인' 단위로 맡깁니다.`; }
   if (ins[1]) { ins[1].big = `${Math.round(T.cacheHitRate * 100)}%`; ins[1].body = `입력 토큰의 약 ${Math.round(T.cacheHitRate * 100)}%가 캐시에서 재사용됐습니다. 프로젝트 문서와 코드 맥락을 한 세션에 쌓아 두고 긴 작업을 이어갑니다.`; }

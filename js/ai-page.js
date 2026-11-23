@@ -44,7 +44,7 @@
       A.training?.runs?.length && {
         big: `${A.training.runs[0].score} → ${A.training.runs.at(-1).score}`,
         label: "AI 협업 평가 모의 응시",
-        desc: `300점 만점 · ${A.training.runs.length}회 응시하며 작업 방식을 고쳐 숨은 점검 ${A.training.compare.after.items.find((x) => x.k === "숨은 점검")?.v || ""} 통과`,
+        desc: `기술 + 의도 ${A.training.max || 200}점 만점 · ${A.training.runs.length}회 응시하며 작업 방식을 고쳐 숨은 점검 ${A.training.compare.after.items.find((x) => x.k === "숨은 점검")?.v || ""} 통과`,
         go: "ai-s6", goLabel: "훈련 기록 보기",
       },
       cases.length && {
