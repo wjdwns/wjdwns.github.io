@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T12:11:37+09:00",
+  "generatedAt": "2026-11-26T00:00:02+09:00",
   "source": "codex-local-sessions",
   "range": {
     "from": "2026-06-18",
@@ -8,16 +8,16 @@
     "activeDays": 97
   },
   "totals": {
-    "sessions": 69,
-    "requests": 1095,
-    "toolRuns": 10933,
+    "sessions": 74,
+    "requests": 1105,
+    "toolRuns": 11152,
     "patches": 233,
-    "inputTokens": 1517621525,
-    "cachedInputTokens": 1455870080,
-    "outputTokens": 6396922,
-    "reasoningTokens": 1340166,
+    "inputTokens": 1550555389,
+    "cachedInputTokens": 1488185216,
+    "outputTokens": 6617703,
+    "reasoningTokens": 1400165,
     "guardianReviews": 244,
-    "cacheHitRate": 0.9593103787849873
+    "cacheHitRate": 0.9597755917379872
   },
   "daily": [
     {
@@ -790,11 +790,11 @@
     },
     {
       "date": "2026-11-25",
-      "requests": 1,
-      "toolRuns": 14,
-      "inputTokens": 856842,
-      "cachedInputTokens": 810240,
-      "outputTokens": 11965
+      "requests": 11,
+      "toolRuns": 233,
+      "inputTokens": 33790706,
+      "cachedInputTokens": 33125376,
+      "outputTokens": 232746
     }
   ],
   "projects": [
@@ -818,9 +818,9 @@
     },
     {
       "name": "기타 실험 · 학습",
-      "requests": 153,
-      "toolRuns": 1051,
-      "inputTokens": 123818964
+      "requests": 163,
+      "toolRuns": 1270,
+      "inputTokens": 156752828
     },
     {
       "name": "C++ FPS·TPS 학습",
@@ -849,18 +849,18 @@
     },
     {
       "name": "설계",
-      "turns": 65,
-      "inputTokens": 75607550
+      "turns": 67,
+      "inputTokens": 78359191
     },
     {
       "name": "구현·제작",
-      "turns": 100,
-      "inputTokens": 186203584
+      "turns": 101,
+      "inputTokens": 192567377
     },
     {
       "name": "검증",
-      "turns": 211,
-      "inputTokens": 790121321
+      "turns": 213,
+      "inputTokens": 813788504
     },
     {
       "name": "수정",
@@ -869,8 +869,8 @@
     },
     {
       "name": "기타",
-      "turns": 721,
-      "inputTokens": 437987630
+      "turns": 722,
+      "inputTokens": 438138877
     }
   ]
 }
